@@ -5,15 +5,25 @@ date:   2017-06-10
 categories: terminal
 ---
 
-*I forget stuff--*  
+*I forget stuff--* 
 
-For last command: up arrow key
+`control + C` : To kill whatever is running
 
-To get to the beginning of the line: control + a
+`up arrow key` : For last command
 
-To jump to the end of the line: control + e  
+`control + A` : To get to the beginning of the line
 
-*-- so I'll be adding to this.*
+`control + E` : To jump to the end of the line
 
+`control + L` : To clear terminal/screen 
 
+`control + H` : Similar to Backspace 
+
+`control + K` : Clears after cursor 
+
+`control + W` : Clears before cursor 
+
+*-- so I'll be adding to this.*  
+
+NOTE: I'm on a Mac
 
