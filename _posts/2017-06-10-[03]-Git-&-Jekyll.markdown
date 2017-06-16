@@ -34,8 +34,8 @@ After page reloads you'll see a section that says "Push existing repo from comma
 
 If you check Github you should see your files on there. 
 
-Click SETTINGS and head down to GITHUB PAGES section.
-Under SOURCE click the dropdown and click MASTER BRANCH or if you created a GH-PAGES branch then choose that one. 
-SAVE and you'll see a link like https://username.github.io/repoName/ show up
+  - Click SETTINGS and head down to GITHUB PAGES section.  
+  - Under SOURCE click the dropdown and click MASTER BRANCH or if you created a GH-PAGES branch then choose that one.  
+  - SAVE and you'll see a link like https://username.github.io/repoName/ show up
 
 If all went smooth, congratulations your SITE is LIVE on [Github Pages](https://pages.github.com/) :)
