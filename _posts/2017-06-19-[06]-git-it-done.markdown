@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "Git It Done"
+date:   2017-06-19
+categories: git
+---  
+
+The amount of times I look these up...  
+I have screenshots saved, I have notes...  
+Yea, I'll be adding to this list. Until then...
+
+
+# Switching Branches
+
+`$ git checkout -b branch-name-here`  
+ _switches to new branch 'branch-name-here'_
+
+Shortcut for:
+
+`$ git branch branch-name-here`  
+`$ git checkout branch-name-here`  
+
+# Using Rebase to Update Branch
+
+```
+$ git checkout master
+$ git pull
+$ git checkout other-branch
+$ git rebase master
+$ git push origin other-branch -f
+```
+
+# When you need to delete a branch
+
+`$ git branch -d the-local-branch`  
+
+
+
