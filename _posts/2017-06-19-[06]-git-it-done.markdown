@@ -32,7 +32,15 @@ $ git push origin other-branch -f
 
 # When you need to delete a branch
 
-`$ git branch -d the-local-branch`  
+`$ git branch -d the-local-branch` 
+
+# When you want to delete untracked files from working branch  
+
+This one I actually only used once and I'm not exactly sure what was the situation, but I jotted it down nonetheless because, well, you never know. There are two posts I saved regarding this topic-- perhaps, I'll look them over and summarize them here or on a seperate post.  
+
+`$ git clean -n` (will show files that would be deleted)  
+
+`$ git clean -f` (will delete files) 
 
 
 
