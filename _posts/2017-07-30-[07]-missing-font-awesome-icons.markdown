@@ -2,7 +2,7 @@
 layout: post
 title:  "Missing: Font-Awesome Icons"
 date:   2017-07-30
-categories: css, font
+categories: gem
 ---  
 
 I've had this issue twice. Thankfully I wrote it down the first time it happened and figured since it happened a second time I should post it for future reference. 
