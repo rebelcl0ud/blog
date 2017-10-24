@@ -5,7 +5,7 @@ date:   2017-10-24
 categories: git
 ---
 
-The following was initially part of the 'Rails Project Checklist of Sorts' post. Figured having a dedicated post would make it easier to find, especially if not working w/ rails, and convenient :)
+The following was initially part of the 'Rails Project Checklist of Sorts' post. Figured having a dedicated post would make it easier to find, especially if not working w/ rails, not to mention convenient :)
 
 # SETTING UP REPO  
 
