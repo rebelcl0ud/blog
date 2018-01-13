@@ -115,6 +115,8 @@ HEROKU
 `gem 'rails_12factor', group: :production`  
 NOTE: above goes in gem file
 
+UPDATE: above gem is not needed with Rails 5 :)
+
 `$ bundle install`
 
 NOTE:  

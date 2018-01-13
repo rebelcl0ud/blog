@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: COD3NIGMA
+title: COD3nigma
 #email: your-email@domain.com
 website: jovanka.herokuapp.com
 description: > # this means to ignore newlines until "baseurl:"
@@ -33,3 +33,4 @@ exclude:
   - Gemfile.lock
 
 port: 3000
+host: 0.0.0.0
