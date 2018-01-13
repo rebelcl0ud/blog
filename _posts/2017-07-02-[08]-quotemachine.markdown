@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  quotemachine[JS]
+title:  quote machine [JS]
 date:   2017-07-02
-categories: javascript
+categories: javascript, fcc
 ---
 
 Below was written while working on the quote machine user stories from [FCC](https://freecodecamp.org). Actually had this draft sitting all lonesome for awhile so post date used is a give or take. Below are my notes.
