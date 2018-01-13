@@ -307,14 +307,16 @@ pre {
 
 .home {
   display: flex;
+  margin-bottom: 25%; /* edit, noticed posts not fully scrolling/ posts covered by static footer*/
 }
 
 .post-list-section {
   width:50%;
 }
 
+/* section I need to scroll*/
 .post-articles-section {
-  flex:1;
+  flex: 1;
 }
 
 .post-meta {
@@ -340,7 +342,7 @@ pre {
       font-size: 36px; } }
 
 .post-content {
-  margin-bottom: 30px; }
+  margin-bottom: 25%; } /* edit, noticed posts not fully scrolling/ posts covered by static footer*/
   .post-content h2 {
     font-size: 32px; }
     @media screen and (max-width: 800px) {
