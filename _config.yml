@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: COD3nigma
 #email: your-email@domain.com
-website: jovanka.herokuapp.com
+website: portfolio
 description: > # this means to ignore newlines until "baseurl:"
   A migration of scribbles regarding code-- a 'note to self' collection. 
 baseurl: /blog # the subpath of your site, e.g. /blog

@@ -234,7 +234,13 @@ pre {
  */
 .site-footer {
   border-top: 1px solid #686868;
-  padding: 30px 0; }
+  padding: 30px 0;
+
+  /* added to fix footer, post-scroll behind */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #272727; }
 
 .footer-heading {
   font-size: 18px;
@@ -256,16 +262,16 @@ pre {
   padding-left: 15px; }
 
 .footer-col-1 {
-  width: -webkit-calc(35% - (30px / 2));
-  width: calc(35% - (30px / 2)); }
+  width: -webkit-calc(21% - (30px / 2));
+  width: calc(21% - (30px / 2)); }
 
 .footer-col-2 {
-  width: -webkit-calc(20% - (30px / 2));
-  width: calc(20% - (30px / 2)); }
+  width: -webkit-calc(28% - (30px / 2));
+  width: calc(28% - (30px / 2)); }
 
 .footer-col-3 {
-  width: -webkit-calc(45% - (30px / 2));
-  width: calc(45% - (30px / 2)); }
+  width: -webkit-calc(51% - (30px / 2));
+  width: calc(51% - (30px / 2)); }
 
 @media screen and (max-width: 800px) {
   .footer-col-1,
