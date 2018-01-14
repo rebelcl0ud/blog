@@ -1,0 +1,119 @@
+---
+layout: post
+title:  twitchtv app [doc]
+date:   2017-09-06
+categories: javascript, fcc
+---
+
+Documentation below was written as I went through building the twitchTV app. I would work and post script progress as I went. User stories are from [FCC](https://freecodecamp.org).
+
+- - - 
+
+https://git-scm.com/docs/git-push 
+
+user stories:
+* can see whether Free Code Camp is currently streaming on Twitch.tv
+* can click the status output and be sent directly to the Free Code Camp's Twitch.tv channel
+* if a Twitch user is currently streaming, I can see additional details about what they are streaming
+
+- - - 
+can see api being called, but nothing coming through using FCC endpoint 
+had to sign up for a clientID which can be used publicly
+using clientID in header within AJAX call returns info :)
+```
+<h1>testing...</h1>
+<div class="streams"></div>
+
+<script>
+  $(document).ready(function(){
+    $.ajax({
+      type: 'GET',
+      url: 'https://api.twitch.tv/kraken/channels/twitch',
+      headers: {
+        'Client-ID': 'aoduqmn77opdqjx9aqirf976btdpk' // can be public
+      },
+      success: function(data) {
+          $(".streams").html(JSON.stringify(data));
+        }
+    }); // end of AJAX
+
+  }); // end of doc
+</script>
+```
+- - - 
+
+user stories fulfilled
+```
+<h1>testing...</h1>
+<div class="fcc"></div>
+<br />
+<div class="streams"></div>
+
+<script>
+  $(document).ready(function(){
+    $.ajax({
+      type: 'GET',
+      url: 'https://api.twitch.tv/kraken/streams/',
+      headers: {
+        'Client-ID': 'aoduqmn77opdqjx9aqirf976btdpk' // can be public
+      },
+      success: function(data) {
+        var streaming = data.streams;
+        var live = [];
+        var list = '';
+
+          streaming.forEach(function(stream) {
+            if(stream.is_playlist == false && stream.stream_type == "live") {
+              // console.log(stream.channel);
+              live.push(stream.channel);     
+            } 
+
+          }); // end of streaming loop
+
+          live.forEach(function(check) {
+
+            if(check.mature == true) {
+              var mature = "mature content";
+            }
+            
+            list += check.name + "<br />" + check.status + "<br />" + check.game + "<br />" + check.url + "<br />" + "language: " + check.language + "<br />" + "views: " + check.views + "<br />" + "followers: " + check.followers + "<br />" + mature + "<br />" + "<br />"
+
+            if(check.name == "freecodecamp") { 
+                $(".fcc").html("<a href=https://www.twitch.tv/freecodecamp>" + "FCC" + "</a>" + " is live at the moment");
+            }
+            else {
+              $(".fcc").html("<a href=https://www.twitch.tv/freecodecamp>" + "FCC" + "</a>" + " is not live at the moment");
+            }
+            
+          }); // end of list loop
+
+          $(".streams").html(list);
+          
+      } // end of success
+
+    }); // end of AJAX
+
+  }); // end of doc
+</script>
+```
+- - - 
+https://stackoverflow.com/questions/24127521/change-bootstrap-navbar-background-color-and-font-color#24127693
+
+https://stackoverflow.com/questions/18529274/change-navbar-color-in-twitter-bootstrap-3?noredirect=1&lq=1
+
+https://stackoverflow.com/questions/2570972/css-font-border?noredirect=1&lq=1
+
+https://css-tricks.com/bem-101/
+
+- - - 
+
+Things to look into: 
+
+```
+Warning: Your Ruby version is compiled against a copy of OpenSSL that is very old. Starting in January 2018, RubyGems.org will refuse connection
+requests from these very old versions of OpenSSL. If you will need to continue installing gems after January 2018, please follow this guide to upgrade:
+http://ruby.to/tls-outdated.
+```
+```
+heroku-cli: This CLI is deprecated. Please reinstall from https://cli.heroku.com
+```
