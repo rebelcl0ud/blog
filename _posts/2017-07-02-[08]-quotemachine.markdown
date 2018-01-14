@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  quote machine [JS]
+title:  quote machine [doc]
 date:   2017-07-02
 categories: javascript, fcc
 ---
 
-Below was written while working on the quote machine user stories from [FCC](https://freecodecamp.org). Actually had this draft sitting all lonesome for awhile so post date used is a give or take. Below are my notes.
+Documentation below was written while working on the quote machine user stories from [FCC](https://freecodecamp.org). Actually had this draft sitting all lonesome for a bit so post date used is a give or take. 
 
 Reminder Note: I initially created this as a rails app with plans of inputting/saving quotes in addition to fetching my stoic quotes.
 
