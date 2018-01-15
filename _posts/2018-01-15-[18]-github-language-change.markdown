@@ -5,7 +5,7 @@ date:   2018-01-15
 categories: github
 ---
 
-`*.rb linguist-language=Javascript` in `.gitattributes` will do a language override on Github.
+`*.rb linguist-language=Javascript` in `.gitattributes` will do a language override on Github. [Note: adjust code to your particular proj]
 
 Why do I know this? Or, better yet *why would I want to know this?*
 
