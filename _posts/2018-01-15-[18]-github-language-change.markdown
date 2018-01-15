@@ -9,7 +9,7 @@ categories: github
 
 Why do I know this? Or, better yet *why would I want to know this?*
 
-Well, using Rails for its [ENV]variable to store API keys [example: weatherapp] made it look as if the project was mainly Ruby eventhough (technically) it wasn't. I wanted the focus on Javascript since that was the reason for the project. So, I figured someone had to have run into this same issue for whatever reason and found the articles below.
+Well, using Rails for its [ENV]variable to store API keys [example: weather app] made it look as if the project was mainly Ruby eventhough (technically) it wasn't. I wanted the focus on Javascript since that was the reason for the project. So, I figured someone had to have run into this same issue for whatever reason and found the articles below.
 
 
 Resources:
@@ -28,7 +28,7 @@ When it came to API keys I didn't to make mine public. Atleast not for the DarkS
 
 Although I'd like to think I'm just as much a n00b as any of them I did have a slight advantage (at least on this matter). Learning to code, I started with Rails and had done a couple of projects building contact forms with email functionality so I knew it was possible to hide keys using Figaro.
 
-I did look into other ways though-- Node came up a few times during my search, but I decided to gow with what I was familiar with (Rails). 
+I did look into other ways though-- Node came up a few times during my search, but I decided to go with what I was familiar with (Rails). 
 
 I think this is when I officially decided that it would be a good idea to learn Node (and friends :D). Although, I'm interested in frontend I'd like to understand and be able to work backend of a JS fullstack app if I needed/wanted to. 
 
