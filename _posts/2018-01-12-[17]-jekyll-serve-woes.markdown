@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Jekyll Serve Woes
+title:  "Jekyll Serve Woes"
 date:   2018-01-12
 categories: jekyll
 ---

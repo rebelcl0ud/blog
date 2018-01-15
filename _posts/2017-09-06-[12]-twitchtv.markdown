@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  twitchtv app [doc]
+title:  "twitchtv app [doc]"
 date:   2017-09-06
 categories: javascript, fcc
 ---
 
-Documentation below was written as I went through building the twitchTV app. I would work and post script progress as I went. User stories are from [FCC](https://freecodecamp.org).
+Documentation below was written as I went through building the twitchTV app-- user stories are from [FCC](https://freecodecamp.org).
 
 - - - 
 

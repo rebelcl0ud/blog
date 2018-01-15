@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  forismatic api [doc]
+title:  "forismatic api [doc]"
 date:   2017-07-20
 categories: javascript, fcc
 ---

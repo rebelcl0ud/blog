@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  quote machine [doc]
+title:  "quote machine [doc]"
 date:   2017-07-02
 categories: javascript, fcc
 ---
