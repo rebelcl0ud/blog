@@ -24,7 +24,7 @@ Resources:
 
 Sidebar:
 
-When it came to API keys I didn't to make mine public. Atleast not for the DarkSky API I used for my weatherapp. I went looking to see how other FCC campers went about it and it seemed either they used some mockup link (sometimes FCC would have those) or for those that wanted to use real world APIs, I noticed some would have their keys on display on Codepen/etc (eek).
+When it came to API keys I didn't want to make mine public. Atleast not for the DarkSky API I used for my weatherapp. I went looking to see how other FCC campers went about it and it seemed either they used some mockup link (sometimes FCC would have those) or for those that wanted to use real world APIs, I noticed some would have their keys on display on Codepen/etc (eek).
 
 Although I'd like to think I'm just as much a n00b as any of them I did have a slight advantage (at least on this matter). Learning to code, I started with Rails and had done a couple of projects building contact forms with email functionality so I knew it was possible to hide keys using Figaro.
 
