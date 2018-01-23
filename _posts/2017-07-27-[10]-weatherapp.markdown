@@ -2,7 +2,7 @@
 layout: post
 title:  "weather app [doc]"
 date:   2017-07-27
-categories: javascript, fcc
+categories: projects, javascript, fcc
 ---
 
 The following is just me documenting as I went through building the weather app. I would work and post script progress as I went. User stories are from [FCC](https://freecodecamp.org).

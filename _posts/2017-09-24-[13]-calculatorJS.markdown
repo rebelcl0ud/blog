@@ -2,7 +2,7 @@
 layout: post
 title:  "calculatorJS [doc]"
 date:   2017-09-24
-categories: javascript, fcc
+categories: projects, javascript, fcc
 ---
 Documentation below was written as I went through building the calculator-- user stories are from [FCC](https://freecodecamp.org).
 

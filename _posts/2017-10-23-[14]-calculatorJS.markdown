@@ -2,7 +2,7 @@
 layout: post
 title:  "calculatorJS"
 date:   2017-10-23
-categories: projects
+categories: projects, javascript, fcc
 ---
 
 This project was initially setup in rails... *the thing is* I started learning with rails and once I shifted into learning Javascript I kept setting it up mainly for practice (didn't want to completely forget things) and to make use of `ENV[variables]` when it came to keys and such.
