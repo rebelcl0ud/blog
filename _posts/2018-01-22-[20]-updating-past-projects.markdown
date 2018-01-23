@@ -7,7 +7,7 @@ categories: projects, javascript, fcc
 
 I've had a a todo list of sorts regarding past projects. My main focus was on functionality so styling was always something I wanted to revisit.
 
-I haven't decided on whether I would combine all edits on this post or give each project it's individual post, but for now I'll start with listing my first update.
+I haven't decided on whether I will combine all edits on this post or give each project it's individual post, but for now I'll start with listing my first update.
 
 ## Quote Machine
 
@@ -93,6 +93,6 @@ body {
 }
 ```
 
-Almost forgot, I added some shadow to the "quote card" and a more subtle version of it on the quote and tweet button.
+Almost forgot, I added some shadow to the "quote card" and a more subtle version of it on the quote and tweet button. Then, went back to update tweet quote function to reflect the increase in characters allowed.
 
-[check out 2.0 here](https://quotemachine-jo.herokuapp.com/)
+[check out 2.0 here](https://quotemachine-jo.herokuapp.com/) :)
