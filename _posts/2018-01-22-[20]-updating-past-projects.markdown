@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Updating Past Projects"
+title:  "Updating Past Projects [1]"
 date:   2018-01-22
 categories: projects, javascript, fcc
 ---
