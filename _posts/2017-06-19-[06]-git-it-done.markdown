@@ -42,5 +42,12 @@ This one I actually only used once and I'm not exactly sure what was the situati
 
 `$ git clean -f` (will delete files) 
 
+# When you screw up a git merge 
+
+`git reset --hard master@{"300 minutes ago"}` to revert back to a certain period of time... before you screwed up :D
+
+That^ little nugget of wisdom came from [@data_stephanie](https://twitter.com/data_stephanie/status/968226587547258886) on Twitter. *I love Twitter*
+
+
 
 
