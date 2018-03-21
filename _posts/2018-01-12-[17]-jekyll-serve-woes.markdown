@@ -11,7 +11,7 @@ I have a list of drafts waiting for me. I don't post often which means I tend to
 
 Turns out what I needed was `jekyll serve --baseurl '/blog'` instead of plain 'ol `jekyll serve` Note: Before I would append `--host` and all that in there, but adding it to the `config` file saved me some typing.
 
-And `http://localhost:4000/blog/index.html` instead of `localhost:3030` in browser.
+And `http://localhost:3030/blog/` instead of `localhost:3030` in browser.
 
 Personally, I do not remember having to do that before, but now if I ever forget again here it is!
 
