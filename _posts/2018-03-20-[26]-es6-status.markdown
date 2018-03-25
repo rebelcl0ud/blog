@@ -5,8 +5,7 @@ date:   2018-03-20
 categories: javascript
 ---
 
-This is me yellow brick road*-ing*... to better grasp JS/ES6
- 
+This is me yellow brick road-ing… to better grasp JS/ES6
 
 ### var scope
 
@@ -56,7 +55,7 @@ would return the same used globally, but to prevent leaking in this case it just
 
 ```
 {
-	const name = JO;
+  const name = JO;
 	console.log(name); // JO
 }
 
@@ -174,6 +173,127 @@ For immutable values, to make immutable arrays/objects use `Object.freeze();`
 Do not use `const` to make constant (immutable) values, use for non-reassignable variables
 
 - - -
+## arrow functions
+
+concise, impicit returns (allowing one-liners), doesn'r rebind value of `this` when using arrow function within other function
+
+const kids = ['bandit', 'flavor', 'scrappy'];
+
+original, non-arrow function:
+```
+const withLastInitial = kids.map(function(kid) {
+  return `${kid} P`;  
+});
+
+console.log(withLastInitial);
+```
+
+using arrow function:
+```
+const withLastInitial2 = kids.map((kid) => {
+  return `${kid} P`;  
+});
+
+console.log(withLastInitial2);
+```
+
+when only passing 1 parameter (same as above):
+```
+const withLastInitial2 = kids.map((kid) => {
+  return `${kid} P`;  
+});
+
+console.log(withLastInitial2);
+```
+
+or... you can remove parenthesis, they aren't needed
+imo, I think it looks odd and I rather have the parenthesis like above, seems nicer/readable
+
+```
+const withLastInitial3 = kids.map(kid => {
+  return `${kid} P`;  
+});
+
+console.log(withLastInitial3);
+```
+
+implicit return:
+meaning `return` isn't stated (explicitly), in the case below it is assumed
+
+```
+const withLastInitial4 = kids.map(kid => `${kid} P`);
+
+console.log(withLastInitial4);
+```
+
+if no there were to be no arguments:
+```
+const withLastInitial5 = kids.map(()=> `whut whut`);
+
+console.log(withLastInitial5);
+```
+
+NOTE: all arrow functions are anonymous functions, not named
+
+ex: `function() { ... }` vs `function nameGoesHere() { ... }`
+
+Using named functions can benefit you when troubleshooting an error. Personally, I like to name my functions for readability, kinda like a title of an article, it gives a headsup of what to expect/ what is it supposed to be doing/ what is it for/ etc.,
+
+It is possible to put the function in a variable:
+```
+const nameGoesHere = (param) => { alert(`hey ${param}!`)}
+
+nameGoesHere('you'); // alert box will pop up saying 'hey you!'
+
+```
+
+function declaration, still anon function, still wont be very useful for stack traces (something to keep in mind)
+
+### more on arrow functions
+#### implicit return w/ obj literal
+
+const soda = 'coke';
+const whatKind = ['zero', 'diet', 'cherry', 'original'];
+
+{
+  whatKind: whatKind,
+  soda: soda
+}
+
+const pop = whatKind.map((whatKind, i) => ({name: whatKind, soda: soda, order: i}))
+
+NOTE: without the outer parenthesis you will get a syntax error^
+Why? The removal of the curly brackets would do an implicit return, however to do an implicit return on an object literal, not actual function block you need to enclose it with a pair of parenthesis-- it shows you are returning an object literal
+
+ANOTHER NOTE: and a pretty sweet one... use `console.table(pop)` will spit out info in a pretty table. Much nicer than using Object dropdowns in console
+
+const pop = whatKind.map((whatKind, i) => ({name: whatKind, soda, order: i}))
+the use of `variableName: propertyName` is not necessary when the same (es6 feature, cuts redundancy)
+
+another example:
+```
+const ages = [15, 18, 21, 25, 32, 50, 55, 82];
+
+// grab all 50/over
+
+// const overFifty = ages.filter( age => if(age >= 50));
+
+const overFifty = ages.filter( age => age >= 50 );
+console.log(overFifty);
+```
+first thought, to use if statement, but unnecessary since able to pass condition -- filter will return if true and not if false
+
+what returns true will be put into `overFifty` array
+
+
+
+
+
+
+
+
+
+
 
 
 
