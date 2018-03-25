@@ -335,8 +335,44 @@ box.addEventListener('click', function() {
 
 ```
 
+### default function arguments
 
+some things you can do: 
+```
+function calculate(total, tax, tip) {
+  return total + (total * tax) + (total * tip);
+}
 
+const fullTotal = calculate(100, 0.7, 0.20);
+console.log(fullTotal);
+```
+
+able to set default w/ es6:
+```
+function calculate(total, tax=0.7, tip=0.20) {
+  return total + (total * tax) + (total * tip);
+}
+
+const fullTotal = calculate(100);
+console.log(fullTotal);
+```
+not passing all arguments, in this case total, tax, tip they will still be implied (above example)
+
+this is cleaner and leaner way than using an if statement for tax and tip === undefined
+sidebar: undefined would be what would come up if when arguments not passed or default set up top
+
+able to update and not have to put all params:
+```
+function calculate(total, tax=0.7, tip=0.20) {
+  return total + (total * tax) + (total * tip);
+}
+
+const fullTotal = calculate(100, undefined, 0.25);
+console.log(fullTotal);
+```
+above, I'm able to bump up tip percentage from what was used in default and skip over tax value by placing undefined-- you cant't just leave a blank space there, it will shoot out an error
+
+what will happen is there will be a check for undefined defaulting to default value of 0.7 tax
 
 
 
