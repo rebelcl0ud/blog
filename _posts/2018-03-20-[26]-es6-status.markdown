@@ -175,9 +175,9 @@ Do not use `const` to make constant (immutable) values, use for non-reassignable
 - - -
 ## arrow functions
 
-concise, impicit returns (allowing one-liners), doesn'r rebind value of `this` when using arrow function within other function
+concise, impicit returns (allowing one-liners), doesn't rebind value of `this` when using arrow function within other function.
 
-const kids = ['bandit', 'flavor', 'scrappy'];
+`const kids = ['bandit', 'flavor', 'scrappy'];`
 
 original, non-arrow function:
 ```
@@ -206,8 +206,8 @@ const withLastInitial2 = kids.map((kid) => {
 console.log(withLastInitial2);
 ```
 
-or... you can remove parenthesis, they aren't needed
-imo, I think it looks odd and I rather have the parenthesis like above, seems nicer/readable
+or... you can remove parenthesis, they aren't needed:
+sidebar: imo, I think it looks odd and I rather have the parenthesis like above, seems nicer/readable
 
 ```
 const withLastInitial3 = kids.map(kid => {
@@ -251,23 +251,23 @@ function declaration, still anon function, still wont be very useful for stack t
 
 ### more on arrow functions
 #### implicit return w/ obj literal
-
+```
 const soda = 'coke';
 const whatKind = ['zero', 'diet', 'cherry', 'original'];
 
-{
-  whatKind: whatKind,
-  soda: soda
-}
+// {
+//  whatKind: whatKind,
+//  soda: soda
+// }
 
 const pop = whatKind.map((whatKind, i) => ({name: whatKind, soda: soda, order: i}))
-
+```
 NOTE: without the outer parenthesis you will get a syntax error^
 Why? The removal of the curly brackets would do an implicit return, however to do an implicit return on an object literal, not actual function block you need to enclose it with a pair of parenthesis-- it shows you are returning an object literal
 
 ANOTHER NOTE: and a pretty sweet one... use `console.table(pop)` will spit out info in a pretty table. Much nicer than using Object dropdowns in console
 
-const pop = whatKind.map((whatKind, i) => ({name: whatKind, soda, order: i}))
+`const pop = whatKind.map((whatKind, i) => ({name: whatKind, soda, order: i}))`
 the use of `variableName: propertyName` is not necessary when the same (es6 feature, cuts redundancy)
 
 another example:
