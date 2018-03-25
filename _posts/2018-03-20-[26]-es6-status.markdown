@@ -376,14 +376,15 @@ what will happen is there will be a check for undefined defaulting to default va
 
 ### when NOT to use an arrow function
 
-- when you need to use `this`
 remember using `this` inherits from parent scope when using arrow function
+
+- when you need to use `this`
 
 - when you need a method to bind to an object
 
 - when you need to add a prototype method
 
-- when you need arguments obj (ex: Array.from(arguments);)
+- when you need arguments obj ( ex: Array.from(arguments); )
 
 - - - 
 
