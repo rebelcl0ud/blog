@@ -285,11 +285,55 @@ first thought, to use if statement, but unnecessary since able to pass condition
 
 what returns true will be put into `overFifty` array
 
+### this
+using `this` with an arrow function does not bind the `this` to the function, it inherits from the parent
 
+```
+const box = document.querySelector('.box');
+box.addEventListener('click', function() {
+  console.log(this);
+})
 
+```
 
+`this` will reference `box` using normal function (above example)
 
+```
+const box = document.querySelector('.box');
+box.addEventListener('click', () => {
+  console.log(this);
+})
 
+```
+
+using an arrow function `this` will reference/ inherit parent scope, in this case, window (above example)-- why? because `this` does not bind to function when arrow functions are used. 
+
+another example of inheritence and all that `this` jazz:
+```
+const box = document.querySelector('.box');
+box.addEventListener('click', function() {
+  this.classList.toggle('opening');
+  // up to this point, this references box
+  setTimeout(function() {
+    // here, however, this references window
+    this.classList.toggle('open');
+  }, 5000);
+})
+
+```
+the `this` used inside the setTimeout will reference window because we are using a new function, this is not bound, but inherits from parent (window) unlike...
+```
+const box = document.querySelector('.box');
+box.addEventListener('click', function() {
+  this.classList.toggle('opening');
+  // up to this point, this references box
+  setTimeout(() => {
+    // here, using an arrow function will inherit, in this case, box (as intended)
+    this.classList.toggle('open');
+  }, 5000);
+})
+
+```
 
 
 
