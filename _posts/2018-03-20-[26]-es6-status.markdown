@@ -387,4 +387,28 @@ remember using `this` inherits from parent scope when using arrow function
 - when you need arguments obj ( ex: Array.from(arguments); )
 
 - - - 
+### template strings
+
+Or template literals...
+
+At its most basic, using backticks are for template type strings
+Other forms used are with double/single quotes which is cool and all, but how great are template strings though? Pretty great.
+
+The use of template variable slots was actually one of the cool things I remember from when I was playing around with Ruby... pretty stoked this is now JS goodness.
+```
+const name = 'tobias';
+const species = 'cat';
+const sentence = `${name} is a ${species}`;
+
+console.log(sentence);
+```
+
+
+
+
+
+
+
+
+
 
