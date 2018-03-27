@@ -9,9 +9,9 @@ This is me yellow brick road-ing… to better grasp JS/ES6
 
 ### var scope
 
-`var` can be updated and redefined. They are also function-scoped, which means they can only be used within the function they were declared (local) unless global. Global means they are available from wherever they are called.
+`var` can be updated/redefined and function-scoped, which means they can only be used within the function they were declared (local) unless global. Global means they are available from wherever they are called.
 
-When used within an if statement block (no function) the var/value will leak out because it doesnt stay local (not block-scoped). That can be a problem.
+When used within an if statement block (no function) the var/value will leak out because it doesnt stay local (not block-scoped), which can totes be a problem.
 
 ### let & const
 
@@ -403,12 +403,34 @@ const sentence = `${name} is a ${species}`;
 console.log(sentence);
 ```
 
+### other cool stuff like... creating HTML snippets
 
+the days of needing a backslash `\` for new line
+```
+var orgVer = "hey, \
+    how u doin";
 
+```
+  
+vs.
 
+```
+const dog = {
+  name: 'Sam',
+  breed: 'Hound',
+  bio: 'Sam likes to watch Andy Griffin reruns while lounging on the couch.'
+}
 
+const betterVer = `
+  <div class="dog">
+    <h2>
+      ${dog.name}
+      <span class="breed">${dog.breed}</span>
+    </h2>
+    <p class="bio">${dog.bio}</p>
+  </div>
+`;
 
-
-
-
-
+document.body.innerHTML = betterVersion;
+```
+y
