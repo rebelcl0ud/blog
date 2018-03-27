@@ -433,4 +433,8 @@ const betterVer = `
 
 document.body.innerHTML = betterVersion;
 ```
-y
+new lines outputted, cleaner/ proper html w/o `document.createElement()`
+
+
+
+
