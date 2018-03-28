@@ -405,7 +405,7 @@ console.log(sentence);
 
 ### other cool stuff like... creating HTML snippets
 
-the days of needing a backslash `\` for new line
+alternative/ update to the days of needing a backslash `\` for new line:
 ```
 var orgVer = "hey, \
     how u doin";
@@ -434,6 +434,48 @@ const betterVer = `
 document.body.innerHTML = betterVersion;
 ```
 new lines outputted, cleaner/ proper html w/o `document.createElement()`
+
+nesting/ looping:
+```
+const dogs = [
+  { name: 'Bandit', age: 17 },
+  { name: 'Flavor', age: 11 },
+  { name: 'Scrappy', age: 14 }
+];
+
+const markup = `
+  <ul class="dogs">
+    ${dogs.map(dog => `
+      <li>
+        ${dog.name} is ${dog.age} in human years.
+      </li>`).join('')}
+  </ul>
+`;
+document.body.innerHTML = markup;
+```
+
+if statements inside html:
+```
+const song = {
+  name: 'My Own Country',
+  artist: 'Pennywise'
+};
+
+const markup = `
+  <div class="song">
+    <p>
+      ${song.name}: ${song.artist}
+      ${song.featuring ? `(Featuring ${song.featuring})` : ''}
+    </p>
+  </div>
+`;
+
+document.body.innerHTML = markup;
+```
+
+
+
+
 
 
 
