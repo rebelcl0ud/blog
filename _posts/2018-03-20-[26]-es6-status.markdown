@@ -473,10 +473,37 @@ const markup = `
 document.body.innerHTML = markup;
 ```
 
+complex data, russian doll type nesting can make code hard to maintain:
+```
+const soda = {
+  name: 'Coca-Cola',
+  company: 'Coca-Cola Co.',
+  keywords: ['original', 'diet', 'zero', 'cherry', 'dasani', 'classic']
+};
 
+function renderKeywords(keywords) {
+  return `
+    <ul>
+      ${keywords.map(keyword => `<li>${keyword}</li>`).join('')}
+    </ul>
+  `
+}
 
+const markup = `
+  <div class="soda">
+    <h2>
+      ${soda.name}
+    </h2>
+    <p class="company">
+      ${soda.company}
+    </p>
+    ${renderKeywords(soda.keywords)}
+  </div>
+`;
 
-
+document.body.innerHTML = markup;
+```
+above^ is using a render function, concept taken from React's component seperation handling sep data/ components
 
 
 
