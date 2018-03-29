@@ -505,5 +505,156 @@ document.body.innerHTML = markup;
 ```
 above^ is using a render function, concept taken from React's component seperation handling sep data/ components
 
+### tagged templates
 
+ability to create a function-- tag a string with function name gives ability to modify string inputted into variable.
 
+```
+function highlight() {
+  // whatever returned in here affects template string below, b4 it hits the variable
+  // basic example, if I return 'test', that will be what sentence variable outputs in console instead of org string
+}
+
+const name = 'Scrappy';
+const age = 14;
+const sentence = highlight`${name} is ${age} in human years.`
+
+console.log(sentence);
+```
+
+another example:
+```
+function highlight(strings, ...values) {
+  debugger;
+}
+
+const name = 'Scrappy';
+const age = 14;
+const sentence = highlight`${name} is ${age} in human years.`
+
+console.log(sentence);
+```
+argument of `strings` and `...values`--
+`strings` will snag fragments of string until it hits a variable, in the above example it would grab 'is' and then 'in human years.'
+
+while, `...values` snags variables used, in the above example it would grab `name` and `age`
+
+below shows debugger ouput:
+```
+<this>: Window
+​
+arguments: Arguments
+​​
+0: (3) […]
+​​
+1: "Scrappy"
+​​
+2: 14
+​​
+callee: Getter & Setter
+​​
+length: 3
+​​
+Symbol(Symbol.iterator): undefined
+​​
+__proto__: {…}
+​
+strings: (3) […]
+​​
+0: ""
+​​
+1: " is "
+​​
+2: " in human years."
+​​
+length: 3
+​​
+raw: (3) […]
+​​
+__proto__: []
+​
+values: (2) […]
+​​
+0: "Scrappy"
+​​
+1: 14
+​​
+length: 2
+​​
+__proto__: []
+```
+
+`...values` is pretty great to use, it picks up w.e # of values.
+
+ability to tack on to string:
+```
+function highlight(strings, ...values) {
+  let str = '';
+  strings.forEach((string, i) => {
+    str += string + (values[i] || '');
+  });
+  return str;
+}
+
+// without (values[i] || '') it will output string followed by undefined because strings array is always +1 more than values array
+// it is possible to use an if statement as well
+
+const name = 'Scrappy';
+const age = 14;
+const sentence = highlight`${name} is ${age} in human years.`
+
+console.log(sentence);
+```
+
+example has highlight function, below actually hightlights:
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>tagging template str</title>
+
+  <style>
+    .highlighter {
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+function highlight(strings, ...values) {
+  let str = '';
+  strings.forEach((string, i) => {
+    str += `${string} <span class='highlighter'>${values[i] || ''}</span>`;
+  });
+  return str;
+}
+
+// without (values[i] || '') it will output string followed by undefined because strings array is always +1 more than values array
+// it is possible to use an if statement as well
+
+const name = 'Scrappy';
+const age = 14;
+const sentence = highlight`${name} is ${age} in human years.`
+document.body.innerHTML = sentence;
+console.log(sentence);
+
+</script>
+</body>
+</html>
+```
+an addition to this is the ability to edit what is highlighted--
+adding `contenteditable` after span tag
+
+honestly, I don't see much of a point to doing that except just for the sake of being able to do it, but it was something I didn't know could be done just by adding that little piece of code (you learn something new everyday :D)
+```
+function highlight(strings, ...values) {
+  let str = '';
+  strings.forEach((string, i) => {
+    str += `${string} <span contenteditable class='highlighter'>${values[i] || ''}</span>`;
+  });
+  return str;
+}
+```
+still, the ability to modify strings through functions is something I'm looking forward to messing around with.
