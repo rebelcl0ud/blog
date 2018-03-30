@@ -658,3 +658,102 @@ function highlight(strings, ...values) {
 }
 ```
 still, the ability to modify strings through functions is something I'm looking forward to messing around with.
+
+### more on tagged templates
+
+in the following example, ability to not only use variables in template strings, but strings as well as shown 
+```
+const dict = {
+  HTML: 'Hyper Text Markup Language',
+  CSS: 'Cascading Style Sheets',
+  JS: 'JavaScript'
+};
+
+const name = 'JO';
+const sentence = `Hey, I'm ${name} and I build stuff using ${'HTML'}, ${'CSS'}, and ${'JS'}.`;
+
+console.log(sentence);
+
+const bio = document.querySelector('.bio');
+const p = document.createElement('p');
+
+p.innerHTML = sentence;
+bio.appendChild(p);
+
+```
+adding to previous example, another tag connecting a function to template string
+the following encompasses abbreviated terms inside abbr tags, but only if it is found in dictionary
+```
+const dict = {
+  HTML: 'Hyper Text Markup Language',
+  CSS: 'Cascading Style Sheets',
+  JS: 'JavaScript'
+};
+
+function addAbbreviations(strings, ...values) {
+  const abbreviated = values.map(value => {
+    if(dict[value]) {
+      return `<abbr title="${dict[value]}">${value}</abbr>`
+    }
+    return value; 
+    // ^if dict value not found to wrap inside abbr, return value or will output undefined
+    // something I caught after the fact... forgot to add quotations on title making it cutoff string output (whoops) so remember to check punctuation
+  })
+  console.log(abbreviated);
+}
+
+const name = 'JO';
+const sentence = addAbbreviations`Hey, I'm ${name} and I build stuff using ${'HTML'}, ${'CSS'}, and ${'JS'}.`;
+
+
+const bio = document.querySelector('.bio');
+const p = document.createElement('p');
+
+p.innerHTML = sentence;
+bio.appendChild(p);
+
+```
+
+example updated below to use `.reduce()` looping/building str in progress, alternative to using a `let str=` to tack onto as used in previous tagged template string section.
+
+`.reduce()` takes function and what you're starting with `.reduce(functionHere, whatYouStartWith)`
+all the magic happens within the function unlike using the `let str=` approach.
+
+```
+const dict = {
+  HTML: 'Hyper Text Markup Language',
+  CSS: 'Cascading Style Sheets',
+  JS: 'JavaScript'
+};
+
+function addAbbreviations(strings, ...values) {
+  const abbreviated = values.map(value => {
+    if(dict[value]) {
+      return `<abbr title="${dict[value]}">${value}</abbr>`
+    }
+    return value;
+  })
+  return strings.reduce((sentence, string, i) => {
+    return `${sentence}${string}${abbreviated[i] || ''}`;
+  }, '');
+}
+
+const name = 'JO';
+const sentence = addAbbreviations`Hey, I'm ${name} and I build stuff using ${'HTML'}, ${'CSS'}, and ${'JS'}.`;
+
+
+const bio = document.querySelector('.bio');
+const p = document.createElement('p');
+
+p.innerHTML = sentence;
+bio.appendChild(p);
+
+```
+I dug working through this example mainly for 2 reasons, using `.reduce()` and alternative to using `document.body.innerHTML = whateverHoldingStrVariableHere`
+
+
+
+
+
+
+
