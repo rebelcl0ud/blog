@@ -786,8 +786,11 @@ there are different ways to sanitize, above is one, another could be something l
 
 I dig videos and all, but I like looking for the actual docs and things being used in examples.
 
+
 RESOURCES:
+
 [DOMPurify - Github](https://github.com/cure53/DOMPurify)
+
 [DOMPurify - cdnjs](https://cdnjs.com/libraries/dompurify)
 
 
