@@ -751,9 +751,44 @@ bio.appendChild(p);
 ```
 I dug working through this example mainly for 2 reasons, using `.reduce()` and alternative to using `document.body.innerHTML = whateverHoldingStrVariableHere`
 
+### sanitizing user data w/ tagged templates
+
+sanitizing data before you put it into the DOM-
+whenever you get data/display data from user you must make sure the user isn't sneaking in any bad juju, some examples mentioned: insert iframe, image, xss
+
+avoid allowing user to run JavaScript on your page
+
+sanitize example using template string:
+```
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/dompurify/1.0.3/purify.min.js"></script>
+
+<script>
+function sanitize(strings, ...values) {
+  const dirty = strings.reduce((prev, next, i) => `${prev}${next}${values[i] || ''}`, '');
+  return DOMPurify.sanitize(dirty);
+}
+
+const name = 'Dr. Evil'
+const about = sanitize`bahaha <img src="http://unsplash.it/100/100?random" onload="alert('bad juju injected');" />`;
+
+const html = `
+  <h3>${name}</h3>
+  <p>${about}</p>
+`;
+
+const bio = document.querySelector('.bio');
+bio.innerHTML = html;
+</script>
+```
+
+there are different ways to sanitize, above is one, another could be something like `bio.innerHTML = DOMPurify.sanitize(html);` or tagging `const html =` above.
 
 
+I dig videos and all, but I like looking for the actual docs and things being used in examples.
 
+RESOURCES:
+[DOMPurify - Github](https://github.com/cure53/DOMPurify)
+[DOMPurify - cdnjs](https://cdnjs.com/libraries/dompurify)
 
 
 
