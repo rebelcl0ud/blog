@@ -7,7 +7,7 @@ categories: javascript
 
 This is me yellow brick road-ing… to better grasp JS/ES6
 
-Note: I started with YDKJS books so I had *some* familiarity before hitting up Wes Bos's ES6 videos (which these notes/examples are from)... excellent combo imo
+Note: I started with Kyle Simpson's [YDKJS](https://github.com/getify/You-Dont-Know-JS) books, the following references Wes Bos's [ES6](https://es6.io/) videos. Excellent combo, imo.
 
 ### var scope
 
@@ -859,3 +859,5 @@ console.log(leftPad(kid3));
 ->                  sam
 
 ```
+
+So this doesn't turn into an endless scroll type post I'll start a new entry when I start going over Destructuring.
