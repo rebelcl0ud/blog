@@ -1,0 +1,59 @@
+---
+layout: post
+title:  "ES6 Status II"
+date:   2018-04-02
+categories: javascript
+---
+
+### destructuring objects
+
+Can extract data from arrays, objects, maps and sets.
+
+This I actually found pretty cool. There have been a few instances I have broken down things into multiple parts, writing extra... until...
+
+```
+let quote = item.saying;
+let author = item.author;
+
+```
+
+vs.
+
+```
+let { saying:quote, author } = item;
+
+```
+
+How awesome is that?^ AND the `saying:quote` part is me storing `saying` into `quote` variable! Yes, I dig it and am stoked to use it.
+
+Destructuring would also come in handy for deep nested data, like with an API. Thinking back, I'm pretty sure the Dark Sky API I used for my weather app had a few of those.
+
+```
+const you = {
+	first: 'NAME HERE'
+	links: {
+		social: {
+			twitter: 'https://twitter.com/USERNAME', 
+			github: 'https://github.com/USERNAME'
+		}
+	}
+}
+
+const { twitter, github } = you.links.social;
+
+```
+
+SETTING DEFAULTS:
+
+`const settings = { width: 500, color: 'black' }` 
+
+`const { width=100 height=500, color='pink', fontSize=32 } = settings;`
+
+2nd line above has defaults set, in other words as it deconstructs settings obj it checks if there's a match. If so, it moves on and if not, it takes the default.
+
+BREAKDOWN: width is included in the 1st line (settings) so it stays at 500, height takes 500 which is set as default in 2nd line (destructuring line), there is color in settings so it stays black, but fontSize, like height is not so it takes default set, 32
+
+
+
+
+
