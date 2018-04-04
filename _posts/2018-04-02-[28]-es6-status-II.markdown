@@ -53,6 +53,38 @@ SETTING DEFAULTS:
 
 BREAKDOWN: width is included in the 1st line (settings) so it stays at 500, height takes 500 which is set as default in 2nd line (destructuring line), there is color in settings so it stays black, but fontSize, like height is not so it takes default set, 32
 
+### destructuring arrays
+
+Just like objects, there's a way to simplify life with arrays. The difference, object destructuring uses curly braces, while arrays used square brackets.
+
+```
+const details = ['scrappy', '14', 'brindle'];
+
+const name = details[0];
+const age = details[1];
+const age = details[2];
+
+
+```
+
+vs.
+
+```
+const details = ['scrappy', '14', 'brindle'];
+
+const [name, age, color] = details;
+
+console.log(name, age, color); // scrappy 14 brindle
+
+```
+
+Note: There will also be a difference when destructuring maps and sets, maps uses curly braces, while sets use square brackets.
+
+
+
+
+
+
 
 
 
