@@ -80,10 +80,38 @@ console.log(name, age, color); // scrappy 14 brindle
 
 Note: There will also be a difference when destructuring maps and sets, maps uses curly braces, while sets use square brackets.
 
+Also helpful when dealing with a [comma] list/string:
 
+```
+const data = 'sport, basketball, shaq, 32, retired';
 
+const[category, type, player, number, status] = data.split(',');
 
+console.log(category, type, player, number, status);
 
+```
+
+^At first, I had used a `let` instead of `const` to split data and reassign variable, but turns out there is a simplier/ better way to do that and that's just add it to the destructure (w00t!)
+
+```
+const data = 'sport, basketball, shaq, 32, retired, yourFace';
+
+const[category, type, player, number, status] = data.split(',');
+
+console.log(category, type, player, number, status);
+
+```
+^What happens when you want to destructure something that doesnt match length of array? Nothing.
+Output will actually remain the same since the last part of the string was not destructured.
+
+But, how about those times you do want the rest?
+```
+const cockpit = ['Clarence', 'Roger', 'Striker', 'Doctor', 'Nun'];
+
+const [pilot, co-pilot, ...passengers] = cockpit;
+
+```
+^ you'd destructure as usual, but use the *rest operator* to snag the *rest* :D
 
 
 
