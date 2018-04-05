@@ -181,4 +181,15 @@ console.log(bill);
 ```
 Making order of values independent, you wrap params in curly braces. Pass obj will destructure into 3 variables (total, tip, tax)/make available inside function. When called, you pass obj with values, they do not have to be in exact order and it is possible to leave unneeded values out.
 
+If NO arguments are passed:
+```
+function tipCalc({total=200, tip=0.25, tax=0.09} = {}) {
+	return total + (tip * total) + (tax * total);
+}
 
+const bill = tipCalc();
+console.log(bill);
+
+```
+
+For cases where no obj are passed to destructure against, calling function, you have to give itself a default argument. If no object is passed it will default to blank obj and all defaults will be in there.
