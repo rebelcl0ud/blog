@@ -113,6 +113,21 @@ const [pilot, co-pilot, ...passengers] = cockpit;
 ```
 ^ you'd destructure as usual, but use the *rest operator* to snag the *rest* :D
 
+### swapping variables with destructuring
+
+When you need to toggle between variables:
+```
+let onCourt = 'DWade';
+let offCourt = 'UD';
+
+console.log(onCourt, offCourt); // will show org
+
+[onCourt, offCourt] = [offCourt, onCourt];
+
+console.log(onCourt, offCourt); // will show swap
+
+```
+^ Will create an array and destructure into opp variables. Since updating variables -> using `let`
 
 
 
