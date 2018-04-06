@@ -193,3 +193,59 @@ console.log(bill);
 ```
 
 For cases where no obj are passed to destructure against, calling function, you have to give itself a default argument. If no object is passed it will default to blank obj and all defaults will be in there.
+
+### iterables & looping
+
+`const dogs = ['beagle', 'dalmation', 'golden retriever', 'pug', 'labrador'];`
+
+
+The classic `for loop`
+The following type of for loop became the main one used, but only after getting some used to. Although, it does do what it's meant to do, syntax may not be as readable as it could be.
+```
+for(let i = 0; i < dogs.length; i++) {
+  console.log(dogs[i]);
+}
+
+```
+
+
+Then, there's the `forEach`
+This one actually made the most sense to me when I first started trying to wrap my head around JavaScript. The reason, I got my basic grasp of web dev workings messing with Ruby which had something similar.
+```
+dogs.forEach((dog) => {
+	console.log(dog);
+})
+
+```
+Cannot pause loop, cannot skip items
+Cannot use `break` or `continue` inside a `forEach` loop
+
+
+The `for in` loop:
+```
+for(const index in dogs) {
+	console.log(dogs[index]);
+}
+
+``` 
+This gives index, snag values as follows, but...
+
+there are many methods on a prototype, if you were to add one and then reiterate it will reiterate all things in array including anything added. [example] custom prototype method or property added to array.
+
+
+The `for of` loop:
+```
+for(const dog of dogs) {
+	console.log(dog)
+}
+
+```
+This is like the one that brings all the good stuff from those above into one, sorta. It will return what is in the array w/o anything extra like if prototype was modified and able to use `break` and `continue`. NOTE: `for of` loops can be used on anything except objects.
+
+
+
+
+
+
+
+
