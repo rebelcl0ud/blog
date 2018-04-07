@@ -538,7 +538,77 @@ for(const paragraph of ps) {
 Able to use `for of` on things even when they are not arrays as long as they are iterable.
 *What are iterables?* DOM collections, strings, arguments, arrays, maps, sets
 
+### no objects with for of loops, yea?
 
+```
+const watermelon = {
+	size: 'large',
+	weight: 100,
+	type: 'fruit'
+}
+
+for(const prop of watermelon) {
+	console.log(prop); // ERROR
+}
+
+```
+^TypeError: watermelon is not iterable
+
+So, what *CAN* we do?
+`Object.values()` and `Object.entries()`
+
+Presently, giving `TypeError: watermelon.entries is not a function` error *womp womp womp*, however according to [proposals](https://github.com/tc39/proposal-object-values-entries) they will be included in ES2017.
+
+NOTE: [polyfill is available](https://github.com/es-shims/Object.entries)
+
+*What is a polyfill?* adds unsupported features back in
+
+If you can't use a polyfill?
+```
+const watermelon = {
+	size: 'large',
+	weight: 100,
+	type: 'fruit'
+}
+
+for(const prop of Object.keys(watermelon)) {
+	console.log(prop); // gives size, weight, type
+}
+
+```
+
+```
+const watermelon = {
+	size: 'large',
+	weight: 100,
+	type: 'fruit'
+}
+
+for(const prop of Object.keys(watermelon)) {
+	const values = watermelon[prop];
+	
+	console.log(prop, values); // outputs size, weight, type and large, 100, fruit
+}
+
+```
+
+Not the cleanest solution since we're going outside to snag stuff, but it is possible to use. Of course, using `for of` loop isn't exactly necessary. There are other options like `for in` loop which will give same output without the use of `Object.keys()`
+
+```
+const watermelon = {
+	size: 'large',
+	weight: 100,
+	type: 'fruit'
+}
+
+for(const prop in watermelon) {
+	const values = watermelon[prop];
+	// console.log(prop); // outputs size, weight, type
+	console.log(prop, values); // outputs large, 100, fruit
+}
+
+```
+^best option to use for objects until `Object.values()` and `Object.entries()` arrive
 
 
 
