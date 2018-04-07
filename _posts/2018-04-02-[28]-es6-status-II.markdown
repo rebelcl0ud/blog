@@ -354,7 +354,7 @@ Iterating using `arguments`:
 ```
 function addUpNum() {
 	let total = 0;
-	for (num of arguments) {
+	for (const num of arguments) {
 		total += num;
 	}
 	console.log(total);
@@ -491,8 +491,52 @@ __proto__: Object { … }
 
 NOTE: It is possible and sometimes may be neccessary to convert `arguments` into an array, but if kept as is those would be differences to keep in mind.
 
+Iterating strings:
+```
+const name = 'MysticalState'
+
+for(const char of name) {
+	console.log(char);
+}
+
+```
+NOTE: remember to put in `const`, `let`, or even `var` in `for of` loop as usual or it will override the actual variable every single time instead of creating a scoped variable to that block.
+
+Iterate over DOM collections without converting to array:
+```
+... html, body and all that jazz here
+
+<p>P 01</p>
+<p>P 02</p>
+<p>P 03</p>
+<p>P 04</p>
+<p>P 05</p>
 
 
+<script>
+const ps = document.querySelectorAll('p');
+console.log(ps);
+</script>
+</body>
+</html>
+
+```
+^This `console.log`s NodeList which offers array methods on certain browsers, but not all. May have to convert to true array.
+
+```
+const ps = document.querySelectorAll('p');
+
+for(const paragraph of ps) {
+	// console.log(paragraph);
+	
+	paragraph.addEventListener('click', function() {
+		console.log(this.textContent);
+	})
+}
+
+```
+Able to use `for of` on things even when they are not arrays as long as they are iterable.
+*What are iterables?* DOM collections, strings, arguments, arrays, maps, sets
 
 
 
