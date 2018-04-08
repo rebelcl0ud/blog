@@ -688,6 +688,7 @@ If you were looking for multiple, `.filter()` would be output an array of object
 
 - - - 
 
+
 `Array.some()` & `Array.every()`
 
 These are not part of ES6, but apparently Wes doesn't feel they get the love they deserve so he's covering them :D
@@ -715,5 +716,70 @@ const oldEnoughToDrink = ages.every(age => age >= 21);
 console.log(oldEnoughToDrink); // outputs false since there are youngins in the squad
 
 ```
+
+
+### ...spread & ...rest
+
+Using a `.concat()` to combine two arrays makes sense, but this `...spread` is too sweet not to prefer.
+
+`.concat()`
+```
+const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
+const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
+
+const combineArrays = featured.concat(specialty);
+console.log(combineArrays);
+
+```
+
+To throw something in the middle though using `...spread`, saves lines of reassigning variables and using `.push()` and all that jazz
+```
+const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
+const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
+
+const combineArrays = [...featured, 'veggie', ...specialty, 'vegan'];
+console.log(combineArrays);
+
+```
+
+Sweeten the pot though, when 'copying' an array
+```
+const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
+const weekendSpecial = featured;
+
+weekendSpecial[0] = 'NY Style';
+
+console.log(weekendSpecial); // ['NY Style', 'Pepperoni', 'Hawaiian'] :D
+console.log(featured); // also ['NY Style', 'Pepperoni', 'Hawaiian'] now >_<
+
+```
+I wanted to make a copy of the featured options, but change one just for the weekends. However, changing the first item from my 'copy' actually changed the original featured array because it was in fact referencing. The two, in this manner, were not seperate. *booooo*
+
+What can be done? Well, `.concat()` is an option...
+```
+const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
+const weekendSpecial = [].concat(featured); // copies instead of references
+
+weekendSpecial[0] = 'NY Style';
+  
+console.log(weekendSpecial); // ['NY Style', 'Pepperoni', 'Hawaiian'] :D
+console.log(featured); // ['Deep Dish', 'Pepperoni', 'Hawaiian']; :D
+
+```
+
+BUT, you can ALSO use that shweeet `...spread` to get that copy without `.concat()`
+```
+const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
+const weekendSpecial = [...featured]; // copies instead of references
+
+weekendSpecial[0] = 'NY Style';
+
+console.log(weekendSpecial); // ['NY Style', 'Pepperoni', 'Hawaiian'] :D
+console.log(featured); // ['Deep Dish', 'Pepperoni', 'Hawaiian']; :D
+
+```
+
+TL;DR
+A spread will take all things from specified array/iterable and throw it into the new array.
 
 
