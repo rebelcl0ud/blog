@@ -669,6 +669,6 @@ const ages = Array.of(12, 15, 4);
 console.log(ages);
 
 ```
-Looking through the proto dropdown you'll see all the usual Array type stuff like `.join()`, `pop()`, `push()`, etc.
+Looking through the proto dropdown you'll see all the usual Array type stuff like `.join()`, `.pop()`, `.push()`, etc.
 
 
