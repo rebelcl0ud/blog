@@ -610,5 +610,65 @@ for(const prop in watermelon) {
 ```
 ^best option to use for objects until `Object.values()` and `Object.entries()` arrive
 
+### array stufffffff
+
+`.from()` & `.of()` are not part of the prototype. Creating an array `const ages = [13, 15, 21, 32, 35];` and `console.log`-ing `ages.from()` or `ages.of()` would result in a `TypeError: ages.from is not a function` error.
+
+On Array itself however, `Array.from()` or `Array.of()` would be used to convert something that's Array-ish into a legit Array (liiiiiike NodeLists or arguments).
+
+NodeList -> Array:
+```
+<div class="kids">
+	<p>Scrappy</p>
+	<p>Enigma</p>
+	<p>Sammy</p>
+</div>
+
+<script>
+const kids = Array.from(document.querySelectorAll('.kids p'));
+console.log(kids);
+const names = kids.map(kids => kids.textContent);
+console.log(names); 
+
+</script>
+</body>
+</html>
+```
+
+`Array.from()` can take a 2nd argument, a map function. Instead, of using `Array.from()` on the doc selector use `Array.from();` giving it 2 arguments, the first have the NodeList, the second a function to map over list
+
+```
+const kids = document.querySelectorAll('.kids p');
+
+console.log(kids); // ^NodeList
+
+const names = Array.from(kids, kid => {
+	console.log(kid); // outputs actual DOM node
+	return kid.textContent;
+});
+
+console.log(names); // array of names
+
+```
+
+Arguments -> Arrays:
+```
+function sumAll() {
+	// console.log(arguments);
+	const arr = Array.from(arguments);
+	return arr.reduce((prev, next) => prev + next, 0);
+}
+
+sumAll(2, 4, 6, 8);
+
+```
+
+`Array.of()` is pretty straight forward
+```
+const ages = Array.of(12, 15, 4);
+console.log(ages);
+
+```
+Looking through the proto dropdown you'll see all the usual Array type stuff like `.join()`, `pop()`, `push()`, etc.
 
 
