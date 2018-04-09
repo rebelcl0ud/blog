@@ -788,6 +788,16 @@ A spread will take all things from specified array/iterable and throw it into th
 
 Messing with SPREAD
 ```
+   .jump span {
+      display: inline-block; /* span is inline, making it inline-block will allow the hover animation */
+      transition: transform 0.2s;
+      cursor:url('http://csscursor.info/source/santahand.png'), default;
+    }
+    .jump span:hover {
+      transform: translateY(-20px) rotate(10deg) scale(2);
+    }
+  </style>
+</head>
 <body>
   <h2 class="jump">SPREADS!</h2>
 
@@ -805,9 +815,9 @@ function spanWrap(word) {
 </html>
 
 ``` 
-Didn't add the CSS associated, but the point is to show spread being used within a function on a string where each letter is animated to move on hover.
+Didn't add all CSS associated, but the point is to show spread being used within a function on a string where each letter is animated to move on hover.
 
-RANDOM NOTE: something I'm not sure I've figured out when needed, but did not know off the top of my head is... you can't animate a span(inline), inline-block is what got it to work.
+RANDOM NOTE: something I'm not sure I've figured out when needed, but did not know off the top of my head... you can't animate a span(inline), inline-block is what got it to ^work.
 
 
 - - -
