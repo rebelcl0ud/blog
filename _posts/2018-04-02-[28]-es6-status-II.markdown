@@ -672,7 +672,7 @@ console.log(ages);
 Looking through the proto dropdown you'll see all the usual Array type stuff like `.join()`, `.pop()`, `.push()`, etc.
 
 
-- - - 
+- - -
 
 
 `Array.find()` & `Array.findIndex()`
@@ -781,5 +781,37 @@ console.log(featured); // ['Deep Dish', 'Pepperoni', 'Hawaiian']; :D
 
 TL;DR
 A spread will take all things from specified array/iterable and throw it into the new array.
+
+
+- - -
+
+
+Messing with SPREAD
+```
+<body>
+  <h2 class="jump">SPREADS!</h2>
+
+<script>
+const heading = document.querySelector('.jump');
+heading.innerHTML = spanWrap(heading.textContent);
+console.log(heading);
+ 
+function spanWrap(word) {
+  return [...word].map(letter => `<span>${letter}</span>`).join('');
+} 
+
+</script>
+</body>
+</html>
+
+``` 
+Didn't add the CSS associated, but the point is to show spread being used within a function on a string where each letter is animated to move on hover.
+
+RANDOM NOTE: something I'm not sure I've figured out when needed, but did not know off the top of my head is... you can't animate a span(inline), inline-block is what got it to work.
+
+
+- - -
+
+
 
 
