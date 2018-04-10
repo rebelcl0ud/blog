@@ -824,7 +824,7 @@ RANDOM NOTE: something I'm not sure I've figured out when needed, but did not kn
 
 MOAAAAR [or *more*, for the serious] spread examples:
 
-Kicking it off with a NodeList:
+I. Kicking it off with a NodeList:
 ```
 const dogs = document.querySelectorAll('.dogs p');
 
@@ -850,3 +850,16 @@ const names = dogs.map(dog => dog.textContent);
 
 ```
 
+II. When creating a new array off an object property:
+```
+const joSpecial = {
+    pizzaName: 'joSpecial',
+    size: 'Medium',
+    ingredients: ['Marinara', 'Spinach', 'Dough', 'Cheese', 'Banana Pepper']
+  };
+
+const groceryList = ['leche', 'flour', ...joSpecial.ingredients];
+console.log(groceryList);
+
+```
+^Combines lists, true copy not reference.
