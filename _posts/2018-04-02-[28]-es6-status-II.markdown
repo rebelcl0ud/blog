@@ -863,3 +863,47 @@ console.log(groceryList);
 
 ```
 ^Combines lists, true copy not reference.
+
+III. When you have an array of objects and need/want to remove one of them:
+```
+const comments = [
+  {id: 111222, text: 'Your dog is adorable'}, 
+  {id: 222333, text: 'Swoooooon'}, 
+  {id: 333444, text: 'Please evaporate'}, 
+  {id: 444555, text: 'I miss your FACE'}
+];
+
+console.log(comments);
+
+```
+
+You want to remove the comment asking you to 'Please evaporate', so u snag id of that comment to find out position in array:
+```
+const id = 333444;
+
+const removeIndex = comments.findIndex(comment => comment.id === id); 
+
+console.log(removeIndex); // 2
+
+```
+
+You find out it's at index 2, so let's remove that sucker using `slice()`:
+```
+const keepers = [comments.slice(0, removeIndex), comments.slice(removeIndex + 1)];
+
+console.log(keepers); // removes, but leaves you with an array of arrays
+
+```
+
+You got it removed and all, buuuuut you got an array of 2 arrays... the fix? use SPREAD
+```
+const keepers = [...comments.slice(0, removeIndex), ...comments.slice(removeIndex + 1)];
+
+console.log(keepers); // one full array
+
+```
+Now, we got ourselves a nice little array of lovely comments that make your heart smile :D
+
+
+- - - 
+
