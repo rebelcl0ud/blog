@@ -822,6 +822,31 @@ RANDOM NOTE: something I'm not sure I've figured out when needed, but did not kn
 
 - - -
 
+MOAAAAR [or *more*, for the serious] spread examples:
 
+Kicking it off with a NodeList:
+```
+const dogs = document.querySelectorAll('.dogs p');
 
+console.log(dogs); // NodeList atm
+
+```
+^As is, you can't map this baby, but we totally have done this before soooo...
+
+We can use an `Array.from()` to convert our NodeList into an Array:
+```
+const dogs = Array.from(document.querySelectorAll('.dogs p'));
+console.log(dogs); // yay Array 
+
+const names = dogs.map(dog => dog.textContent);
+```
+
+Or... it's totally possible to use a spread on the doc selector line (O_O)
+```
+const dogs = [...document.querySelectorAll('.dogs p')];
+console.log(dogs); // yay Array
+
+const names = dogs.map(dog => dog.textContent);
+
+```
 
