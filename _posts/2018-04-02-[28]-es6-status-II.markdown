@@ -905,12 +905,10 @@ console.log(keepers); // one full array
 Now, we got ourselves a nice little array of lovely comments that make your heart smile :D
 
 
-- - - 
-
-
 ### spreading into a function
 
 I.
+
 Using `.push()` is cool and all, but it will give you one of those situations where you get an array within an array
 ```
 const inventors = ['Einstein', 'Newton', 'Galileo'];
@@ -939,6 +937,7 @@ console.log(inventors); // using spread takes that array passing each item as in
 ```
 
 II.
+
 ```
 const name = ['jo', 'shmo'];
 
@@ -950,5 +949,46 @@ sayHi(...name);
 
 ```
 ^Instead of doing something like `sayHi(name[0], name[1]);`, time saver especially if there were more arguments to throw in there.
+
+
+### ...rest param
+`...rest` param looks like `...spread`, but does the opposite. While ...spread unpackages an array, ...rest bundles them. 
+
+I. used in a function
+
+Something like `function convertCurr(rate, amt1, amt2, amt3, amt4) {}` or instead, toss all that and use `arguments`, `function convertCurr() {arguments}`.
+
+Since we want the first thing to be the rate and then the *rest* to be the amounts one would like to convert we use a ...rest to package various ammounts into a tidy array :D
+```
+function convertCurr(rate, ...amounts) {
+  console.log(rate, amounts); // outputs 1.54 (rate) and then the rest (amounts) Array(5) [ 10, 23, 52, 1, 56 ]
+  return amounts.map(amount => amount * rate);
+}
+
+const amounts = convertCurr(1.54, 10, 23, 52, 1, 56);
+
+console.log(amounts); // outputs Array(5) [ 15.4, 35.42, 80.08, 1.54, 86.24000000000001 ]
+
+```
+
+
+II. used in a destructuring situation
+
+`const crew = ['Han', 'Chewie', 'Luke', 'C3PO', 'R2D2'];` takes pilot, copilot, and the *rest* of the passengers.
+
+To group the passengers together, and since it is an array we are destructuring we use `[]` and three variables we are packing things into -> pilot, copilot, ...passengers
+
+Using rest bundles up the passengers into a nice tidy array.
+
+```
+const crew = ['Han', 'Chewie', 'Luke', 'C3PO', 'R2D2'];
+
+const [pilot, copilot, ...passengers] = crew;
+
+console.log(pilot, copilot, passengers); // outputs Han Chewie Array(3) [ "Luke", "C3PO", "R2D2" ]
+
+```
+
+NOTE: Don't forget to take out the ...rest when copy/pasting into console.log *>_<*
 
 
