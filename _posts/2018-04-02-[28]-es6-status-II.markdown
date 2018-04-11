@@ -907,3 +907,48 @@ Now, we got ourselves a nice little array of lovely comments that make your hear
 
 - - - 
 
+
+### spreading into a function
+
+I.
+Using `.push()` is cool and all, but it will give you one of those situations where you get an array within an array
+```
+const inventors = ['Einstein', 'Newton', 'Galileo'];
+const newInventors = ['Musk', 'Jobs'];
+
+inventors.push(newInventors);
+
+console.log(inventors); // gives an array within an array
+
+```
+
+You do got that `.push.apply()` option that does in fact give you the combined array you're looking for
+```
+inventors.push.apply(inventors, newInventors);
+
+console.log(inventors); // this gives whole array containing all 5 inventors
+
+```
+
+But, then you got that *spread* option that (imo) looks so much prettier to read
+```
+inventors.push(...newInventors);
+
+console.log(inventors); // using spread takes that array passing each item as individual arguments, spread into function
+
+```
+
+II.
+```
+const name = ['jo', 'shmo'];
+
+function sayHi(first, last) {
+  alert(`Hi ${first} ${last}!`);
+}
+
+sayHi(...name);
+
+```
+^Instead of doing something like `sayHi(name[0], name[1]);`, time saver especially if there were more arguments to throw in there.
+
+
