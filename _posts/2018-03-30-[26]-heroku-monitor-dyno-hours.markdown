@@ -5,14 +5,14 @@ date:   2018-03-30
 categories: heroku
 ---
 
-### How to check dyno [hours] usage
+How to check dyno [hours] usage:
 
  - Sign into your Heroku account
  - Go to Account Settings
  - Go to Billing tab
  - Scroll down to section containing list of apps and their hour usage
 
-### Determine free dyno hours using Heroku CLI
+Determine free dyno hours using Heroku CLI:
 
 Run `heroku ps` on free app, `heroku ps -a <app name>`
 
