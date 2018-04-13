@@ -186,4 +186,48 @@ getPostById(3)
   })
 
 ```
+^stepped, waited for post to arrive before finding the author because we needed the author of the post first before being able to populate the author-- one thing needed to happen before the next thing.
 
+*So, how about firing all at once when not dependent of each other?*
+
+### multi-promises
+
+```
+const weather = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve({ temp: 92, conditions: 'Nothing but SUN, pack that sunscreen and hit the beach'});
+  }, 5000);
+});
+
+const tweets = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(['Friday the 13th is tomorrow :D', 'Ceviche is life!'])
+  }, 1000);
+});
+
+// ^nothing to do with eachother, instead of chaining .then(), Promise.all()
+
+// create promise and pass array of promises
+Promise
+  .all([weather, tweets])
+  .then(responses => {
+    console.log(responses); 
+  });
+
+```
+^the return happens after the longest amount of time to resolve, even if there's one promise faster than another-- in this case it will come back in 5 sec because thats how long it takes for ALL promises to resolve before .then() runs
+
+reponses throws out a combo of info from both weather and tweets, sprinkle some destructurizing to seperate info into 2 sep variables:
+```
+Promise
+  .all([weather, tweets])
+  .then(responses => {
+
+  	// throwing in some destructure sweetness
+    const [weatherDeets, tweetsDeets] = responses;
+    
+    // outputs data into 2 sep variables
+    console.log(weatherDeets, tweetsDeets); 
+  });
+
+```
