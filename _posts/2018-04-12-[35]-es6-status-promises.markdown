@@ -85,3 +85,105 @@ In similar fashion, below shows promise rejected for whatever reason and having 
   })
 
 ```
+
+### chaining promises, flow control
+
+Example below mimics snagging info from "database" using Wes's example of posts & authors. Specifically, a post of a certain ID.
+```
+  const posts = [
+    { title: 'I love JavaScript', author: 'Wes Bos', id: 1 },
+    { title: 'CSS!', author: 'Chris Coyier', id: 2 },
+    { title: 'Dev tools tricks', author: 'Addy Osmani', id: 3 },
+  ];
+
+  const authors = [
+    { name: 'Wes Bos', twitter: '@wesbos', bio: 'Canadian Developer' },
+    { name: 'Chris Coyier', twitter: '@chriscoyier', bio: 'CSS Tricks and CodePen' },
+    { name: 'Addy Osmani', twitter: '@addyosmani', bio: 'Googler' },
+  ];
+
+function getPostById(id) {
+ // promise created
+ return new Promise((resolve, reject) => {
+
+  // setTimeout to simulate having to wait for some data to come through
+  setTimeout(() => {
+    // finds post, self-explanatory
+    const post = posts.find(post => post.id === id);
+    if(post) {
+      resolve(post);
+    } else {
+      reject(Error('No Post Found.'));
+    }
+  }, 2000);
+ });
+}
+
+getPostById(2) // once post id snagged
+  .then(post => { console.log(post) }); // then, output result
+
+```
+
+When we get back our specified post, posts.author contains name only, to replace that with info from authors object of particular author with more information...
+
+we create another function `snagAuthorInfo(post)` where the post we snagged by ID will get checked for `post.author` matching `authors.name` in authors array of objects. If one is found, the author obj will then replace the `post.author` string. If none found, an error will return stating no author was found.
+```
+  const posts = [
+    { title: 'I love JavaScript', author: 'Wes Bos', id: 1 },
+    { title: 'CSS!', author: 'Chris Coyier', id: 2 },
+    { title: 'Dev tools tricks', author: 'Addy Osmani', id: 3 },
+  ];
+
+  const authors = [
+    { name: 'Wes Bos', twitter: '@wesbos', bio: 'Canadian Developer' },
+    { name: 'Chris Coyier', twitter: '@chriscoyier', bio: 'CSS Tricks and CodePen' },
+    { name: 'Addy Osmani', twitter: '@addyosmani', bio: 'Googler' },
+  ];
+
+function getPostById(id) {
+ // promise
+ return new Promise((resolve, reject) => {
+
+  // setTimeout to simulate having to wait for some data to come through
+  setTimeout(() => {
+    // finds post, self-explanatory
+    const post = posts.find(post => post.id === id);
+    if(post) {
+      resolve(post);
+    } else {
+      reject(Error('No Post Found.'));
+    }
+  }, 2000);
+ });
+}
+
+function snagAuthorInfo(post) {
+  // new promise
+  return new Promise((resolve, reject) => {
+
+    // find author
+    const authorDeets = authors.find(author => author.name === post.author);
+    // if author, replace org author string with author object
+    if(authorDeets) {
+      post.author = authorDeets;
+      resolve(post);
+    } else {
+      reject(Error('No Author Info Found'));
+    }
+  })
+}
+
+getPostById(3)
+  .then(post => { 
+    // console.log(post) 
+    return snagAuthorInfo(post) // returning a promise allows to chain another then()
+  })
+  .then(post => {
+    console.log(post);
+  })
+  .catch(err => {
+    console.error(err);
+  })
+
+```
+
