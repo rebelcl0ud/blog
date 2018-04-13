@@ -48,3 +48,40 @@ postsPromise
 ```
 
 `.then()` is similar to `on-click`, meaning it will only run when it clicks or in this case only run when the data comes back.
+
+### building promises
+
+As somewhat mentioned above, promises are pretty much used when you want JS still running while waiting for something else to be dealt with upon completion. This seems pretty handy when waiting on API data.
+
+Below is a simulation of a Promise contructor waiting to resolve. The idea is the setTimeout acts as time waiting on certain data to come through, once that happens we are notified of its resolve.
+```
+ const p = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('This promise was resolved');
+  }, 2000); 
+ });
+
+ p
+  .then(data => {
+    console.log(data);
+  })
+
+```
+
+In similar fashion, below shows promise rejected for whatever reason and having the error caught w/ information regarding error. However, using the `Error()` within `reject()` is what will be caught, directing us to where the Error took place. Without this, error would get caught, but the line shown would be where the catch err was placed and not actual reject/error line.
+```
+ const p = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject(Error('This promise was rejected'));
+  }, 2000); 
+ });
+
+ p
+  .then(data => {
+    console.log(data);
+  })
+  .catch(err => {
+    console.error(err);
+  })
+
+```
