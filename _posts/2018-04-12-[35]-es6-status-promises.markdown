@@ -223,11 +223,11 @@ Promise
   .all([weather, tweets])
   .then(responses => {
 
-  	// throwing in some destructure sweetness
-    const [weatherDeets, tweetsDeets] = responses;
+  // throwing in some destructure sweetness
+  const [weatherDeets, tweetsDeets] = responses;
     
-    // outputs data into 2 sep variables
-    console.log(weatherDeets, tweetsDeets); 
+  // outputs data into 2 sep variables
+  console.log(weatherDeets, tweetsDeets); 
   });
 
 ```
