@@ -231,3 +231,47 @@ Promise
   });
 
 ```
+
+Using a real API:
+
+NOTE: need server when using `fetch()`, opening up file in browser will not work. `browser-sync` is an option if you don't have an alternative way of running a server.
+
+First snag: Tried using my weatherapp on this section since it calls 2 APIs, but turns out the API I'm using to grab weather info gives me an error when using fetch instead of AJAX/JSONP. Looking into it I realize I remember running into this when I first set it up. Going into the docs they suggest proxy server and state disabling CORS on their servers which I remember looking into, however since I was a bit more brand new at the time it was something I always wanted to return to and implement. Looks like I got my reminder :D
+
+As an alternative, I've replaced the weather API with a street cars API used in vid example.
+
+```
+const getCityPromise = fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude}, ${longitude}&key=<%=ENV['GEO_KEY']%>`);
+
+const getStreetCarsPromise = fetch('http://data.ratp.fr/api/datasets/1.0/search/?q=paris');
+
+Promise
+	.all([getCityPromise, getStreetCarsPromise])
+  .then(responses => {
+  	console.log(responses);
+})
+
+```
+
+NOTE: The `getCityPromise` is actual API being used on my live app. The above snippet may look a little odd-- I'm using template string for lat/long that I'm grabbing using geolocation and the key is hidden using ENV variables from Rails.
+
+`console.log()` shows no data coming through yet, readable stream needs to be converted into JSON. Below, once initial promises come back we run through array of responses/data to convert to JSON, which returns a second promise that we can then call to log responses.
+
+```
+Promise
+	.all([getCityPromise, getStreetCarsPromise])
+	.then(responses => {
+		return Promise.all(responses.map(res => res.json()));
+  })
+  .then(responses => console.log(responses));
+
+```
+
+SIDEBAR on `return Promise.all(responses.map(res => res.json()));`:
+
+*Why are we calling `return Promise.all(responses.map(res => res.json()));` 
+and not something like `return Promise.all(responses.map(res => JSON.parse(res))); or something`?*
+
+Because, there are many different types of data that can come back. Ex: arrayBuffer(), blob(), json(), text(), formData(). In other words, don't assume AJAX requests will always be JSON.
+
+^Reference: [Using Fetch - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
