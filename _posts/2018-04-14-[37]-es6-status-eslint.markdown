@@ -90,4 +90,4 @@ killall Finder
 
 To revert: repeat, but switch out 'TRUE' for 'FALSE'
 
-For similar stuff, including the one I've used [HowToGeek Article](https://www.howtogeek.com/211496/how-to-hide-files-and-view-hidden-files-on-mac-os-x/)
+For similar stuff, including the one I've used, check out [HowToGeek Article](https://www.howtogeek.com/211496/how-to-hide-files-and-view-hidden-files-on-mac-os-x/)
