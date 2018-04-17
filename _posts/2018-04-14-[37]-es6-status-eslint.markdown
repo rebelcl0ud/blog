@@ -71,6 +71,45 @@ NOTE: gotta have ESLint globally installed, these plugins use your system-- you 
 
 `cmd + shift + p` brings up the dropdown where you can adj settings.
 
+NOTE: I was getting `ERROR: eslint cannot locate 'eslint'`, the fix: run `which eslint` in the command line/terminal, the path it shoots out is the path you want to include in your Sublime ESLint Settings. Should look something like this:
+```
+	"paths": {
+   	"osx": [
+   		"/Users/jO/.nvm/versions/node/v9.11.1/bin"
+   	],
+	},
+
+```
+
+References:
+
+[https://github.com/SublimeLinter/SublimeLinter-eslint/issues/42](https://github.com/SublimeLinter/SublimeLinter-eslint/issues/42)
+
+[https://github.com/SublimeLinter/SublimeLinter-eslint](https://github.com/SublimeLinter/SublimeLinter-eslint)
+
+Reminder: the `.eslinrc` file may have to be written a certain way-- in my case, I'm in rails so I had to edit my file to look like this...
+```
+	env: 
+    browser: true,
+    es6: true,
+    jquery: true
+	extends: 'eslint:recommended'
+
+```
+
+instead of something like this...
+```
+{
+	"env": {
+		"browser": true,
+    "es6": true,
+    "jquery": true
+	},  
+	"extends": "eslint:recommended"
+}
+	
+```
+
 ### thou shall not pass [into git repo] *unless* ESLint allows it
 
 I remember using Rubocop which is pretty much ESLint, but for Ruby code. Like ESLint it catches any errors in code which is great especially when on a team and you want everyone's code looking uniform and tidy. I was using Travis, for the first time, and remember it would tell you if your build passed or failed depending. If it failed, your push wasn't going anywhere. 
