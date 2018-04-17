@@ -74,9 +74,9 @@ NOTE: gotta have ESLint globally installed, these plugins use your system-- you 
 NOTE: I was getting `ERROR: eslint cannot locate 'eslint'`, the fix: run `which eslint` in the command line/terminal, the path it shoots out is the path you want to include in your Sublime ESLint Settings. Should look something like this:
 ```
 "paths": {
-	"osx": [
-		"/Users/jO/.nvm/versions/node/v9.11.1/bin"
-	],
+  "osx": [
+    "/Users/jO/.nvm/versions/node/v9.11.1/bin"
+  ],
 },
 
 ```
@@ -90,8 +90,8 @@ References:
 Reminder: the `.eslinrc` file may have to be written a certain way-- in my case, I'm in rails so I had to edit my file to look like this...
 ```
 env:
-	browser: true,
-	es6: true,
+  browser: true,
+  es6: true,
   jquery: true
 extends: 'eslint:recommended'
 
@@ -100,12 +100,12 @@ extends: 'eslint:recommended'
 instead of something like this...
 ```
 {
-	"env": {
-		"browser": true,
-		"es6": true,
+  "env": {
+    "browser": true,
+    "es6": true,
     "jquery": true
-   },
-	"extends": "eslint:recommended"
+  },
+  "extends": "eslint:recommended"
 }
 	
 ```
