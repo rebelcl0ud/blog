@@ -90,8 +90,8 @@ References:
 Reminder: the `.eslinrc` file may have to be written a certain way-- in my case, I'm in rails so I had to edit my file to look like this...
 ```
 env:
-  browser: true,
-  es6: true,
+  browser: true
+  es6: true
   jquery: true
 extends: 'eslint:recommended'
 
@@ -109,6 +109,97 @@ instead of something like this...
 }
 	
 ```
+
+### my wtf moment trying to incorporate ESLint into 2nd project
+
+So everything (my ESLint in Sublime) was working until... well, it wasn't.
+
+Behold! `ERROR: env: node: No such file or directory` -- off I went to duck duck go.
+
+The following seemed the most helpful/useful, maybe:
+  - [https://github.com/SublimeLinter/SublimeLinter/issues/1218](https://github.com/SublimeLinter/SublimeLinter/issues/1218)
+
+  - [https://github.com/SublimeLinter/SublimeLinter/pull/1266](https://github.com/SublimeLinter/SublimeLinter/pull/1266)
+
+  - [https://github.com/SublimeLinter/SublimeLinter/issues/725](https://github.com/SublimeLinter/SublimeLinter/issues/725)
+
+There were a few suggestions, but a simple solution (to me) seemed to set up a connection between the command line and Sublime. A user mentioned that was a way of avoiding that error so I figured it was worth the shot because I would not only gain convenience, but ALSO get this thing to work.
+
+Off I went. *imagine lute type tunes playing at this very moment*
+
+### opening sublime from command line
+
+Resource: [https://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/](https://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/)
+
+`echo $PATH` and `ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime`
+
+The path is pretty straight forward, *but what is `ln` and `-s`?* I asked myself this very Q and because I will forget, I'm making a note of it for my future self below.
+
+  - `ln` is link/symbolic link of an exisiting file [ln](https://en.wikipedia.org/wiki/Ln_(Unix))
+  - `-s` print the allocated size of each file, in blocks. [-s](https://www.computerhope.com/unix/uls.htm)
+
+My `ERROR: env: node: No such file or directory` error seems to have vanished, seems all is well.
+
+*checks sublime console* Or... not. Hmmmmm...
+
+Welcome, `- Unexpected top-level property "browser".` error. 
+
+I thought perhaps editing my `eslintrc` file from this:
+```
+env:
+  browser: true,
+  es6: true,
+  jquery: true
+extends: 'eslint:recommended'
+
+```
+to this:
+```
+extends: 'eslint:recommended'
+env:
+  browser: true
+  es6: true
+  jquery: true
+
+```
+But, that wouldn't make much sense since in another project I had a file that looked the exact same way and it had worked just fine so maybe...
+
+Maybe I need the symbolic link from within my vagrant command line?
+
+`failed to create symbolic link` - from what I read it seems this cant be done this way, security risk type jazz.
+
+Ok, so maybe...
+
+I hit up my duck duck go and started my search once more. I mean, I haven't used ESLint much so maybe I missed something that I had done in the previous project where I first set up ESLint & Sublime. 
+
+Hello, `eslint --init`
+
+I decided to scrap the `eslintrc` file I had and ran `eslint --init` some Qs pop up to get your config file started (which can be edited after the fact) annnnnndddd *drum roll* I finally got my little dots!
+
+My `eslintrc` file atm:
+```
+env:
+  browser: true
+  es6: true
+  jquery: true
+extends: 'eslint:recommended'
+rules:
+  indent:
+    - error
+    - 2
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+  semi:
+    - error
+    - always
+  no-unused-vars: 1
+
+```
+Sidebar: I've discovered the lute calms the aggro of hours troubleshooting :D
 
 ### thou shall not pass [into git repo] *unless* ESLint allows it
 
