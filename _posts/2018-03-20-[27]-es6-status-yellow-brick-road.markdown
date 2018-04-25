@@ -45,8 +45,8 @@ hence, the usage of IIFE mentioned above.
 
 ```
 (function(){
-	var name = JO;
-	console.log(name); // JO
+  var name = JO;
+  console.log(name); // JO
 })();
 
 // "" showing blank/empty outside of scope as it is a window property, meaning var used previously is not leaking outside function
@@ -58,7 +58,7 @@ would return the same used globally, but to prevent leaking in this case it just
 ```
 {
   const name = JO;
-	console.log(name); // JO
+  console.log(name); // JO
 }
 
 // outside will return "" same as before, name is window property
@@ -68,7 +68,7 @@ would return the same used globally, but to prevent leaking in this case it just
 
 ```
 for(var i=0; i < 10; i++) {
-	console.log(i);
+  console.log(i);
 }
 
 // here var i would iterate and count to 9, but calling i would show value of ten, var, global var, leaked
@@ -77,9 +77,9 @@ for(var i=0; i < 10; i++) {
 another example of var behavior...
 ```
 for(var i=0; i < 10; i++) {
-	setTimeout(function() {
-		console.log(i);
-	}, 1000);
+  setTimeout(function() {
+    console.log(i);
+  }, 1000);
 }
 
 // by the time setTimeout runs (in this case 1 sec) it would have iterated through, the number 10 will output 10x instead of iterating and counting through to 9 as with previous example
@@ -92,9 +92,9 @@ Similar to AJAX request iteration, no good way than use an IIFE? to ref i --why?
 swapping out `var` for `let`...
 ```
 for(let i=0; i < 10; i++) {
-	setTimeout(function() {
-		console.log(i);
-	}, 1000);
+  setTimeout(function() {
+    console.log(i);
+  }, 1000);
 }
 
 // this will output correctly, iterating and counting as each value of i passes through and no 10 as with initial example, the variable is not global, it is block-scoped
