@@ -30,13 +30,13 @@ Destructuring would also come in handy for deep nested data, like with an API. T
 
 ```
 const you = {
-	first: 'NAME HERE'
-	links: {
-		social: {
-			twitter: 'https://twitter.com/USERNAME', 
-			github: 'https://github.com/USERNAME'
-		}
-	}
+  first: 'NAME HERE'
+    links: {
+      social: {
+        twitter: 'https://twitter.com/USERNAME', 
+	github: 'https://github.com/USERNAME'
+    }
+  }
 }
 
 const { twitter, github } = you.links.social;
@@ -134,12 +134,12 @@ console.log(onCourt, offCourt); // will show swap
 Multi- Returns:
 ```
 function convertCurrency(amount) {
-	const converted = {
-		USD: amount * 0.76,
-		MEX: amount * 13.30,
-		GPB: amount * 0.53
-	}
-	return converted;
+  const converted = {
+    USD: amount * 0.76,
+    MEX: amount * 13.30,
+    GPB: amount * 0.53
+  }
+  return converted;
 }
 
 const hundo = convertCurrency(100);
@@ -152,12 +152,12 @@ Destructuring to return multi values from a function is a cheat since you can't 
 
 ```
 function convertCurrency(amount) {
-	const converted = {
-		USD: amount * 0.76,
-		MEX: amount * 13.30,
-		GPB: amount * 0.53
-	}
-	return converted;
+  const converted = {
+    USD: amount * 0.76,
+    MEX: amount * 13.30,
+    GPB: amount * 0.53
+  }
+  return converted;
 }
 
 const {  MEX, USD, GPB } = convertCurrency(100);
@@ -172,7 +172,7 @@ Note: It isnt necessary to destructure all if, let's say, only USD and GPB is ne
 Named Defaults:
 ```
 function tipCalc({total, tip=0.15, tax=0.13}) {
-	return total + (tip * total) + (tax * total);
+  return total + (tip * total) + (tax * total);
 }
 
 const bill = tipCalc({ total: 200, tax: 0.09 });
@@ -184,7 +184,7 @@ Making order of values independent, you wrap params in curly braces. Pass obj wi
 If NO arguments are passed:
 ```
 function tipCalc({total=200, tip=0.25, tax=0.09} = {}) {
-	return total + (tip * total) + (tax * total);
+  return total + (tip * total) + (tax * total);
 }
 
 const bill = tipCalc();
