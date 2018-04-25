@@ -114,21 +114,21 @@ in `home.component.ts`
 `ngOnInit()` gets loaded when app loads
 
 ```
-	itemCount: number;
-	btnText: string = 'add task';
-	goalText: string = 'todo item example';
-	goals = [];
+  itemCount: number;
+  btnText: string = 'add task';
+  goalText: string = 'todo item example';
+  goals = [];
 
   constructor() { }
 
   ngOnInit() {
-  	this.itemCount = this.goals.length;
+    this.itemCount = this.goals.length;
   }
 
   addItem() {
-  	this.goals.push(this.goalText);
-  	this.goalText = '';
-  	this.itemCount = this.goals.length;
+    this.goals.push(this.goalText);
+    this.goalText = '';
+    this.itemCount = this.goals.length;
   }
  ```
 
@@ -138,9 +138,9 @@ however, the actual items do not show yet because we have not edited html file t
 
 ```
 <div class="col">
-	<p class="todo-container" *ngFor="let goal of goals">
-		{{ goal }}
-	</p>
+  <p class="todo-container" *ngFor="let goal of goals">
+    {{ goal }}
+  </p>
 </div>
 ```
 
@@ -191,9 +191,9 @@ in `home.component.html`--
 
 ```
 <div class="col">
-	<p class="todo-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
-		{{ goal }}
-	</p>
+  <p class="todo-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
+    {{ goal }}
+  </p>
 </div>
 ```
 
@@ -202,25 +202,25 @@ in `home.component.ts`--
 ```
 export class HomeComponent implements OnInit {
 
-	itemCount: number;
-	btnText: string = 'add task';
-	goalText: string = 'todo item example';
-	goals = ['test', 'test2', 'test3'];
+  itemCount: number;
+  btnText: string = 'add task';
+  goalText: string = 'todo item example';
+  goals = ['test', 'test2', 'test3'];
 
   constructor() { }
 
   ngOnInit() {
-  	this.itemCount = this.goals.length;
+    this.itemCount = this.goals.length;
   }
 
   addItem() {
-  	this.goals.push(this.goalText);
-  	this.goalText = '';
-  	this.itemCount = this.goals.length;
+    this.goals.push(this.goalText);
+    this.goalText = '';
+    this.itemCount = this.goals.length;
   }
 
   removeItem(i) {
-  	this.goals.splice(i,1);
+    this.goals.splice(i,1);
   }
 
 }
@@ -248,14 +248,14 @@ import { HomeComponent } from './home/home.component'
 import { AboutComponent } from './about/about.component'
 
 const routes: Routes = [
-	{
-		path: '',
-		component: HomeComponent
-	},
-	{
-		path: 'about', 
-		component: AboutComponent
-	}
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'about', 
+    component: AboutComponent
+  }
 ];
 
 ```
@@ -271,8 +271,8 @@ clicking on menu links, home & about, are now functional
 example:
 ```
 {
-	path: 'about/:id', 
-	component: AboutComponent
+  path: 'about/:id', 
+  component: AboutComponent
 }
 
 ```
@@ -286,7 +286,7 @@ by adding `import { ActivatedRoute } from '@angular/router';` in `about.componen
 
 ```
  constructor(private route: ActivatedRoute) { 
- 	this.route.params.subscribe(res => console.log(res.id));
+   this.route.params.subscribe(res => console.log(res.id));
  }
 
 ```
@@ -342,14 +342,14 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class DataService {
-	private goals = new BehaviorSubject<any>(['todo 1', 'todo 2']);
+  private goals = new BehaviorSubject<any>(['todo 1', 'todo 2']);
 
-	goal = this.goals.asObservable();
+  goal = this.goals.asObservable();
 
   constructor() { }
 
   changeGoal(goal) {
-  	this.goals.next(goal);
+    this.goals.next(goal);
   }
 
 }
@@ -367,8 +367,8 @@ then...
 ```
 ngOnInit() {
   this.itemCount = this.goals.length;
-	this._data.goal.subscribe(res => this.goals = res);
-	this._data.changeGoal(this.goals);
+    this._data.goal.subscribe(res => this.goals = res);
+    this._data.changeGoal(this.goals);
 }
 
 ```
