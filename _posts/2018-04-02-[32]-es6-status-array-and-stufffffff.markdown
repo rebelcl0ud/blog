@@ -14,9 +14,9 @@ On Array itself however, `Array.from()` or `Array.of()` would be used to convert
 NodeList -> Array:
 ```
 <div class="kids">
-	<p>Scrappy</p>
-	<p>Enigma</p>
-	<p>Sammy</p>
+  <p>Scrappy</p>
+  <p>Enigma</p>
+  <p>Sammy</p>
 </div>
 
 <script>
@@ -38,8 +38,8 @@ const kids = document.querySelectorAll('.kids p');
 console.log(kids); // ^NodeList
 
 const names = Array.from(kids, kid => {
-	console.log(kid); // outputs actual DOM node
-	return kid.textContent;
+  console.log(kid); // outputs actual DOM node
+  return kid.textContent;
 });
 
 console.log(names); // array of names
@@ -49,9 +49,9 @@ console.log(names); // array of names
 Arguments -> Arrays:
 ```
 function sumAll() {
-	// console.log(arguments);
-	const arr = Array.from(arguments);
-	return arr.reduce((prev, next) => prev + next, 0);
+  // console.log(arguments);
+  const arr = Array.from(arguments);
+  return arr.reduce((prev, next) => prev + next, 0);
 }
 
 sumAll(2, 4, 6, 8);
