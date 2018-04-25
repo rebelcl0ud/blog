@@ -14,11 +14,11 @@ Symbols are unique identifiers, help avoid naming collisions. Good time to use S
 Example:
 ```
 const band = {
-	[Symbol('J')]: { instrument: 'guitar' },
-	[Symbol('J')]: { instrument: 'guitar' }, 
-	[Symbol('M')]: { instrument: 'drums' }, 
-	[Symbol('J')]: { instrument: 'bass' }
-	[Symbol('J')]: { instrument: 'vocals' }
+  [Symbol('J')]: { instrument: 'guitar' },
+  [Symbol('J')]: { instrument: 'guitar' }, 
+  [Symbol('M')]: { instrument: 'drums' }, 
+  [Symbol('J')]: { instrument: 'bass' },
+  [Symbol('J')]: { instrument: 'vocals' }
 }
 // no conflict
 ```
@@ -26,7 +26,7 @@ const band = {
 Note: You cannot loop over Symbols.
 ```
 for(person in band) {
-	console.log(person);
+  console.log(person);
 }
 // will not work (cannot loop over), reminder: using `for in` -- `for of` does not work on objects
 ```
