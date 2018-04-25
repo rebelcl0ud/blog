@@ -41,9 +41,9 @@ It goes to fetch whatever data, but doesn't get through it before 'done' is logg
 const postsPromise = fetch('http://whateverwebsitehere.com/whatever-json/posts');
 
 postsPromise
-	.then(data => data.json())
-	.then(data => { console.log(data) })
-	.catch(err=> { console.error(err) })
+  .then(data => data.json())
+  .then(data => { console.log(data) })
+  .catch(err=> { console.error(err) })
 
 ```
 
