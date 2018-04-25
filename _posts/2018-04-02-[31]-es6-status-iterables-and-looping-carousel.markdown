@@ -24,7 +24,7 @@ Then, there's the `forEach`
 This one actually made the most sense to me when I first started trying to wrap my head around JavaScript. The reason, I got my basic grasp of web dev workings messing with Ruby which had something similar.
 ```
 dogs.forEach((dog) => {
-	console.log(dog);
+  console.log(dog);
 })
 
 ```
@@ -35,7 +35,7 @@ Cannot use `break` or `continue` inside a `forEach` loop
 The `for in` loop:
 ```
 for(const index in dogs) {
-	console.log(dogs[index]);
+  console.log(dogs[index]);
 }
 
 ``` 
@@ -47,7 +47,7 @@ there are many methods on a prototype, if you were to add one and then reiterate
 The `for of` loop:
 ```
 for(const dog of dogs) {
-	console.log(dog)
+  console.log(dog)
 }
 
 ```
@@ -57,7 +57,7 @@ This is like the one that brings all the good stuff from those above into one, s
 
 ```
 for(const dog of dogs) {
-	console.log(dog)
+  console.log(dog)
 }
 
 // will output:
@@ -74,56 +74,56 @@ labrador
 In comes `dogs.entries()` which `console.log`s an Array Iterator with a `next()` method
 ```
 dogs.entries()
-	Array Iterator
-	​
-		__proto__: Array Iterator
-		​​
-		next: next()
-		​​​
-		length: 0
-		​​​
-		name: "next"
-		​​​
-		__proto__: ()
-		​​​​
-		apply: function apply()
-		​​​​
-		arguments: null
-		​​​​
-		bind: function bind()
-		​​​​
-		call: function call()
-		​​​​
-		caller: null
-		​​​​
-		constructor: function Function()
-		​​​​
-		length: 0
-		​​​​
-		name: ""
-		​​​​
-		toSource: function toSource()
-		​​​​
-		toString: function toString()
-		​​​​
-		Symbol(Symbol.hasInstance): undefined
-		​​​​
-		__proto__: Object { … }
-		​​
-		Symbol(Symbol.toStringTag): undefined
-		​​
-		__proto__: {…}
-		​​​
-		Symbol(Symbol.iterator): undefined
-		​​​
-		__proto__: Object { … }
+  Array Iterator
+  ​
+    __proto__: Array Iterator
+    ​​
+    next: next()
+    ​​​  
+    length: 0
+    ​​​
+    name: "next"
+    ​​​
+    __proto__: ()
+    ​​​​
+    apply: function apply()
+    ​​​​
+    arguments: null
+    ​​​​
+    bind: function bind()
+    ​​​​
+    call: function call()
+    ​​​​
+    caller: null
+    ​​​​
+    constructor: function Function()
+    ​​​​
+    length: 0
+    ​​​​
+    name: ""
+    ​​​​
+    toSource: function toSource()
+    ​​​​
+    toString: function toString()
+    ​​​​
+    Symbol(Symbol.hasInstance): undefined
+    ​​​​
+    __proto__: Object { … }
+    ​​
+    Symbol(Symbol.toStringTag): undefined
+    ​​
+    __proto__: {…}
+    ​​​
+    Symbol(Symbol.iterator): undefined
+    ​​​
+    __proto__: Object { … }
 
 ```
 When stored in a variable `const pups = dogs.entries();` you are able to iterate manually `pups.next();`, but placing it within `for of` loop `console.log`s
 
 ```
 for(const dog of dogs.entries()) {
-	console.log(dog)
+  console.log(dog)
 }
 
 // will output:
@@ -149,7 +149,7 @@ However, present setup requires `console.log(dog[0], dog[1]);` to get index with
 A better approach, destructuring with optional use of template strings
 ```
 for(const [i, dog] of dogs.entries()) {
-	console.log(`${i}: ${dog}`);
+  console.log(`${i}: ${dog}`);
 }
 
 // will output:
@@ -164,12 +164,12 @@ for(const [i, dog] of dogs.entries()) {
 Iterating using `arguments`:
 ```
 function addUpNum() {
-	let total = 0;
-	for (const num of arguments) {
-		total += num;
-	}
-	console.log(total);
-	return total;
+  let total = 0;
+  for (const num of arguments) {
+    total += num;
+  }
+  console.log(total);
+  return total;
 }
 
 addUpNum(10, 20, 32, 35, 15); // 112
@@ -179,7 +179,7 @@ addUpNum(10, 20, 32, 35, 15); // 112
 Using arguments gives you something similar to an array, but it is NOT an array. 
 ```
 function addUpNum() {
-	console.log(arguments);	
+  console.log(arguments);	
 }
 
 addUpNum(10, 20, 32, 35, 15); // 112
@@ -307,7 +307,7 @@ Iterating strings:
 const name = 'MysticalState'
 
 for(const char of name) {
-	console.log(char);
+  console.log(char);
 }
 
 ```
@@ -338,11 +338,11 @@ console.log(ps);
 const ps = document.querySelectorAll('p');
 
 for(const paragraph of ps) {
-	// console.log(paragraph);
+// console.log(paragraph);
 	
-	paragraph.addEventListener('click', function() {
-		console.log(this.textContent);
-	})
+  paragraph.addEventListener('click', function() {
+    console.log(this.textContent);
+  })
 }
 
 ```
@@ -353,13 +353,13 @@ Able to use `for of` on things even when they are not arrays as long as they are
 
 ```
 const watermelon = {
-	size: 'large',
-	weight: 100,
-	type: 'fruit'
+  size: 'large',
+  weight: 100,
+  type: 'fruit'
 }
 
 for(const prop of watermelon) {
-	console.log(prop); // ERROR
+  console.log(prop); // ERROR
 }
 
 ```
@@ -377,28 +377,28 @@ NOTE: [polyfill is available](https://github.com/es-shims/Object.entries)
 If you can't use a polyfill?
 ```
 const watermelon = {
-	size: 'large',
-	weight: 100,
-	type: 'fruit'
+  size: 'large',
+  weight: 100,
+  type: 'fruit'
 }
 
 for(const prop of Object.keys(watermelon)) {
-	console.log(prop); // gives size, weight, type
+  console.log(prop); // gives size, weight, type
 }
 
 ```
 
 ```
 const watermelon = {
-	size: 'large',
-	weight: 100,
-	type: 'fruit'
+  size: 'large',
+  weight: 100,
+  type: 'fruit'
 }
 
 for(const prop of Object.keys(watermelon)) {
-	const values = watermelon[prop];
+  const values = watermelon[prop];
 	
-	console.log(prop, values); // outputs size, weight, type and large, 100, fruit
+  console.log(prop, values); // outputs size, weight, type and large, 100, fruit
 }
 
 ```
@@ -407,15 +407,15 @@ Not the cleanest solution since we're going outside to snag stuff, but it is pos
 
 ```
 const watermelon = {
-	size: 'large',
-	weight: 100,
-	type: 'fruit'
+  size: 'large',
+  weight: 100,
+  type: 'fruit'
 }
 
 for(const prop in watermelon) {
-	const values = watermelon[prop];
-	// console.log(prop); // outputs size, weight, type
-	console.log(prop, values); // outputs large, 100, fruit
+  const values = watermelon[prop];
+  // console.log(prop); // outputs size, weight, type
+console.log(prop, values); // outputs large, 100, fruit
 }
 
 ```
