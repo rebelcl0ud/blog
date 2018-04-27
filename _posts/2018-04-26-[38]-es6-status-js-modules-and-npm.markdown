@@ -207,6 +207,8 @@ const profile = createURL(userInfo.name);
 const image = gravatar(userInfo.email);
 
 ```
-loading html in browser and `console.log`ing variables output info
+loading html in browser and `console.log`-ing variables output info
 
 Note: you can make your own modules and put them up on npm :O
+
+SN(N2FS): I'd like to take a moment to remember the first time I tried to wrap my brain around package.json and modules and all this jazz, I had jumped into the deep end trying to incorporate gulp into jekyll. This revisiting... I follow and dig it. Putting this here to remind my future self, progress :)
