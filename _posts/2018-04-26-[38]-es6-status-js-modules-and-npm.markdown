@@ -57,7 +57,8 @@ To get started,
   Should have all popped up under devDependecies in `package.json`
   
   - Webpack config file, `webpack.config.js`
-  ```
+  
+```
   const webpack = require('webpack');
   const nodeEnv = process.env.NODE_ENV || 'production';
   
@@ -98,8 +99,8 @@ To get started,
       })
     ]
   }
-  
-  ```
+
+```
   To run webpack:
   
     - able to run from command line or 
