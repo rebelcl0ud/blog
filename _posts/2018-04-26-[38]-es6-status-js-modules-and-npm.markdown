@@ -113,3 +113,53 @@ Rewinding back to html file, swap src script to `"_build/bundle.js"`
 
 Now, w.e you throw into `app.js`, regarding using things like `uniq`, hitting save should run webpack bundle
 
+### Creating Own Modules
+
+`config.js` ex:
+```
+const apiKey = 'abc123'; 
+
+```
+
+`app.js`
+```
+// grabbing^ api key from another file
+import apiKey = './src/config';
+
+```
+
+Note: variables are not global with modules, always scoped to function, block, or module.
+
+Since it is not a node module, but a local file you can import using a relative path (.js/ext not needed)
+
+Able to export in 2 ways, 'default export' or 'named export':
+`config.js` -- `default export` ex:
+```
+const apiKey = 'abc123';
+
+export default apiKey; 
+
+```
+and import like previous example.
+
+Note: If you load html file in browser and console.log(apiKey) you'll see example api key used. Also, exporting as default allows you to name it whatever you'd like on import. Any module can only have ONE default export.
+
+`config.js` -- `named export` ex:
+```
+export const apiKey = 'abc123';
+
+```
+
+`app.js`
+```
+// grabbing^ api key from another file
+import { apiKey, canAddMoreNamedExports, likeThis } = './src/config';
+
+```
+Note: import differs from previous example when exporting named export by using curly braces. To add more named exports, add them inside those same curly braces.
+
+Note 2: You can also export functions, variable names. Also, able to rename.
+`import apiKey as key = './src/config';`
+
+References:
+[MDN - export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
