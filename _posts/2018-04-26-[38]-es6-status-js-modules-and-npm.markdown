@@ -158,8 +158,55 @@ import { apiKey, canAddMoreNamedExports, likeThis } = './src/config';
 ```
 Note: import differs from previous example when exporting named export by using curly braces. To add more named exports, add them inside those same curly braces.
 
-Note 2: You can also export functions, variable names. Also, able to rename.
-`import apiKey as key = './src/config';`
+Note 2: You can also export functions, variable names. Also, able to rename. `import apiKey as key = './src/config';`
 
 References:
 [MDN - export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
+
+### MOAAAR ES6 Module Example
+
+coding along...
+to make a user module w/ some utility methods
+
+`src/user.js`
+```
+// imports go in w.e file needed even if already imported elsewhere, will not dup code
+
+import slug from 'slug';
+import { url } from './config';
+
+// import below able to be renamed, creator of base-64 exported as a default which gives ability of importing with any name
+import base64 from 'base-64';
+
+export default function User(name, email, website) {
+  // when props name and var are the same no need to be redundant
+  return { name, email website };
+}
+
+export function createURL(name) {
+  return `${url}/users/${slug(name)}`;
+}
+
+// here npm base64 is needed, base64 hash of user email follows main url
+export function gravatar(email) {
+  const hash = base64.encode(email);
+  const photoURL = `https://www.gravatar.com/avatar/${hash}`;
+  return photoURL
+}
+
+```
+module^ ready to use in other files-- 
+default export added to 'main' User fn, while others are named exports.
+
+add import to `app.js` to use:
+```
+import User, { createURL, gravatar } from './src/user';
+
+const userInfo = new User('jo', 'emailHere@email.com', 'websiteHere.com' );
+const profile = createURL(userInfo.name);
+const image = gravatar(userInfo.email);
+
+```
+loading html in browser and `console.log`ing variables output info
+
+Note: you can make your own modules and put them up on npm :O
