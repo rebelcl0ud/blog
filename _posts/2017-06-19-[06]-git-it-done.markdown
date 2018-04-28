@@ -54,6 +54,12 @@ That^ little nugget of wisdom came from [@data_stephanie](https://twitter.com/da
 
 `$ git reset --soft HEAD^` undo keeps changes BEFORE commit
 
+# Update
+
+First time using this one was to remove a few deleted files.
+
+`$ git add -u` stages already tracked files, does not add new files
+
 
 
 
