@@ -246,9 +246,9 @@ const getCityPromise = fetch(`https://maps.googleapis.com/maps/api/geocode/json?
 const getStreetCarsPromise = fetch('http://data.ratp.fr/api/datasets/1.0/search/?q=paris');
 
 Promise
-	.all([getCityPromise, getStreetCarsPromise])
+  .all([getCityPromise, getStreetCarsPromise])
   .then(responses => {
-  	console.log(responses);
+    console.log(responses);
 })
 
 ```
@@ -259,9 +259,9 @@ NOTE: The `getCityPromise` is actual API being used on my live app. The above sn
 
 ```
 Promise
-	.all([getCityPromise, getStreetCarsPromise])
-	.then(responses => {
-		return Promise.all(responses.map(res => res.json()));
+  .all([getCityPromise, getStreetCarsPromise])
+  .then(responses => {
+    return Promise.all(responses.map(res => res.json()));
   })
   .then(responses => console.log(responses));
 
