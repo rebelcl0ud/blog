@@ -5,6 +5,10 @@ date: 2018-04-30
 categories: javascript
 ---
 
+Resources: 
+	[systemjs](https://github.com/systemjs/systemjs)
+	[browser-sync](https://www.browsersync.io/docs/)
+
 webpack not only way to bundle up js/ es6 modules-- browserfy, rollup, systemjs
 
 
@@ -17,8 +21,8 @@ BrowserSync Sidebar:
 	- npm init
 	- npm install browser-sync --save-dev
 	- go to package.json
-		- delete test line under scripts
-		- add "server": "browser-sync start --directory --server --files '*.js, *.html, *.css' "
+	 - delete test line under scripts
+	 - add "server": "browser-sync start --directory --server --files '*.js, *.html, *.css' "
 
 If all went well, `browser-sync` should have popped up under `devDependencies` in `package.json`
 
@@ -30,8 +34,8 @@ After you got a server and have systemjs loaded through a script tag, in the bod
 
 ```
 <script>
-	System.config({ transpiler: 'babel' });
-	System.import('./main.js');
+  System.config({ transpiler: 'babel' });
+  System.import('./main.js');
 </script>
 ```
 
@@ -51,3 +55,61 @@ and works with personal modules as well-- `export` before `fn` in module and `im
 
 Note: not ideal for production, but good for testing, quick mockups, and such
 
+### babel + npm
+
+Resources: 
+	[babeljs](https://babeljs.io/)
+	[test drive - babeljs](https://babeljs.io/repl/)
+
+Note: you only need webpack, system, browserfy for modules only-- simpler setup if not making use of modules
+
+	- npm init
+	- npm install babel-cli@next
+	 - @next needed? check out version [npmjs](https://www.npmjs.com/package/babel-cli)
+	- go to package.json
+	 - remove test line under scripts
+	 - add 
+
+`"babel": "babel main.js --watch --out-file app-compiled.js"`
+
+Installing plugins + presets:
+
+Instead of going through/ selecting plugins and such for conversion and all that, babel-preset-env makes things a bit easier where it auto determines what plugins/polyfills you may need based on browser or runtime env.
+
+Resources:
+	[babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env)
+
+	- npm i babel-preset-env@next (next is for latest/beta, you can check version)
+	- open package.json
+	 - under dependencies section
+	 - add
+
+```
+"babel": { 
+  "presets": [
+    [
+      "@babel/preset-env", 
+      {
+        "targets": {
+          // The % refers to the global coverage of users from browserslist
+          "browsers": [ 
+            ">0.25%", "not dead"
+          ]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "syntax-object-rest-spread"
+  ]
+},
+```
+
+`npm run babel` will spit out a `app-compiled.js` file that will contain pollyfill version code of es6 code in, let's say, `main.js` file, `app.js` file, or w.e main file being used.
+
+Note: `.babelrc`, config what browsers you want to support or plugins/presets is the alternative to including it in the `package.json` file
+
+Example- adding plugins in support of experimental features:
+	- `npm install --save-dev babel-plugin-syntax-object-rest-spread`
+	recource: [object-spread](https://babeljs.io/docs/plugins/syntax-object-rest-spread/#top)
+	- snag plugin code to throw into `package.json` file or `.babelrc` file (check above snippet)
