@@ -105,7 +105,7 @@ Resources:
 },
 ```
 
-`npm run babel` will spit out a `app-compiled.js` file that will contain pollyfill version code of es6 code in, let's say, `main.js` file, `app.js` file, or w.e main file being used.
+`npm run babel` will spit out a `app-compiled.js` file that will contain polyfill version code of es6 code in, let's say, `main.js` file, `app.js` file, or w.e main file being used.
 
 Note: `.babelrc`, config what browsers you want to support or plugins/presets is the alternative to including it in the `package.json` file
 
@@ -113,3 +113,19 @@ Example- adding plugins in support of experimental features:
 	- `npm install --save-dev babel-plugin-syntax-object-rest-spread`
 	recource: [object-spread](https://babeljs.io/docs/plugins/syntax-object-rest-spread/#top)
 	- snag plugin code to throw into `package.json` file or `.babelrc` file (check above snippet)
+
+### polyfilling for older browsers
+
+Babel converts/compiles es6 to es5; works on new syntax, what it looks/acts like. However, methods like `array.from()`, babel doesn't convert.
+
+This is where polyfill comes in, which means, if the browser does not have it then it must be recreated with regular JS.
+
+[MDN](https://developer.mozilla.org/en-US/) shows polyfill options examples
+
+Resources:
+  Polyfill options to include in projects:
+
+  - [babel-polyfill](https://babeljs.io/docs/usage/polyfill/)
+
+  - [polyfill.io](https://polyfill.io/v2/docs/)
+
