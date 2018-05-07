@@ -9,8 +9,8 @@ Prototypal Inheritance
 
 ```
 function Dog(name, breed) {
-	this.name = name;
-	this.breed = breed;
+  this.name = name;
+  this.breed = breed;
 }
 
 const scrappy = new Dog('Scrappy', 'mix')
@@ -31,7 +31,7 @@ Note: they don't take their own, but share
 
 ```
 Dog.prototype.bark = function() {
-	console.log(`Rrrrruufffff! I'm ${this.name}`);
+  console.log(`Rrrrruufffff! I'm ${this.name}`);
 }
 
 ```
@@ -145,3 +145,6 @@ scrappy.nicknames
 // will console.log "scraps"
 
 ```
+
+### extending classes + using super()
+
