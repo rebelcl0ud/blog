@@ -148,3 +148,84 @@ scrappy.nicknames
 
 ### extending classes + using super()
 
+```
+class Animal() {
+  constructor(name) {
+    this.name = name;
+    this.thirst = 100;
+    this.hungry = [];
+  }
+
+  drink() {
+    this.thirst -= 10;
+    return this.thirst;
+  }
+
+  eat(food) {
+    this.hungry.push(food);
+    return this.hungry;
+  }
+}
+
+```
+
+Above class can fit any type of animal.
+
+`const goat = new Animal('stardust');`
+
+goat in console should output name, thirst meter, and hunger as in above constructor.
+```
+// console example
+
+> goat
+  
+  Animal {name: "stardust", thirst: 100, hungry: Array[0]}
+
+```
+
+with `goat.eat` you can add to stomach--
+`goat.eat('grass');`
+
+and `goat.drink()` will reduce thirst by 10
+
+Although, Animal works for most what if we wanted a dog-- dogs bark. We can *extend* Animal. Initial thought would be something as follows:
+
+```
+class Dog extends Animal {
+  constructor(name, breed) {
+    this.name = name;
+    this.breed = breed;
+  }
+}
+
+```
+
+`const enigma = new Dog('Enigma', 'Lab mix');`
+
+The above however will return an error, `this` is undefined.
+
+*why?* Dog is an extension of Animal, which means Animal would need to be created first before layering in additional behavior and such like we would be doing with Dog.
+
+*how?* by calling `super`
+
+```
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name);
+    this.breed = breed;
+  }
+
+  bark() {
+    console.log('bark bark bark');
+  }
+}
+
+```
+
+`super()` is like calling `Animal()`, essentially it calls whatever you're extending. Since Animal contains name, `this.name` in Dog is not needed, instead it is added as param in super, `super(name)`
+
+Now, when `console.log`-ing enigma, output should contain (inheriting) all of Animal and the breed added through Dog.
+
+Of course, able to add methods, such as `bark()` as in previous section of notes.
+
+Note: prob good idea to not go extend/super crazy, which would make sense, I can imagine it would not be reader-friendly with like 10 of those things. #realtalk
