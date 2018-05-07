@@ -13,7 +13,7 @@ function Dog(name, breed) {
 	this.breed = breed;
 }
 
-const scrappy = new Dog('Scrappy', 'mixed')
+const scrappy = new Dog('Scrappy', 'mix')
 
 ```
 
@@ -49,3 +49,99 @@ Note:
 	- you can add another method to prototype after creating instance 
 	- when you console.log an instance, ex: scrappy, opening it up in console you'll see name and breed, which are specific to the instance, but to see prototype methods-- those are located under proto which are inherited methods from parent, they are not part of the actual object of scrappy itself.
 
+### classes
+
+```
+// taken from prototype ex ^there
+
+function Dog(name, breed) {
+  this.name = name;
+  this.breed = breed;
+}
+
+Dog.prototype.bark = function() {
+  console.log(`Rrrrruufffff! I'm ${this.name}`);
+}
+
+Dog.prototype.nap = function() {
+  console.log('ZzZzZzz');
+}
+
+const scrappy = new Dog('Scrappy', 'mix')
+const enigma = new Dog('Enigma', 'Lab mix')
+```
+
+There are 2 ways to create classes, class declaration and class expression.
+
+class declaration:
+```
+class Dog {
+
+}
+
+```
+
+class expression:
+```
+const Dog = class {
+
+}
+
+```
+
+Inside the body of a class are methods. The only method required is a constructor. That is what happens when you create a new version.
+```
+class Dog {
+  constructor(name, breed) {
+    this.name = name;
+    this.breed = breed;
+  }
+
+  bark() {
+    console.log(`Rrrrruufffff! I'm ${this.name}`);
+  }
+
+  nap() {
+    console.log('ZzZzZzz');
+  }
+
+  get description() {
+    return `${this.name} is a ${this.breed}`
+  }
+
+  set nicknames(value) {
+    this.nn = value.trim();
+  }
+
+  get nicknames() {
+    return this.nn;
+  }
+}
+
+```
+
+Note: adding methods inside a class, don't put commas to seperate as with properties in objects.
+
+static method:
+
+`Array.of()`, `of()` only lives on Array itself/directly... meaning it is not inherited. So, if you would have an array of `toys = [legos, barbies, puzzles]` you would not be able to do something like `toys.of`
+
+In similiar fashion,
+adding `static info() { console.log('Dogs are known to be more dependent on humans than cats.') }` to Dog.
+
+To grab info, would be from Dog itself, not through an instance like scrappy or enigma. `Dog.info()` will return the static method.
+
+Note: you can use getters and setters like you would use on objects.
+
+getter: `scrappy.description()` in console should return `Scrappy is a mix` -- not a method, but property.
+
+setter: `nicknames(values)` cannot use same name for variable^, also need getter to recall nickname.
+
+```
+scrappy.nicknames = '   scraps ';
+// will console.log "   scraps "
+
+scrappy.nicknames
+// will console.log "scraps"
+
+```
