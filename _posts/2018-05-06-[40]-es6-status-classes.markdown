@@ -229,3 +229,133 @@ Now, when `console.log`-ing enigma, output should contain (inheriting) all of An
 Of course, able to add methods, such as `bark()` as in previous section of notes.
 
 Note: prob good idea to not go extend/super crazy, which would make sense, I can imagine it would not be reader-friendly with like 10 of those things. #realtalk
+
+### extending arrays w/ classes
+
+creating a custom collection:
+```
+// class to create new instance from, extends from Array
+// when something extends you first have to create what you are extending first, calling super within constructor
+  
+class MovieCollection extends Array {
+  // name of list, and the rest of the items- ex: name, stars
+  constructor(name, ...items) {
+    // in this case it is like calling new Array
+    // items as is will create an array within array
+    // using ...spread, will put each item in- spread into array
+    // items is an array, but we want super to have each item passed as argument
+    super(...items);
+    this.name = name;
+  }
+}
+const movies = new MovieCollection('MyList', 
+  { name: 'Hackers', stars: 5 }, 
+  { name: 'Saturday Night Fever', stars: 5 }, 
+  { name: 'Death Note, live action', stars: 2 }, 
+  { name: 'Aladdin', stars: 5 }, 
+  { name: 'Little Nicky', stars: 2 }
+);
+
+```
+
+adding methods:
+```
+class MovieCollection extends Array {
+ 
+  constructor(name, ...items) {
+    super(...items);
+    this.name = name;
+  }
+
+  add(movie) {
+    this.push(movie);
+  }
+
+
+}
+const movies = new MovieCollection('Random', 
+  { name: 'Hackers', stars: 5 }, 
+  { name: 'Saturday Night Fever', stars: 5 }, 
+  { name: 'Death Note, live action', stars: 2 }, 
+  { name: 'Aladdin', stars: 5 }, 
+  { name: 'Little Nicky', stars: 2 }
+);
+
+movies.add({ name: 'Jason X', stars: 1});
+
+```
+
+Note:
+   - using `for in` will loop over/output index 0-5 and name, which is property given
+
+```
+for(const movie in movies) {
+  console.log(movie);
+}
+
+// console output
+0 -> hackers
+1 -> saturday night fever
+2 -> death note, live action
+3 -> aladdin
+4 -> little nicky
+5 -> jason x
+name -> property name
+```
+
+Note:
+  - using `for of` iterates over iterable properties of an object, you dont get the property 'name' but objects themselves not just key
+  - you can add properties, but iterate over just objects using this type of for loop
+
+```
+for(const movie of movies) {
+  console.log(movie);
+}
+
+// console output
+Object { name: "Hackers", stars: 5 }
+Object { name: "Saturday Night Fever", stars: 5 }
+Object { name: "Death Note, live action", stars: 2 }
+Object { name: "Aladdin", stars: 5 }
+Object { name: "Little Nicky", stars: 2 }
+Object { name: "Jason X", stars: 1 }
+
+```
+
+adding another method, sort:
+```
+sortIt(limit=10) {
+  return this.sort((a,b) => (a.stars > b.stars ? -1 : 1)).slice(0,limit)
+}
+
+```
+
+will sort by star ratings w/ a default limit of 10 movies
+```
+movies.sortIt()
+
+// console output
+(6) […]
+​
+0: Object { name: "Aladdin", stars: 5 }
+​
+1: Object { name: "Saturday Night Fever", stars: 5 }
+​
+2: Object { name: "Hackers", stars: 5 }
+​
+3: Object { name: "Little Nicky", stars: 2 }
+​
+4: Object { name: "Death Note, live action", stars: 2 }
+​
+5: Object { name: "Jason X", stars: 1 }
+​
+length: 6
+​
+name: 6
+
+```
+
+can also specify number, like top 3. ex: `movies.sortIt(3)`
+
+Note: you can extend any of the native stuff built into JavaScript like above Array ex
+
