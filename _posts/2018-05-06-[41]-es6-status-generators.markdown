@@ -152,3 +152,24 @@ fetching....
 >Object { profile: "Rapper.\r\nBorn: August 19, 1970, Bronx, New York, USA.\r\n\r\nRaised in the South Bronx area of New York. Part of the [a=D.I.T.C.] Crew.\r\n", realname: "Joseph Antonio Cartagena", releases_url: "https://api.discogs.com/artists/51988/releases", name: "Fat Joe", uri: "https://www.discogs.com/artist/51988-Fat-Joe", urls: (2) […], images: (8) […], resource_url: "https://api.discogs.com/artists/51988", aliases: (2) […], id: 51988, … }
 
 ```
+
+### looping generators with 'for of'
+
+`for of` loop works on generators, no use of manual `next()` or recursive function
+
+```
+function* lyrics() {
+  yield `We are a part of the rhythm nation`;
+  yield `People of the world unite`;
+  yield `Strength in numbers we can get it right`;
+  yield `One time`;
+  yield `We are a part of the rhythm nation`;
+}
+
+const rhythmNation = lyrics();
+
+for(const line of rhythmNation) {
+  console.log(line);
+}
+
+```
