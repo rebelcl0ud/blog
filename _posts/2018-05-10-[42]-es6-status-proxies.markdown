@@ -125,3 +125,34 @@ however, input of `pupProxy` in console outputs `whut` tidy and trimmed as `set`
 
 Note: if you don't specify one of listed traps, [Proxy/handler](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler), object default will take over.
 
+### moaaar proxy usage
+
+```
+const phoneHandler = {
+    set(target, name, value) {
+      target[name] = value.match(/[0-9]/g).join('');
+    }
+  }
+
+  const phoneNumProxy = new Proxy({}, phoneHandler);
+
+```
+setting a phone number, no matter input, will remove spaces/dashes and whatnot
+ex: `phoneNumProxy.cel = '123-456-7890'` will return `'1234567890'` on `phoneNumProxy.cel` input.
+
+```
+const phoneHandler = {
+    set(target, name, value) {
+      target[name] = value.match(/[0-9]/g).join('');
+    }, 
+    get(target, name) {
+      return target[name].replace(/(\d{3})(\d{3})(\d{4})/, '($1)-$2-$3');
+    }
+  }
+
+  const phoneNumProxy = new Proxy({}, phoneHandler);
+
+```
+the get will then replace certain characters in such a manner that no matter input, the return of that will be uniform. ex: `"(123)-456-7890"` on `phoneNumProxy.cel`
+
+^ex of set/ get stepping in between proxy, not starting with existing object, but instead passing blank object using that to set values on
