@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ES6 Status - Proxies
-date: 2018-05-10
+date: 2018-05-12
 categories: javascript
 ---
 Proxies allow you to override default behavior for many of Object's default operations-- there are a multitude of methods that come as Object default.
