@@ -156,3 +156,34 @@ const phoneHandler = {
 the get will then replace certain characters in such a manner that no matter input, the return of that will be uniform. ex: `"(123)-456-7890"` on `phoneNumProxy.cel`
 
 ^ex of set/ get stepping in between proxy, not starting with existing object, but instead passing blank object using that to set values on
+
+### proxy usage to combat errors
+
+```
+const safeHandler = {
+  // trap the set, only one that matters in this case
+  set(target, name, value) {
+    
+    // make list of like keys
+    // find those that match initial letter case
+    const likeKey = Object.keys(target).find(k => k.toLowerCase() === name.toLowerCase())
+
+    if(!(name in target) && likeKey) {
+      throw new Error(`seems there already is a(n) ${name} property but with the case of ${likeKey}`)
+    }
+    target[name] = value;
+  }
+
+}
+
+const safety = new Proxy({ id: 100}, safeHandler);
+
+// testing with overriding trying to use different letter case than stated/intended initially, should throw error
+safety.ID = 200;
+
+```
+^results in `Error: seems there already is a(n) ID property but with the case of id` shown in console upon page refresh
+
+setting: `safety.name = 'jo'` and then trying to reset with `safety.NaMe = 'jo'` will result in similar error^, `Error: seems there already is a(n) NaMe property but with the case of name`
+
+however, doing it the other way around would result in opposite, showing something like `Error: seems there already is a(n) name property but with the case of NaMe` in which case I would assume there would nee to be something to check/prevent that because who the hell would want to look up something with some screwy letter casing, am I right?
