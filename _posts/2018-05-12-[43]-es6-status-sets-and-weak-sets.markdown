@@ -91,3 +91,32 @@ here's existing array, `const hamsters = ['ernie', 'ozzie', 'tommy'];` that can 
 hamsters input will show array while hamsterSet will show set.
 
 `.has()` can be used to check if set HAS a certain item which will return a true or false.
+
+### moaaarrrrr on sets
+
+```
+const signing = new Set();
+  // as people start coming in
+  signing.add('jo');
+  signing.add('bill');
+  signing.add('ted');
+  
+  // ready to open!
+    // so take values^ to use
+  const line = signing.values();
+  
+  // working with line, who's up?
+    // line.next() gives generator item, .value() gives actual item of set
+    // each .next() called removes from line
+  console.log(line.next().value); // first up
+  console.log(line.next().value); // second up
+  
+  // cont adding to set
+  signing.add('lara');
+  signing.add('jayna');
+  console.log(line.next().value); // next up
+  console.log(line.next().value); // next up
+  
+  // can still add to set after initial creation, as well as after creating line-- will still iterate through
+
+```
