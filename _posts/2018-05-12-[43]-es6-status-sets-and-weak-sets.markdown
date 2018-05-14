@@ -18,43 +18,43 @@ similar to array, but notable differences shown in dropdowns within console outp
 ```
 Set(3)
 ​
-	size: 3
-	​
-	<entries>
-	​​
-		0: "scrappy"
-		​​
-		1: "flavor"
-		​​
-		2: "bandit"
-	​
-	<prototype>: {…}
-	​​
-		add: function add()
-		​​
-		clear: function clear()
-		​​
-		constructor: function Set()
-		​​
-		delete: function delete()
-		​​
-		entries: function entries()
-		​​
-		forEach: function forEach()
-		​​
-		has: function has()
-		​​
-		keys: function values()
-		​​
-		size: Getter
-		​​
-		values: function values()
-		​​
-		Symbol(Symbol.iterator): function values()
-		​​
-		Symbol(Symbol.toStringTag): "Set"
-		​​
-		<prototype>: Object { … }
+    size: 3
+    ​
+    <entries>
+    ​​
+      0: "scrappy"
+      ​​
+      1: "flavor"
+      ​​
+      2: "bandit"
+      ​
+    <prototype>: {…}
+    ​​
+      add: function add()
+      ​​
+      clear: function clear()
+      ​​
+      constructor: function Set()
+      ​​
+      delete: function delete()
+      ​​
+      entries: function entries()
+      ​​
+      forEach: function forEach()
+      ​​
+      has: function has()
+      ​​
+      keys: function values()
+      ​​
+      size: Getter
+      ​​
+      values: function values()
+      ​​
+      Symbol(Symbol.iterator): function values()
+      ​​
+      Symbol(Symbol.toStringTag): "Set"
+      ​​
+      <prototype>: Object { … }
 
 ```
 to `delete` from set: `dogs.delete('bandit');`, input of dogs in console will return edited set.
@@ -73,7 +73,7 @@ whut.next(); // console.logs Object { values: "scrappy", done: false }
 
 ```
 for(const dog of dogs) {
-	console.log(dog);
+  console.log(dog);
 }
 
 ```
@@ -120,3 +120,41 @@ const signing = new Set();
   // can still add to set after initial creation, as well as after creating line-- will still iterate through
 
 ```
+
+### weak sets
+
+similar to a set with some limitations
+  - a `WeakSet` can only contain objects
+  - cannot loop over, no iterator
+  - no `.clear();`
+
+```
+let dog1 = { name: 'scrappy', age: 14 };
+let dog2 = { name: 'enigma', age: 12 };
+
+const weakStatus = new WeakSet([dog1, dog2]);
+
+
+
+```
+
+weak sets, in a sense, clean themselves up (i.e. garbage collection/ memory)
+in other words, if dog1 object was to be deleted it would in turn be (automatically garbage collected) taken out from weak set itself.
+```
+let dog1 = { name: 'scrappy', age: 14 };
+let dog2 = { name: 'enigma', age: 12 };
+
+const weakStatus = new WeakSet([dog1, dog2]);
+
+console.log(weakStatus);
+dog1 = null;
+console.log(weakStatus);
+
+```
+this example didn't work out as it did in the vid I was following o_O
+
+upon refresh it console.log-s set as if there was no null *referenced in vid as a memory leak (i.e., referencing something that cannot be referenced otherwise)*
+
+after a few sec input of weakStatus should return dog2 only, since deleted dog1 in JS weak set runs garbage collectoion checking to see which of its items no longer exists 
+
+however, no matter what browser or how many seconds waited it would still return same number of objects when I did it *womp womp womp*
