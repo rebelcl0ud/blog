@@ -188,3 +188,43 @@ addition of click event listener and registering number of clicks
 </html>
 
 ```
+
+### weakmap + garbage collection
+
+much like a weakset where it gets garbage collected
+
+weakmap has no size, not innumerable- cannot loop over it, items inside that no longer exist anywhere in your script will get garbage collected/ removed from weakmap
+
+normal map vs weakmap:
+```
+let pup1 = {name: 'scrapps'};
+let pup2 = {name: 'tuxx'};
+
+const reg = new Map();
+const weak = new WeakMap();
+
+// adding to reg map, using obj as keys
+reg.set(pup1, 'scrappy <3');
+weak.set(pup2, 'zen master tuxx');
+
+```
+^`weak.size` will return undefined while `reg.size` will return 1
+
+when deleting, the weakmap should update itself while the regular map still holds to the item eventhough it doesnt exist (memory leak)
+
+however, like with weakset example, this follow along didn't work for me in console. Even after a few seconds weakmap still showed object *womp womp womp* although, obviously it did work in the video I was watching 0.0
+```
+let pup1 = {name: 'scrapps'};
+let pup2 = {name: 'tuxx'};
+
+const reg = new Map();
+const weak = new WeakMap();
+
+// adding to reg map, using obj as keys
+reg.set(pup1, 'scrappy <3');
+weak.set(pup2, 'zen master tuxx');
+
+pup1 = null;
+pup2 = null;
+
+```
