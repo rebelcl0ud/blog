@@ -67,3 +67,124 @@ texx 6
 
 ```
 *So, why use map instead of object?* metadata
+
+### map metadata with DOM node keys
+
+a unique map property over regular object is ability to use an object as key in a map.
+
+with a regular object you can only use a string as key, while map can contain an object as key that can then have value as a string, number, or another object.
+
+example:
+recording number of times each button is pressed without putting the click count on the element itself (*why?* if element were to be removed count would go with it and also not very clean looking)
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maps!</title>
+  <style>
+    button {
+      font-size: 50px;
+      margin:10px;
+    }
+  </style>
+</head>
+<body>
+
+<button>do</button>
+<button>re</button>
+<button>me</button>
+<button>fa</button>
+<button>sol</button>
+<button>la</button>
+<button>ti</button>
+
+<script>
+  const clickCount = new Map();
+  const buttons = document.querySelectorAll('button');
+  
+
+  // loop buttons and add to map
+  buttons.forEach(button => {
+    clickCount.set(button, 0);  
+  })
+
+</script>
+</body>
+</html>
+
+```
+console output: at this point if you console clickCount, it will show button as key
+```
+Map(7)
+​
+  size: 7
+  ​
+  <entries>
+  ​​
+    0: <button> → 0
+    ​​
+    1: <button> → 0
+    ​​
+    2: <button> → 0
+    ​​
+    3: <button> → 0
+    ​​
+    4: <button> → 0
+    ​​
+    5: <button> → 0
+    ​​
+    6: <button> → 0
+
+```
+
+addition of click event listener and registering number of clicks
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maps!</title>
+  <style>
+    button {
+      font-size: 50px;
+      margin:10px;
+    }
+  </style>
+</head>
+<body>
+
+<button>do</button>
+<button>re</button>
+<button>me</button>
+<button>fa</button>
+<button>sol</button>
+<button>la</button>
+<button>ti</button>
+
+<script>
+  const clickCount = new Map();
+  const buttons = document.querySelectorAll('button');
+
+
+  // loop buttons and add to map
+  buttons.forEach(button => {
+    // add each button to map, button as key and default of 0
+    clickCount.set(button, 0);
+    button.addEventListener('click', function() {
+      // 'this' will pertain to button
+      const val = clickCount.get(this);
+      clickCount.set(this, val + 1);
+      // will output map showing number of clicks for each button
+      console.log(clickCount)
+    })  
+  })
+
+  // use case of map for storing metadata-- holds info about an object, but not necessarily on the object.
+
+</script>
+</body>
+</html>
+
+```
