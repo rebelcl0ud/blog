@@ -243,3 +243,170 @@ Note: as snazzy as this was it shouldn't be something used ALL the time because 
 ex: catching a form validation error would be handled differently than when encountering another type of error. 
 
 above snippet/example is good for use case where you want to handle all errors in similar fashion w/o multiple try/catch errors.
+
+### waiting on multiple promises
+
+```
+async function go() {
+  const p1 = fetch('https://api.github.com/users/wesbos');
+  const p2 = fetch('https://api.github.com/users/stolinski');
+}
+
+go();
+
+```
+we wont store the return results, but the promises (p1 + p2)
+
+```
+async function go() {
+  const p1 = fetch('https://api.github.com/users/wesbos');
+  const p2 = fetch('https://api.github.com/users/stolinski');
+  const res = await Promise.all([p1, p2]);
+  console.log(res);
+}
+
+go();
+
+```
+`Promise.all()` combines both promises into one, not resolving itself until both come back.
+
+Note: don't forget to add `await` in front of `Promise.all`, if no `await` console output will be `Promise { <state>: "pending" }`
+
+what will return is not the end user data, it will look something like this
+```
+0: Response { type: "cors", url: "https://api.github.com/users/wesbos", redirected: false, … }
+​
+1: Response { type: "cors", url: "https://api.github.com/users/stolinski", redirected: false, … }
+​
+length: 2
+
+```
+Note: using fetch requires a kind of 2-step process; first fetch data, then convert to JSON which returns another promise.
+```
+async function go() {
+  const p1 = fetch('https://api.github.com/users/wesbos').then(res => res.json());
+  const p2 = fetch('https://api.github.com/users/stolinski').then(res => res.json());
+  const res = await Promise.all([p1, p2]);
+  console.log(res);
+}
+
+go();
+
+```
+adding the `then()` to convert each response into json returns an array of data, such as:
+```
+0: Object { login: "wesbos", id: 176013, avatar_url: "https://avatars2.githubusercontent.com/u/176013?v=4", … }
+​
+1: Object { login: "stolinski", id: 669383, avatar_url: "https://avatars1.githubusercontent.com/u/669383?v=4", … }
+​
+length: 2
+
+```
+
+another way to convert to JSON, instead of attaching `then()` 2x...
+```
+async function go() {
+  const p1 = fetch('https://api.github.com/users/wesbos');
+  const p2 = fetch('https://api.github.com/users/stolinski');
+  const res = await Promise.all([p1, p2]);
+  const packagedPromises = res.map(r => r.json());
+  const packagedData = await Promise.all(packagedPromises);
+  console.log(packagedData);
+}
+
+go();
+
+```
+...is to package the promises (`packagePromises`) put into `res` variable by mapping over them and then do another `Promise.all()` that will store all json data into `packagedData` variable. Then, `packagedData` should output same array of data spit out in previous example when attaching `then()` to each fetch.
+
+to seperate data output, destructure!
+```
+async function go() {
+  const p1 = fetch('https://api.github.com/users/wesbos');
+  const p2 = fetch('https://api.github.com/users/stolinski');
+  const res = await Promise.all([p1, p2]);
+  const packagedPromises = res.map(r => r.json());
+  const [person1, person2] = await Promise.all(packagedPromises);
+  console.log(person1, person2);
+}
+
+go();
+
+```
+
+the difference:
+```
+(2) […]
+​
+0: Object { login: "wesbos", id: 176013, avatar_url: "https://avatars2.githubusercontent.com/u/176013?v=4", … }
+​
+1: Object { login: "stolinski", id: 669383, avatar_url: "https://avatars1.githubusercontent.com/u/669383?v=4", … }
+​
+length: 2
+​
+<prototype>: Array []
+
+```
+no destructure^ 
+
+vs.
+```
+Object { login: "wesbos", id: 176013, avatar_url: "https://avatars2.githubusercontent.com/u/176013?v=4", gravatar_id: "", url: "https://api.github.com/users/wesbos", html_url: "https://github.com/wesbos", followers_url: "https://api.github.com/users/wesbos/followers", following_url: "https://api.github.com/users/wesbos/following{/other_user}", gists_url: "https://api.github.com/users/wesbos/gists{/gist_id}", starred_url: "https://api.github.com/users/wesbos/starred{/owner}{/repo}", … }
+ 
+Object { login: "stolinski", id: 669383, avatar_url: "https://avatars1.githubusercontent.com/u/669383?v=4", gravatar_id: "", url: "https://api.github.com/users/stolinski", html_url: "https://github.com/stolinski", followers_url: "https://api.github.com/users/stolinski/followers", following_url: "https://api.github.com/users/stolinski/following{/other_user}", gists_url: "https://api.github.com/users/stolinski/gists{/gist_id}", starred_url: "https://api.github.com/users/stolinski/starred{/owner}{/repo}", … }
+```
+destructure^
+
+the destructure option comes in handy when doing ajax requests
+```
+async function snagDeets(names) {
+  const promises = names.map(name => fetch(`https://api.github.com/users/${name}`).then(res => res.json()));
+  const [deets1, deets2] = await Promise.all(promises);
+  console.log(deets1, deets2);
+
+}
+
+snagDeets(['wesbos', 'stolinski']);
+
+```
+console output gist:
+```
+Object { login: "wesbos", id: 176013, avatar_url: "https://avatars2.githubusercontent.com/u/176013?v=4", gravatar_id: "", url: "https://api.github.com/users/wesbos", html_url: "https://github.com/wesbos", followers_url: "https://api.github.com/users/wesbos/followers", following_url: "https://api.github.com/users/wesbos/following{/other_user}", gists_url: "https://api.github.com/users/wesbos/gists{/gist_id}", starred_url: "https://api.github.com/users/wesbos/starred{/owner}{/repo}", … }
+ 
+Object { login: "stolinski", id: 669383, avatar_url: "https://avatars1.githubusercontent.com/u/669383?v=4", gravatar_id: "", url: "https://api.github.com/users/stolinski", html_url: "https://github.com/stolinski", followers_url: "https://api.github.com/users/stolinski/followers", following_url: "https://api.github.com/users/stolinski/following{/other_user}", gists_url: "https://api.github.com/users/stolinski/gists{/gist_id}", starred_url: "https://api.github.com/users/stolinski/starred{/owner}{/repo}", … }
+
+```
+
+or leave it as array if number of args being passed may not be a set number
+```
+async function snagDeets(names) {
+  const promises = names.map(name => fetch(`https://api.github.com/users/${name}`).then(res => res.json()));
+  const deets = await Promise.all(promises);
+  console.log(deets);
+
+}
+
+snagDeets(['wesbos', 'stolinski', 'freecodecamp']);
+
+```
+
+console output gist:
+```
+[…]
+​
+  0: Object { login: "wesbos", id: 176013, avatar_url: "https://avatars2.githubusercontent.com/u/176013?v=4", … }
+  ​
+  1: Object { login: "stolinski", id: 669383, avatar_url: "https://avatars1.githubusercontent.com/u/669383?v=4", … }
+  ​
+  2: Object { login: "freeCodeCamp", id: 9892522, avatar_url: "https://avatars0.githubusercontent.com/u/9892522?v=4", … }
+  ​
+  length: 3
+  ​
+  <prototype>: Array []
+
+```
+looking in network tab shows 3 GET requests
+
+Note: a lot can be done with async/await/Promise.all in conjuction with map, reduce and all those snazzy methods
+
+Random note that may or may not be useful out in the world-- `Promise.race()`--  multi-requests, resolving upon return of fastest promise from array of promises that come back.
