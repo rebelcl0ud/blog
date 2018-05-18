@@ -410,3 +410,21 @@ looking in network tab shows 3 GET requests
 Note: a lot can be done with async/await/Promise.all in conjuction with map, reduce and all those snazzy methods
 
 Random note that may or may not be useful out in the world-- `Promise.race()`--  multi-requests, resolving upon return of fastest promise from array of promises that come back.
+
+### callback based function promises
+
+Reality: still alot of callback based JS, like native browser APIs/ existing libraries so using async/await/promises may not always be possible.
+
+Some libraries are changing where they both return promises/accept callback for older legacy code, but if in only callback land and want to use promises... in comes 'promisifying' functions. Note: Although there are libraries out in the world that will do this for you, DIY is pretty simple.
+
+ex: older API, uses callback based function
+```
+navigator.geolocation.getCurrentPosition(function(pos) {
+  console.log('it worked!');
+  console.log(pos);
+}, function(err) {
+  console.log('it failed');
+  console.log(err);
+});
+
+```
