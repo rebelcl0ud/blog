@@ -417,7 +417,7 @@ Reality: still alot of callback based JS, like native browser APIs/ existing lib
 
 Some libraries are changing where they both return promises/accept callback for older legacy code, but if in only callback land and want to use promises... in comes 'promisifying' functions. Note: Although there are libraries out in the world that will do this for you, DIY is pretty simple.
 
-ex: older API, uses callback based function
+ex: older type API, uses callback based function
 ```
 navigator.geolocation.getCurrentPosition(function(pos) {
   console.log('it worked!');
@@ -428,3 +428,47 @@ navigator.geolocation.getCurrentPosition(function(pos) {
 });
 
 ```
+
+ex: promisify
+```
+function getCurrentPosition() {
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  })
+}
+
+async function go() {
+  console.log('starting...');
+  const position = await getCurrentPosition();
+  console.log(position);
+  console.log('finished');
+}
+
+go();
+
+```
+console.log(s) of starting/finished shows await in action^
+
+taking arguments, ex: accuracy depending on battery life user has
+```
+function getCurrentPosition(...args) {
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(...args, resolve, reject);
+  })
+}
+
+async function go() {
+  console.log('starting...');
+
+  // now if await getCurrentPosition() was to get passed options object, spread/rest will take care of those
+  const position = await getCurrentPosition();
+  console.log(position);
+  console.log('finished');
+}
+
+go();
+
+```
+promisifying w/o library^
+
+to use library, check out: es6-promisify or if using node there's a built in utility on the util package that comes baked in w/ Node.
