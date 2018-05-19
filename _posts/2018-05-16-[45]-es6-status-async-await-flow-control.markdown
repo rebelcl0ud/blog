@@ -471,4 +471,4 @@ go();
 ```
 promisifying w/o library^
 
-to use library, check out: es6-promisify or if using node there's a built in utility on the util package that comes baked in w/ Node.
+to use library, check out [es6-promisify](https://github.com/digitaldesignlabs/es6-promisify) or if using node there's a built in utility on the util package that comes baked in w/ Node.
