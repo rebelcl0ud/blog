@@ -151,38 +151,38 @@ running `wrappedFn();` is not running `go`, instead we've wrapped `go` in `catch
 *what about if `go` took an argument?*
 ```
 function breath(amount) {
-    return new Promise((resolve, reject) => {
-      if (amount < 500) {
-        reject('too small of a value');
-      }
-      setTimeout(() => resolve(`${amount} ms done`), amount);
-    })
-   }
-
-   // fn is any function, such as something like -> .map(function(){ })
-   function catchErrors(fn) {
-    return function() {
-      return fn().catch((err) => { 
-        console.error(Error(`whoooa -> ${err}`))
-      });
+  return new Promise((resolve, reject) => {
+    if (amount < 500) {
+      reject('too small of a value');
     }
-   }
+    setTimeout(() => resolve(`${amount} ms done`), amount);
+  })
+}
 
-   async function go(name) {
-      console.log(`${name}, starting...`);
-      const res = await breath(1000);
-      console.log(res);
-      const res2 = await breath(5000);
-      console.log(res2);
-      const res3 = await breath(300);
-      console.log(res3);
-      console.log('end');
-   }
+// fn is any function, such as something like -> .map(function(){ })
+function catchErrors(fn) {
+  return function() {
+    return fn().catch((err) => { 
+      console.error(Error(`whoooa -> ${err}`))
+    });
+  }
+}
 
-   // go(); instead of this
-   const wrappedFn = catchErrors(go);
+async function go(name) {
+  console.log(`${name}, starting...`);
+  const res = await breath(1000);
+  console.log(res);
+  const res2 = await breath(5000);
+  console.log(res2);
+  const res3 = await breath(300);
+  console.log(res3);
+  console.log('end');
+}
 
-   wrappedFn('jo');
+// go(); instead of this
+const wrappedFn = catchErrors(go);
+
+wrappedFn('jo');
 
 ```
 as is^ will not work, name will be undefined. Although, putting `name` as argument in the returns functions in `catchErrors` would output correctly it is not an efficient/ flexible option. Instead, using `...rest` and `...spread` would keep it flexible as it would take whatever amount of arguments one would decide to use
