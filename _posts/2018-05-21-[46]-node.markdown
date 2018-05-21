@@ -1,0 +1,55 @@
+---
+layout: post
+title: node
+date: 2018-05-21
+categories: javascript, node
+---
+
+## updating npm
+`npm install npm@latest -g`
+[NPM](https://docs.npmjs.com/getting-started/installing-node)
+
+for mac, needed `sudo`
+
+- - - 
+
+## updating node 
+
+[STACKOVERFLOW](https://stackoverflow.com/questions/10075990/upgrading-node-js-to-latest-version#10076029)
+
+```  
+2017 Solution Without sudo!
+
+The Current/Stable "LTS" version of node is 8.9.4 (2018-01-24) see: nodejs.org for latest.
+Step 1 - Get NVM (Node Version Manger)
+
+`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash`
+
+    If you're curious about the installation command read the source code
+    ... its been reviewed by several security experts
+
+Step 2 - Install the version of node.js you need
+
+Once you've got NVM you can install a specific version of Node.js using the nvm command:
+
+nvm install v8.9.4
+
+```
+- - - 
+
+once in project folder `npm install` installs dependencies
+
+NOTE: to SWITCH between NODE VERSIONS `nvm use [insert version here]` or presently `nvm use v8.9.4`
+	I noticed every time i got back into my vagrant box node was back to w.e version it was b4 upgrading, then it would say version was already installed so I looked up how to switch versions. 
+	http://michael-kuehnel.de/node.js/2015/09/08/using-vm-to-switch-node-versions.html
+
+Trying to prevent node version reverting to an older version every time I run a new terminal:
+`nvm use default` after setting 8.9.4 as default => `$ nvm alias default 8.9.4`
+[restarting reverts version](https://stackoverflow.com/questions/36098765/why-restarting-reverts-the-version-of-node#36099044)
+
+### multiple node versions
+Run `nvm ls` to see list of versions 
+
+Run `nvm uninstall 5.0.0` to remove version, replacing the `5.0.0` I have with whatever version you want removed.
+
+This particluar [post](https://davidwalsh.name/nvm), a few years old, but covers most of what I've found prior/written about in previous sections. The reason I throw it in here is because it gave me my `nvm uninstall` I was looking for annnnd seems like a sweet blog to revisit :)
