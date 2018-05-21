@@ -5,13 +5,13 @@ date: 2018-05-21
 categories: javascript, node
 ---
 
+A post I've had floating about-- updating npm/node and all that jazz.
+
 ## updating npm
 `npm install npm@latest -g`
 [NPM](https://docs.npmjs.com/getting-started/installing-node)
 
 for mac, needed `sudo`
-
-- - - 
 
 ## updating node 
 
@@ -35,7 +35,6 @@ Once you've got NVM you can install a specific version of Node.js using the nvm 
 nvm install v8.9.4
 
 ```
-- - - 
 
 once in project folder `npm install` installs dependencies
 
