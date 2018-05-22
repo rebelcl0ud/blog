@@ -60,6 +60,10 @@ First time using this one was to remove a few deleted files.
 
 `$ git add -u` stages already tracked files, does not add new files
 
+# how do I get out of a `git log` situation?
+
+ready? press `Q` key. Yep.
+
 
 
 
