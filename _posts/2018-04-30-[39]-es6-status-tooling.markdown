@@ -5,10 +5,10 @@ date: 2018-04-30
 categories: javascript
 ---
 
-Resources: 
-	- [systemjs](https://github.com/systemjs/systemjs)
+Resources:
+- [systemjs](https://github.com/systemjs/systemjs)
 
-	- [browser-sync](https://www.browsersync.io/docs/)
+- [browser-sync](https://www.browsersync.io/docs/)
 
 webpack not only way to bundle up js/ es6 modules-- browserfy, rollup, systemjs
 
