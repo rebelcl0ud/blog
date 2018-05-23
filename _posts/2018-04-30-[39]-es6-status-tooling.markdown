@@ -6,8 +6,9 @@ categories: javascript
 ---
 
 Resources: 
-	[systemjs](https://github.com/systemjs/systemjs)
-	[browser-sync](https://www.browsersync.io/docs/)
+	- [systemjs](https://github.com/systemjs/systemjs)
+
+	- [browser-sync](https://www.browsersync.io/docs/)
 
 webpack not only way to bundle up js/ es6 modules-- browserfy, rollup, systemjs
 
