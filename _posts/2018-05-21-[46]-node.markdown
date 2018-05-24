@@ -39,8 +39,7 @@ nvm install v8.9.4
 once in project folder `npm install` installs dependencies
 
 NOTE: to SWITCH between NODE VERSIONS `nvm use [insert version here]` or presently `nvm use v8.9.4`
-	I noticed every time i got back into my vagrant box node was back to w.e version it was b4 upgrading, then it would say version was already installed so I looked up how to switch versions. 
-	http://michael-kuehnel.de/node.js/2015/09/08/using-vm-to-switch-node-versions.html
+	I noticed every time i got back into my vagrant box node was back to w.e version it was b4 upgrading, then it would say version was already installed so I looked up how to [switch versions](http://michael-kuehnel.de/node.js/2015/09/08/using-vm-to-switch-node-versions.html)
 
 Trying to prevent node version reverting to an older version every time I run a new terminal:
 `nvm use default` after setting 8.9.4 as default => `$ nvm alias default 8.9.4`
