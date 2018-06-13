@@ -188,7 +188,7 @@ getPostById(3)
 ```
 ^stepped, waited for post to arrive before finding the author because we needed the author of the post first before being able to populate the author-- one thing needed to happen before the next thing.
 
-*So, how about firing all at once when not dependent of each other?*
+*So, how about firing all at once?*
 
 ### multi-promises
 
