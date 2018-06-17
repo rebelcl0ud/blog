@@ -4,6 +4,7 @@ title: What is...
 date: 2018-06-15
 categories: general
 ---
+Note: While starting to get familar with JavaScript, fiddling with APIs were one of my first set of projects and I believe it was either the first or second where I hit some sort of snag that led me to this thing called CORS. From then on it was something I could vaguely recall, but not word very well so I made myself this little post.
 
 What is CORS?
 
@@ -24,8 +25,5 @@ Other requests that use CORS?
   - Images/Video frames using [drawImage](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage)
   - Stylesheets
   - Scripts
-
-Note:
-	While starting to get familar with JavaScript, fiddling with APIs were one of my first set of projects and I believe it was either the first or second where I hit some sort of snag that led me to this thing called CORS. From then on it was something I could vaguely recall, but not word very well so I made myself this little post.
 
 References: [MDN Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
