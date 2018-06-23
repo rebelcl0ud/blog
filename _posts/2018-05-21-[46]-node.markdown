@@ -1,6 +1,6 @@
 ---
 layout: post
-title: node
+title: Node
 date: 2018-05-21
 categories: javascript, node
 ---
