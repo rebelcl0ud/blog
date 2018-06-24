@@ -312,13 +312,13 @@ pre {
 }
 
 .post-list-section {
-  width:50%;
+  width:100%;
 }
 
 /* section I need to scroll*/
-.post-articles-section {
+/*.post-articles-section {
   flex: 1;
-}
+}*/
 
 .post-meta {
   font-size: 14px;
@@ -327,6 +327,9 @@ pre {
 .post-link {
   display: block;
   font-size: 20px; }
+
+#post-link-title {
+  text-decoration: underline; }
 
 /**
  * Posts

@@ -8,34 +8,18 @@ layout: default
   
   {{ content }}
 
-<div class="post-list-section">
-  <ul class="post-list">
+  <div class="post-list-section">
     {% for post in site.posts %}
-      <li>
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-      </li>
+      {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+      <span class="post-meta">{{ post.date | date: date_format }}</span>
+      <h3><a class="post-link" id="post-link-title" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+      
+      <p>
+        {{ post.excerpt }}
+        <a class="post-link" href="{{ post.url | relative_url }}"><small>[more...]</small></a>
+      </p>
     {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-</div>
-
-<div class="post-articles-section">
-    {% for post in site.posts %}
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>{{ post.title | escape }}</h3>
-        
-        <p>
-          {{ post.excerpt }}
-          <a class="post-link" href="{{ post.url | relative_url }}"><small>[more...]</small></a>
-        </p>
-    {% endfor %}
-</div>  
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> 
+  </div>
     
 </div>
