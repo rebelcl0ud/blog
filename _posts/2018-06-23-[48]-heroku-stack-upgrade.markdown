@@ -5,7 +5,7 @@ date:   2018-06-23
 categories: heroku
 ---
 
-Was sent an email to upgrade my Heroku stack to Heroku-16 from Cedars-14(deprecated). In [Heroku Article - Upgrading to Latest Stack](https://devcenter.heroku.com/articles/upgrading-to-the-latest-stack) there are different sections from testing app on new stack to straight upgrade with even a section to rollback just in case it all blows up in your face.
+Was sent an email to upgrade my Heroku stack to Heroku-16 from Cedars-14(deprecated), `heroku apps:info` shows you what stack you're on. In [Heroku Article - Upgrading to Latest Stack](https://devcenter.heroku.com/articles/upgrading-to-the-latest-stack) there are different sections from testing app on new stack to straight upgrade with even a section to rollback just in case it all blows up in your face.
 
 I went ahead and upgraded.
 
