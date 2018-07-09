@@ -16,7 +16,7 @@ layout: default
       
       <p>
         {{ post.excerpt }}
-        <a class="post-link" href="{{ post.url | relative_url }}"><small>[more...]</small></a>
+        <a class="post-link" href="{{ post.url | relative_url }}"><small>[full post... {{ post.title | escape }}]</small></a>
       </p>
     {% endfor %}
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> 
