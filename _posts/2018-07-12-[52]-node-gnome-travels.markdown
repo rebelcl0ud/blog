@@ -435,14 +435,13 @@ Note: make sure when snagging snippet from Postman you choose JSON from dropdown
 
 Now, when you put in an email and submit the form, that email goes straight to be added into mailchimp list.
 
-Stuff left to do:
-frontend
-clear input
-webpack config message showing up in terminal
-
 - - - 
 ## adding an .env file
 
 This totes should have been done sooner, but I was on a roll so I left off with not really commiting/pushing anything after the first few up to Github. So, I'm back to set up an `.env` file, see: [dotenv](https://www.npmjs.com/package/dotenv)
 
 *you don't want to send off things like api keys into the interwebzzz*
+
+## clearing my input box after form submit
+
+throwing in `$('#email').val('')` within AJAX success callback did the trick.
