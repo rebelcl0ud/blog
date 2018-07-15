@@ -215,7 +215,7 @@ module.exports = {
 ```
 see: [webpack-simple config](https://webpack.js.org/concepts/configuration/#simple-configuration)
 
-When I relaunched `npm start build`, the files ended up where I initially wanted them. *w00t!* and I got my 'it works' from `index.js` *whew* NOW... I'm ready to go on and add some AJAX.
+When I relaunched `npm run build`, the files ended up where I initially wanted them. *w00t!* and I got my 'it works' from `index.js` *whew* NOW... I'm ready to go on and add some AJAX.
 
 ### ajax
 Since I'll be using AJAX, I'll be incorporating jQuery. I hear you that although you can use AJAX with vanilla JS it tends to a pain in the @$$ so I'll stick to jQuery as I've done in the past.
@@ -438,7 +438,11 @@ Now, when you put in an email and submit the form, that email goes straight to b
 Stuff left to do:
 frontend
 clear input
-double check what to push/not push (see: .gitignore)
 webpack config message showing up in terminal
 
+- - - 
+## adding an .env file
 
+This totes should have been done sooner, but I was on a roll so I left off with not really commiting/pushing anything after the first few up to Github. So, I'm back to set up an `.env` file, see: [dotenv](https://www.npmjs.com/package/dotenv)
+
+*you don't want to send off things like api keys into the interwebzzz*
