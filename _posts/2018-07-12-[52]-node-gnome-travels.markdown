@@ -445,3 +445,11 @@ This totes should have been done sooner, but I was on a roll so I left off with 
 ## clearing my input box after form submit
 
 throwing in `$('#email').val('')` within AJAX success callback did the trick.
+
+## add some css 
+
+created a folder inside the public folder for my css and then created a file within that css folder.
+
+adding `<link rel="stylesheet" type="text/css" href="css/style.css" />` to the `head` of `index.html` to hook up css.
+
+[for fonts](https://fonts.google.com/)
