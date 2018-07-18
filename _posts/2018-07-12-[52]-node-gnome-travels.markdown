@@ -453,3 +453,49 @@ created a folder inside the public folder for my css and then created a file wit
 adding `<link rel="stylesheet" type="text/css" href="css/style.css" />` to the `head` of `index.html` to hook up css.
 
 [for fonts](https://fonts.google.com/)
+
+## some things I thought would be good to add
+
+done:
+- added a `required` for email input, a red outline shows up-- if styling/ want it removed-- `input:required { box-shadow: none; }` removes it.
+
+- combined nodemon & webpack into one terminal window, *having them seperate got annoying quick*
+
+I came across a video where nodemon and webpack were ran from one terminal window so I went looking for what would help me do that. Hello, [concurrenly](https://github.com/kimmobrunfeldt/concurrently).
+
+`npm install concurrenly --save-dev` to be added to my dev dependencies.
+
+From there I updated `package.json` to:
+```
+"scripts": {
+  "watch":"nodemon -L ./index.js --ignore public/",
+  "assets": "webpack",
+  "start": "concurrently 'npm run watch' 'npm run assets' --names '💻,📦' --prefix name"
+},
+
+```
+
+- Heroku
+`heroku create APPNAME` & `git push heroku master` have worked previously, however I'm not sure if I've pushed a node app with a backend so...
+
+*let's fix this shiii*
+
+`heroku logs --tail`
+
+my theory was I needed to state what file to use to get things running, maybe the way I had my "start" in my package.json was tripping things up... I added a Procfile with `web:node main.js`
+
+but then... looking again through the logs...
+
+	- `ERROR in Entry module not found: Error: Can't resolve './src/index.js' in '/app'` -- had a typo on my "watch" in my package.json, incorrect path.
+
+and then...
+
+	- `Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 60 seconds of launch` -- updated app.listen() from having specific port number only to having a env var as well, app heroku assigns dynamically and not having an env variable may be causing the port trip up. 
+
+See: https://devcenter.heroku.com/articles/deploying-nodejs#specifying-a-start-script
+
+pushed up to git/heroku annnnnd... it shows up *w00t* Note: don't forget your config vars in Heroku.
+
+## eslint
+
+`eslint --init` creates config file, see: [ESLint docs](https://eslint.org/) for configuring.
