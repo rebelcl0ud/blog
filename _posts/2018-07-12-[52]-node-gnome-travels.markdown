@@ -499,3 +499,13 @@ pushed up to git/heroku annnnnd... it shows up *w00t* Note: don't forget your co
 ## eslint
 
 `eslint --init` creates config file, see: [ESLint docs](https://eslint.org/) for configuring.
+
+
+## alerts
+
+Already have the input box clearing itself upon successful AJAX call, but I wanted to add a bootstrap type alert without actually having to put in bootstrap.
+
+I created a success-alert and error-alert message and set it up so it would show depending on the success/error of the AJAX call in my `index.js` file using jQuery's `.show().fadeOut()`. Of course, adding the styling of the messages in CSS file.
+
+SN: Came across HTML validation attr so I went ahead and put one in there for email input.
+
