@@ -108,3 +108,33 @@ class Todo extends React.component {
 
 // output: walk dog, gym
 ```
+
+## fallback prop, default
+
+You can leave it blank or put a default.
+
+ex:
+```
+MyComponent.defaultProps = {
+	location: 'Springfield'
+}
+
+```
+defaultProps can be overridden by explicit reassignment.
+
+## propTypes
+
+propTypes define props expected.
+
+ex:
+```
+Items.propTypes = {
+	quantity: PropTypes.number.isRequired
+}
+
+```
+This checks quantity is a number and requires it.
+
+Note: PropTypes needs to be imported (React v15.5.0+), ex: throw `import PropTypes from 'prop-types'` at the top of your script.
+
+Keep in mind React has a few differences like with `className`, types like function and boolean are written `func` and `bool`.
