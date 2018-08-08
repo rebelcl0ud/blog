@@ -138,3 +138,45 @@ This checks quantity is a number and requires it.
 Note: PropTypes needs to be imported (React v15.5.0+), ex: throw `import PropTypes from 'prop-types'` at the top of your script.
 
 Keep in mind React has a few differences like with `className`, types like function and boolean are written `func` and `bool`.
+
+## passing props to es6 class component rather than stateless functional component
+
+parent still gets prop as before, but when retrieving add `this`
+
+parent: `<ReturnTempPW tempPw={'pw'} />`
+child: `{this.props.tempPw}`
+
+## some terminology
+
+stateless functional component: any function which accepts props and returns JSX
+
+stateless component: class that extends React.Component, but doesn't use internal state.
+
+stateful component: component that maintains own internal state (also referred to as components/react components)
+
+*what is state?*
+state is data your app needs to know about
+
+## stateful components
+
+```
+class StatefulComponent extends React.Component {
+	constructor(props) {
+		super(props);
+
+		// initializes state
+		this.state = {
+			name: 'jo'
+		}
+	}
+
+	render() {
+		return(
+			<div>
+				<h1>{this.state.name}</h1>
+			</div>
+		);
+	}
+}
+
+```
