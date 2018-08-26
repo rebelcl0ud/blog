@@ -71,3 +71,9 @@ ready? press `Q` key. Yep.
 link below gives more detail and talks of modifying commit message when already pushed.
 
 [more info](https://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits#179147)
+
+# so what about `git stash`?
+
+check out the *stash* using `git stash list`
+
+for the latest stash, `git stash apply` and for a non-recent stash... it will look something like `git stash apply stash@{2}` the number will depend on what is displayed when you check out the list and which one of those you want to apply. Note: using no number, it will be assumed it is the latest stash you're looking to apply.
