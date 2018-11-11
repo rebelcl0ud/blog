@@ -1,0 +1,93 @@
+---
+layout: post
+title: OOP 
+date: 2018-11-11
+categories: javascript
+---
+
+Some things I've come across while on my JS Algorithms and Data Structures kick on FCC:
+
+Although I've come across the following, some I haven't put into much use so let the jot down commence...
+
+# Data Structure and OOP thingsss:
+
+## Let's talk *bracket notation*
+Passing a string within the brackets, `WhateverHere['followers']` vs. `WhateverHere[followers]`. 
+
+The former allows variable to be passed and evaluated as a property name. Man, I forget quotations on properties more than I'd like to admit.
+
+## Iterate through keys of an object using for...in:
+```
+let users = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function countOnline(obj) {
+  let count = 0;
+  for(let user in users) {
+    console.log(users[user].online);
+    if(users[user].online == true) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(countOnline(users));
+```
+
+## Generate array of object keys using `Object.keys`:
+```
+let users = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function getArrayOfUsers(obj) {
+  return Object.keys;
+}
+
+console.log(getArrayOfUsers(users));
+```
+
+## On that OOP tip, objects jazz
+
+The following created a basic Dog object, where 'lab' creates a new instance of Dog.
+```
+function Dog(name, color) {
+  this.name = name,
+  this.color = color,
+  this.numLegs = 4 
+}
+
+let lab = new Dog('rodi', 'brown);
+```
