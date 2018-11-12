@@ -373,6 +373,11 @@ let glideMixin = function(obj) {
 glideMixin(bird);
 glideMixin(boat);
 ```
+The advantage of the `module` pattern, behaviors can be packaged into single object able to be reused by other parts of code.
+```
+motionModule.glideMixin(duck);
+duck.glide();
+```
 
 ### using closure to protect props within obj from being modified externally
 ```
@@ -386,4 +391,45 @@ function Bird() {
  }
 ```
 
+### IIFE (Immediately Invoked Function Expression
+function has no name, anonymous, not stored in a variable-- the parenthesis at the end causes it to be executed right away
+```
+(function() {
+  console.log('I get executed right away!');
+})();
+```
 
+### grouping mixins into module using IIFE
+advantage: all behaviors packaged into single obj
+
+from this:
+```
+let isCuteMixin = function(obj) {
+  obj.isCute = function() {
+    return true;
+  }
+}
+
+let singMixin = function(obj) {
+  obj.sing = function() {
+    console.log('singin my own tune')
+  }
+}
+```
+to this:
+```
+let funModule = (function() {
+  return {
+    isCuteMixin: function(obj) {
+      obj.isCute = function() {
+        return true;
+      }
+    },
+    singMixin: function(obj) {
+      obj.sing = function() {
+        console.log('singin my own tune')
+      }
+    }
+  }
+})();
+```
