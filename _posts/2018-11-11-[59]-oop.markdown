@@ -324,3 +324,66 @@ beagle.bark(); // should print 'woof!'
 ```
 above adds behavior that is unique to Dog obj
 
+### that prototype chain
+When you have an instance `let greyhound = new Dog();` and call `greyhound.eat()`, JavaScript looks for the method on `greyhound prototype`chain.
+
+1. greyhound => is eat() defined here? No.
+2. Dog => is eat() defined here? Yes. Carry out and stop looking.
+3. Animal => eat() is also defined, but JS stopped the search before reaching this level.
+4. Object => JavaScript stopped searching before getting to this level.
+
+Something like:
+```
+function Bird() {}
+
+Bird.prototype.fly = function() { return 'flyyyyyying'; };
+
+function Penguin() {}
+// inherits all methods from Bird
+Penguin.prototype = Object.create(Bird.prototype);
+Penguin.prototype.constructor = Penguin;
+
+// Penguin.fly() overrides Bird.fly()
+Penguin.prototype.fly = function() { return 'Alas, I am flightess.'; };
+
+let penguin = new Penguin();
+console.log(penguin.fly());
+```
+
+### when inheritance won't do; unrelated objects; mixins
+
+A bird and boat can both glide, yet are not both animals...
+```
+let bird = {
+  name: 'Daffy',
+  numLegs: 2
+}
+
+let boat = {
+  name: 'Pegasus',
+  type: 'cruiser'
+}
+
+let glideMixin = function(obj) {
+  obj.glide = function() {
+    return 'glidin'
+  }
+}
+
+glideMixin(bird);
+glideMixin(boat);
+```
+
+### using closure to protect props within obj from being modified externally
+```
+function Bird() {
+  let weight = 15; // private prop
+
+  // publicaly accessible method that any bird obj can use
+  this.getWeight = function() {
+    return weight;
+  }
+ }
+```
+
+
