@@ -7,7 +7,7 @@ categories: javascript
 
 Some things I've come across while on my JS Algorithms and Data Structures kick on FCC:
 
-Although I've come across the following, some I haven't put into much use so let the jot down commence...
+Although I've come across the following before I haven't put some into much use sooo let the jot down commence!
 
 # Data Structure and OOP thingsss:
 
@@ -391,7 +391,7 @@ function Bird() {
  }
 ```
 
-### IIFE (Immediately Invoked Function Expression
+### IIFE (Immediately Invoked Function Expression)
 function has no name, anonymous, not stored in a variable-- the parenthesis at the end causes it to be executed right away
 ```
 (function() {
