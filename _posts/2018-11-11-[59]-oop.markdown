@@ -79,7 +79,7 @@ function getArrayOfUsers(obj) {
 console.log(getArrayOfUsers(users));
 ```
 
-## On that OOP tip, objects jazz
+## On that OOP tip, objects jazz:
 
 The following created a basic Dog object, where 'lab' creates a new instance of Dog.
 ```
@@ -90,4 +90,94 @@ function Dog(name, color) {
 }
 
 let lab = new Dog('rodi', 'brown);
+```
+
+Preventing duplicates in instances:
+```
+function Dog(name) {
+  this.name = name;
+}
+
+// prevents numerous var duplicates in instances created, below prototype is obj shared among all instances
+Dog.prototype.numLegs = 4;
+
+let beagle = new Dog('Snoopy');
+
+console.log(beagle.numLegs);
+```
+
+`own` prop vs. `prototype` prop:
+```
+function Dog(name) {
+  this.name = name; // own prop
+}
+
+Dog.prototype.numLegs = 4; // prototype prop
+
+let beagle = new Dog('Snoopy');
+
+let ownProps = [];
+let prototypeProps = [];
+
+for(let prop in beagle) {
+  if(beagle.hasOwnProperty(prop)) {
+    ownProps.push(prop);
+  }
+  else {
+    prototypeProps.push(prop);
+  }
+}
+```
+
+efficiency; add props:
+```
+function Dog(name) {
+  this.name = name;
+}
+
+// add props to prototype at once instead of individually
+Dog.prototype = {
+  numLegs: 2,
+  eat: function() {
+    console.log('Nom');
+  },
+  describe: function() {
+    console.log(`Bark! My name is ${this.name}`)
+  }
+}
+```
+
+side-effect on manually setting up prototype on new obj:
+^ it erases constructor
+```
+function Dog(name) {
+  this.name(name);
+}
+
+Dog.prototype = {
+  constructor: Dog, // the fix: define constructor prop
+  numLegs: 2,
+  eat: function() {
+    console.log('nom nom nom');
+  },
+  describe: function() {
+    console.log(`My name is ${this.name}`);
+  }
+}
+
+let beagle = new Dog();
+
+console.log(beagle.constructor);
+```
+
+where obj prototype comes from:
+```
+function Dog(name) {
+  this.name = name;
+}
+
+let beagle = new Dog('Snoopy);
+
+// obj inherits its prototype from constructor function that created it
+Dog.prototype.isPrototypeOf(beagle); // returns true
 ```
