@@ -181,3 +181,50 @@ let beagle = new Dog('Snoopy);
 // obj inherits its prototype from constructor function that created it
 Dog.prototype.isPrototypeOf(beagle); // returns true
 ```
+
+supertypes:
+dog is supertype of beagle (subtype)
+Object is supertype of Dog AND beagle
+
+`.hasOwnProperty` is defined in Object.prototype, able to be accessed across 'prototype chain'
+
+Object is supertype for all objects in JS, any object can use `.hasOwnProperty` method
+```
+function Dog(name) {
+  this.name = name;
+}
+
+let beagle = new Dog('Snoopy');
+
+Dog.prototype.isPrototypeOf(beagle); // => true
+Object.prototype.isPrototypeOf(Dog.prototype); // => true
+```
+
+keeping things DRY:
+the eat method was moved to Animal supertype instead of being repeated twice in Cat and Bear
+```
+function Cat(name) {
+  this.name = name;
+}
+
+Cat.prototype = {
+  constructor: Cat,
+}
+
+function Bear(name) {
+  this.name = name;
+}
+
+Bear.prototype = {
+  constructor: Bear,
+}
+
+function Animal() {}
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log('nom nom nom');
+  }
+}
+```
