@@ -60,11 +60,11 @@ First time using this one was to remove a few deleted files.
 
 `$ git add -u` stages already tracked files, does not add new files
 
-# how do I get out of a `git log` situation?
+# How do I get out of a `git log` situation?
 
 ready? press `Q` key. Yep.
 
-# amend most recent commit message, not pushed
+# Amend most recent commit message, not pushed
 
 `$ git commit --amend` that will open editor or `git commit --amend -m "new commit message here"` straight from terminal.
 
@@ -72,13 +72,13 @@ link below gives more detail and talks of modifying commit message when already 
 
 [more info](https://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits#179147)
 
-# so what about `git stash`?
+# So what about `git stash`?
 
 check out the *stash* using `git stash list`
 
 for the latest stash, `git stash apply` and for a non-recent stash... it will look something like `git stash apply stash@{2}` the number will depend on what is displayed when you check out the list and which one of those you want to apply. Note: using no number, it will be assumed it is the latest stash you're looking to apply.
 
-# that time you made some commits and realized you forgot to make an alternate branch so you don't efF your master... /facepalm
+# That time you made some commits and realized you forgot to make an alternate branch so you don't efF your master... */facepalm*
 
 create a new branch, `$ git branch branch-name-here`, from where you've made all the commits, in my case it was master
 
