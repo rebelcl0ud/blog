@@ -77,3 +77,14 @@ link below gives more detail and talks of modifying commit message when already 
 check out the *stash* using `git stash list`
 
 for the latest stash, `git stash apply` and for a non-recent stash... it will look something like `git stash apply stash@{2}` the number will depend on what is displayed when you check out the list and which one of those you want to apply. Note: using no number, it will be assumed it is the latest stash you're looking to apply.
+
+# that time you made some commits and realized you forgot to make an alternate branch so you don't efF your master... /facepalm
+
+create a new branch, `$ git branch branch-name-here`, from where you've made all the commits, in my case it was master
+
+make sure you're on whatever branch you made the mistake commits too... make sure... are you sure? Ok.
+
+`$ git reset --hard 8abc8ab` the characters after `--hard` will be the commit you'd like to revert to.
+
+This will revert the branch you accidentally commited to back to the point(commit) before the screw up :D
+Note: you can use first 7 characters of the commit, they can be forever long
