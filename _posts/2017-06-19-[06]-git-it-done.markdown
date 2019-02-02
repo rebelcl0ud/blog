@@ -88,3 +88,6 @@ make sure you're on whatever branch you made the mistake commits too... make sur
 
 This will revert the branch you accidentally commited to back to the point(commit) before the screw up :D
 Note: you can use first 7 characters of the commit, they can be forever long
+
+# When you update a readme or something similar through github, but forget to do a git pull and update your local repo and then you go do stuff and go to push, but...
+`git pull --rebase` adds your new commit on top, at this point you should see some stuff in your terminal saying to re-push your awesome :D; your github should show commits in the order expected
