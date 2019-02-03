@@ -34,3 +34,5 @@ go to 'cPanel > Zone Editor' and click on 'manage', you should see a gear type i
 
 ## Last thoughts
 Things like Heroku, Surge, and Netlify are fantastic, but knowing how to use an FTP client like FileZilla with a hosting service can be pretty amazeballs too. #justsaying
+
+[React Docs - Deployment](https://facebook.github.io/create-react-app/docs/deployment)
