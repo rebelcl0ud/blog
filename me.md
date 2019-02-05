@@ -10,10 +10,6 @@ So, now I write as I work on a seperate window in Sublime- those files, although
 
 My intention: migrate those Sublime files into blog posts not only for easier access and better readability, but perhaps to better solidify what I may have learned in the process.
 
-I write for me, but if someone [you] stumbled upon this and were helped and/or entertained => :)
+I write for me, but if someone stumbles upon this and gets helped and/or entertained *smiles* I'd find that pretty rad.
 
 -JO
-
-
-
-
