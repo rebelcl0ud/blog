@@ -4,8 +4,10 @@ title: starter
 date: 2019-01-31
 categories: [gulp, webpack, babel, javascript]
 ---
-# starter
+
 wanted to put together my own type of starter files; gulp, scss -> css, css minified, webpack, babel... new to this so I wanted to try and document my flight down the rabbit hole :D
+
+# starter
 
 ## basics
 - make your folder and `cd` into it.
