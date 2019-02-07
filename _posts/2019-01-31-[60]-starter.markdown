@@ -7,9 +7,7 @@ categories: [gulp, webpack, babel, javascript]
 
 wanted to put together my own type of starter files; gulp, scss -> css, css minified, webpack, babel... new to this so I wanted to try and document my flight down the rabbit hole :D
 
-# starter
-
-## basics
+# starter basics
 - make your folder and `cd` into it.
 - `npm init -y` sets up your `package.json` without having to answer 21 Qs about the file. SN: you can always edit it later. *don't be scared*
 - `mkdir` two folders: `src` and `public`
