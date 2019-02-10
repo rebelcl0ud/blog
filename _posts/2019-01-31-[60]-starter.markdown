@@ -5,17 +5,16 @@ date: 2019-01-31
 categories: [gulp, webpack, babel, javascript]
 ---
 
-wanted to put together my own type of starter files; gulp, scss -> css, css minified, webpack, babel... new to this so I wanted to try and document my flight down the rabbit hole :D
+Wanted to put together my own type of starter files; gulp, scss -> css, css minified, webpack, babel... new to this so I wanted to try and document my flight down the rabbit hole :D
 
 # starter basics
 - make your folder and `cd` into it.
-- `npm init -y` sets up your `package.json` without having to answer 21 Qs about the file. SN: you can always edit it later. *don't be scared*
+- `npm init -y` sets up your `package.json` without having to answer 21 Qs about the file. SN: you can always edit it later, *don't be scared*
 - `mkdir` two folders: `src` and `public`
 	Note: `public` or `dist` seem to be what others tend to name it, I think I myself have used both in other projects. Pretty much, it's the folder that will hold files (from `src` folder) after being compiled/transpiled.
 
 ## npm or yarn
-use either-- word on the street is yarn is faster.
-[yarn docs](https://yarnpkg.com/en/)
+Use either-- word on the street is yarn is faster-- [yarn docs](https://yarnpkg.com/en/)
 
 ## gulp
 [Gulp docs](https://gulpjs.com/)
@@ -24,10 +23,10 @@ Gulp is on 4, I believe, but you can install another version by `npm install gul
 
 `gulp --version` shows both cli version and local, make sure they both match or restart the process.
 
-make sure to create `gulpfile.js`, which is final step on Gulp front page.
+Make sure to create `gulpfile.js`, which is final step on Gulp front page.
 
 ### gulp file example
-creating tasks and setting up a default declaring tasks to be run in order. Note: Gulp 4 seems to use series and parallel to declare order or what should be ran simultaneously.
+Creating tasks and setting up a default declaring tasks to be run in order. Note: Gulp 4 seems to use series and parallel to declare order or what should be ran simultaneously.
 
 ```
 const gulp = require('gulp');
@@ -45,7 +44,7 @@ gulp.task('default',['printName', 'printAge'])
 ```
 
 ## packages
-whatever you are looking to add you can run a search, example: sass
+Whatever you are looking to add you can run a search, example: sass
 
 ### gulp-sass
 [gulp-sass](https://www.npmjs.com/package/gulp-sass)
@@ -60,9 +59,9 @@ gulp.task('sass', function () {
 
 ```
 
-running `gulp sass` returns your scss/sass as css-- later the setup will have everything bundled nicely so essentially you'd be running `gulp` prompting all tasks to run.
+Running `gulp sass` returns your scss/sass as css-- later the setup will have everything bundled nicely so essentially you'd be running `gulp` prompting all tasks to run.
 
-folder structure atm:
+Folder structure atm:
 public[folder] > css[folder] > scss/sass converted to css output
 
 src[folder] > scss[folder] > your code before it gets transpiled, files you work on
@@ -70,7 +69,7 @@ src[folder] > scss[folder] > your code before it gets transpiled, files you work
 ### gulp-autoprefixer | vendor prefixes
 [gulp-autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer)
 
-this is a good one to have so you're not worrying about doing things like `-webkit-`, `-moz-`, ` -o-`:
+This is a good one to have so you're not worrying about doing things like `-webkit-`, `-moz-`, ` -o-`:
 
 given this:
 ```
@@ -111,8 +110,7 @@ default task; sass-- watching all folders`**` and files `*` within the `scss` fo
 
 [using with gulp](https://www.browsersync.io/docs/gulp)
 
-[browserSync.reload](https://www.browsersync.io/docs/gulp#gulp-manual-reload)
-[browserSync.stream](https://www.browsersync.io/docs/gulp#gulp-sass-css)
+[browserSync.reload](https://www.browsersync.io/docs/gulp#gulp-manual-reload) | [browserSync.stream](https://www.browsersync.io/docs/gulp#gulp-sass-css)
 
 gulpfile.js
 ```
@@ -211,7 +209,8 @@ entry point is where initial code goes; working files. The output will be named,
 [webpack docs - plugins](https://webpack.js.org/plugins/)
 
 [commonsChunkPlugin](https://webpack.js.org/plugins/commons-chunk-plugin/)
-when you bundle it will snag all imports (and what it entails) plus your code.
+
+When you bundle it will snag all imports (and what it entails) plus your code.
 
 If you import something like React all that comes with that import will be bundled.
 
@@ -263,20 +262,19 @@ module.exports = {
 ```
 [split chunks example used^](https://webpack.js.org/plugins/split-chunks-plugin/#split-chunks-example-2)
 
-the amount of back and forth between webpack docs, babel docs, and related posts... as well as, extra packages to install whether forgotten or unaware until I saw the terminal errors... 
+The amount of back and forth between webpack docs, babel docs, and related posts... as well as, extra packages to install whether forgotten or unaware until I saw the terminal errors... 
 
 many plugins were no longer used so went looking for updated/ alternate version.
 
-reading this guy's journey was a nice break from troubleshooting: [gricard/webpack4upgrade](https://gist.github.com/gricard/e8057f7de1029f9036a990af95c62ba8). It showed me I wasn't too far off with my setup, very helpful as well in areas I wasn't to add.
+Reading this guy's journey was a nice break from troubleshooting: [gricard/webpack4upgrade](https://gist.github.com/gricard/e8057f7de1029f9036a990af95c62ba8). It showed me I wasn't too far off with my setup, very helpful as well in areas I wasn't to add.
 
 ### webpack from gulp
-led to `gulp-shell` package, but noticed people complaining of anti-pattern use, as well as others chiming in on other forums saying it's use was 'blacklisted' so I went looking for an alternative and found `gulp-exec`
-[gulp-exec](https://www.npmjs.com/package/gulp-exec)
+Led to `gulp-shell` package, but noticed people complaining of anti-pattern use, as well as others chiming in on other forums saying it's use was 'blacklisted' so I went looking for an alternative and found `gulp-exec` -- [gulp-exec](https://www.npmjs.com/package/gulp-exec)
 
 gulp-shell drama:
-[gulp-shell | issues](https://github.com/sun-zheng-an/gulp-shell/issues/55)
-[google - remove gulp-shell | issues](https://github.com/google/material-design-lite/issues/790)
-[SO | shell command post](https://stackoverflow.com/questions/29511491/running-a-shell-command-from-gulp)
+- [gulp-shell | issues](https://github.com/sun-zheng-an/gulp-shell/issues/55)
+- [google - remove gulp-shell | issues](https://github.com/google/material-design-lite/issues/790)
+- [SO | shell command post](https://stackoverflow.com/questions/29511491/running-a-shell-command-from-gulp)
 
 
 ```
