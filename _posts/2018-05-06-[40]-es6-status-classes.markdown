@@ -23,7 +23,7 @@ Note: Dog is capitilized because it is a constructor.
 
 Example: when you create an array, `const turtles = [leo, raph, donnie, mikey]` turles will now have methods available to use, such as `join()`
 
-*Where did that come from?* `Array`, queen bee, that if you look inside comtains a multitude of prototype methods. Which means when you create an array every instance created inherits those methods.
+*Where did that come from?* `Array`, queen bee, that if you look inside contains a multitude of prototype methods. Which means when you create an array every instance created inherits those methods.
 
 Or, like above example you create a dog, from Dog (which in this case would be the queen bee)
 
@@ -120,7 +120,7 @@ class Dog {
 
 ```
 
-Note: adding methods inside a class, don't put commas to seperate as with properties in objects.
+Note: when adding methods inside a class, do not put commas to seperate as with properties in objects.
 
 static method:
 
@@ -188,7 +188,7 @@ with `goat.eat` you can add to stomach--
 
 and `goat.drink()` will reduce thirst by 10
 
-Although, Animal works for most what if we wanted a dog-- dogs bark. We can *extend* Animal. Initial thought would be something as follows:
+Although, Animal works for most animals what were to happen if we wanted a dog-- dogs bark. We can *extend* Animal. Initial thought would be something as follows:
 
 ```
 class Dog extends Animal {
@@ -304,7 +304,7 @@ name -> property name
 ```
 
 Note:
-  - using `for of` iterates over iterable properties of an object, you dont get the property 'name' but objects themselves not just key
+  - using `for of` iterates over iterable properties of an object, you dont get the property 'name' but objects themselves (not just key)
   - you can add properties, but iterate over just objects using this type of for loop
 
 ```
