@@ -29,6 +29,6 @@ I wanted to incorporate testing as well. The testing setup was a bit time consum
   4. To compile: `javac -cp .:junit-platform-console-standalone-1.4.0.jar MyClassTest.java`.
   5. To run tests: `java -jar junit-platform-console-standalone-1.4.0.jar --class-path . -c MyClassTest`
   
-This post doesn't document *everything* I came across or my final output, but I wanted to, at the very least, document the gist of this little side quest I found myself on...
+This post doesn't document *everything* I came across or my final output, but I wanted to (at the very least) document the gist of this little side quest I found myself on...
 
-note: to future self, you never touched Java and you got something set up, outputting correct and with passing tests-- you are by no means a Java expert, but you got something going and working, *good for you* :D
+note: to future self, you never touched Java, yet got something set up; correct output and with passing tests-- by no means a Java expert, but you got something going and working, *good for you* :D
