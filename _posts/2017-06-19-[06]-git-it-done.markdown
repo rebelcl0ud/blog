@@ -92,9 +92,6 @@ Note: you can use first 7 characters of the commit, they can be forever long
 # When you update a readme or something similar through github, but forget to do a git pull and update your local repo and then you go do stuff and go to push, but...
 `git pull --rebase` adds your new commit on top, at this point you should see some stuff in your terminal saying to re-push your awesome :D; your github should show commits in the order expected
 
-# Sometimes there's crap files you don't want showing up untracked
-`git clean -f` ,but if you want to double check what would be getting cleaned up do a `git clean -n` which will show what will be deleted
-
 # When you get "please enter a commit message to explain why this merge is necessary..."
 sometimes this happens where an editor will show up that (if you've never seen before) may leave you staring at the screen all 'dafuq-like'.
 
