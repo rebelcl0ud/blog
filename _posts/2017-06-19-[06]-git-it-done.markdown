@@ -103,3 +103,6 @@ If you happen to go this route:
  5. then press enter
  
 That gem of info (list) came from [this SO post](https://stackoverflow.com/questions/19085807/please-enter-a-commit-message-to-explain-why-this-merge-is-necessary-especially)
+
+# So you wanna re-snag your repo or snag to contribute to one...
+Hello `git clone`! Put that into your terminal, at your desired location, and follow it with url that shows up when you click that "clone or download" green button on repo's page. [See this nice post by Github :)](https://help.github.com/en/articles/cloning-a-repository)
