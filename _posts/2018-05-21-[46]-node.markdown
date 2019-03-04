@@ -8,35 +8,17 @@ categories: javascript, node
 A post I've had floating about-- updating npm/node and all that jazz.
 
 ## updating npm
+[reference: npm](https://docs.npmjs.com/getting-started/installing-node)
+
 `npm install npm@latest -g`
-[NPM](https://docs.npmjs.com/getting-started/installing-node)
 
 for mac, needed `sudo`
 
 ## updating nodeJS 
 
-[STACKOVERFLOW](https://stackoverflow.com/questions/10075990/upgrading-node-js-to-latest-version#10076029)
+[reference: stackoverflow](https://stackoverflow.com/questions/10075990/upgrading-node-js-to-latest-version#10076029)
 
-```  
-2017 Solution Without sudo!
-
-The Current/Stable "LTS" version of node is 8.9.4 (2018-01-24) see: nodejs.org for latest.
-Step 1 - Get NVM (Node Version Manger)
-
-`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash`
-
-    If you're curious about the installation command read the source code
-    ... its been reviewed by several security experts
-
-Step 2 - Install the version of node.js you need
-
-Once you've got NVM you can install a specific version of Node.js using the nvm command:
-
-nvm install v8.9.4
-
-```
-
-UPDATED snippet:
+UPDATED SO snippet:
 ```
 2019 Solution Without using sudo!
 
@@ -62,6 +44,25 @@ Now using node v10.15.0
 
 ```
 
+Initial post below:
+```  
+2017 Solution Without sudo!
+
+The Current/Stable "LTS" version of node is 8.9.4 (2018-01-24) see: nodejs.org for latest.
+Step 1 - Get NVM (Node Version Manger)
+
+`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash`
+
+    If you're curious about the installation command read the source code
+    ... its been reviewed by several security experts
+
+Step 2 - Install the version of node.js you need
+
+Once you've got NVM you can install a specific version of Node.js using the nvm command:
+
+nvm install v8.9.4
+
+```
 once in project folder `npm install` installs dependencies
 
 NOTE: to SWITCH between NODE VERSIONS `nvm use [insert version here]` or ie: (at the time of initial post) `nvm use v8.9.4`
