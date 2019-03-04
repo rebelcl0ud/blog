@@ -15,8 +15,9 @@ A post I've had floating about-- updating npm/node and all that jazz.
 for mac, needed `sudo`
 
 ## updating nodeJS 
+[reference: nodeJS docs](https://nodejs.org/en/)
 
-[reference: stackoverflow](https://stackoverflow.com/questions/10075990/upgrading-node-js-to-latest-version#10076029)
+[stackoverflow post](https://stackoverflow.com/questions/10075990/upgrading-node-js-to-latest-version#10076029)
 
 UPDATED SO snippet:
 ```
