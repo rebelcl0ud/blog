@@ -79,7 +79,22 @@ Run `nvm uninstall 5.0.0` to remove version, replacing the `5.0.0` I have with w
 
 This particluar [post](https://davidwalsh.name/nvm), a few years old, but covers most of what I've found prior/written about in previous sections. The reason I throw it in here is because it gave me my `nvm uninstall` I was looking for annnnd seems like a sweet blog to revisit :)
 
-## nvm
+## nvm + nvm woes
 [reference: nvm doc](https://github.com/creationix/nvm#installation-and-update)
 
-[SO Post - nvm install; command not found](https://stackoverflow.com/questions/16904658/node-version-manager-install-nvm-command-not-found)
+[SO post - nvm install; command not found](https://stackoverflow.com/questions/16904658/node-version-manager-install-nvm-command-not-found)
+
+[zsh-nvm plugin doc](https://github.com/lukechilds/zsh-nvm#as-an-oh-my-zsh-custom-plugin)
+
+For me, nvm not being found was a bit odd as I've used it before-- however, I realized that I had started using [Oh My Zsh ](https://github.com/robbyrussell/oh-my-zsh) and in using that you gotta toss 'nvm' into your plugins. Once I did that I checked for it using `nvm ls` and sure enough *not found-- no more!*
+
+Something to keep in mind when looking for the `.zshrc` file, it may be hidden, files starting with `.` usually are.
+
+## Unhide/Hide Files
+To unhide/hide: (I'm on a mac)
+    - Put `defaults write com.apple.Finder AppleShowAllFiles YES` in the terminal, press `enter`
+    - Relaunch Finder: (`alt right-click` on Finder icon, select `Relaunch`) should unhide hidden files
+
+Once you're done and would like to re-hide them:
+    - Put `defaults write com.apple.Finder AppleShowAllFiles NO`, press `enter`
+    - Relaunch Finder: (`alt right-click` on Finder icon, select `Relaunch`) should again hide files
