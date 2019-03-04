@@ -13,7 +13,7 @@ A post I've had floating about-- updating npm/node and all that jazz.
 
 for mac, needed `sudo`
 
-## updating node 
+## updating nodeJS 
 
 [STACKOVERFLOW](https://stackoverflow.com/questions/10075990/upgrading-node-js-to-latest-version#10076029)
 
@@ -36,9 +36,35 @@ nvm install v8.9.4
 
 ```
 
+UPDATED snippet:
+```
+2019 Solution Without using sudo!
+
+The Stable "LTS" version of node is 10.15.0 (2019-01-13) see: nodejs.org for latest.
+Step 1 - Get NVM (Node Version Manger)
+
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+    If you're curious about the installation command read the source code
+    ... its been reviewed by several security experts
+
+Step 2 - Install the version of node.js you need
+
+Once you've got NVM you can install a specific version of Node.js using the nvm command:
+
+nvm install v10.15.0
+
+Note: you may need to close & re-open your terminal window for nvm command to be available.
+
+You should expect to see something like this in your terminal:
+
+Now using node v10.15.0
+
+```
+
 once in project folder `npm install` installs dependencies
 
-NOTE: to SWITCH between NODE VERSIONS `nvm use [insert version here]` or presently `nvm use v8.9.4`
+NOTE: to SWITCH between NODE VERSIONS `nvm use [insert version here]` or ie: (at the time of initial post) `nvm use v8.9.4`
 	I noticed every time i got back into my vagrant box node was back to w.e version it was b4 upgrading, then it would say version was already installed so I looked up how to [switch versions](http://michael-kuehnel.de/node.js/2015/09/08/using-vm-to-switch-node-versions.html)
 
 Trying to prevent node version reverting to an older version every time I run a new terminal:
