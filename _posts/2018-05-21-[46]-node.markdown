@@ -78,3 +78,8 @@ Run `nvm ls` to see list of versions
 Run `nvm uninstall 5.0.0` to remove version, replacing the `5.0.0` I have with whatever version you want removed.
 
 This particluar [post](https://davidwalsh.name/nvm), a few years old, but covers most of what I've found prior/written about in previous sections. The reason I throw it in here is because it gave me my `nvm uninstall` I was looking for annnnd seems like a sweet blog to revisit :)
+
+## nvm
+[reference: nvm doc](https://github.com/creationix/nvm#installation-and-update)
+
+[SO Post - nvm install; command not found](https://stackoverflow.com/questions/16904658/node-version-manager-install-nvm-command-not-found)
