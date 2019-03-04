@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Node
+title: nodeJS & friends; updating
 date: 2018-05-21
 categories: javascript, node
 ---
