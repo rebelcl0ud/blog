@@ -13,6 +13,7 @@ I have a few pages of notes as I went, but here's some things off the top of me 
 
 A few things:
   1. declaring variables by type, ie: `int age;`.
+  1a. speaking of declaring variables-- `final` is like `const` where the variable will not be reassigned, ie: `final int PIE = 3.14`.
   2. `System.out.println()` is like `console.log()`.
   3. It's all about the `" "` instead of `' '`, and don't forget to end with `;`.
   4. When you set up your class and constructor, code to be executed goes in the following: `public static void main(String[] args) {}`.
