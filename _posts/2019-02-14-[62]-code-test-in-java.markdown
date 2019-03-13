@@ -32,3 +32,7 @@ I wanted to incorporate testing as well. The testing setup was a bit time consum
 This post doesn't document *everything* I came across or my final output, but I wanted to (at the very least) document the gist of this little side quest I found myself on...
 
 note: to future self, you never touched Java, yet got something set up; correct output and with passing tests-- by no means a Java expert, but you got something going and working, *good for you* :D
+
+- - - 
+
+On another note, the whole [Eclipse](https://www.eclipse.org/downloads/) usage did intrigue me so I downloaded it. It has a "code completion" feature that you can bring up using the shortcut `ctrl-space`. I needed to change it to something else and found this [gem](https://www.stefaanlippens.net/code_completion_shortcut_eclipse_osx/) explaining how to do just that.
