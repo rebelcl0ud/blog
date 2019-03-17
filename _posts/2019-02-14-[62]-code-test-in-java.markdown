@@ -14,9 +14,9 @@ I have a few pages of notes as I went, but here's some things off the top of me 
 A few things:
   1. declaring variables by type, ie: `int age;`.
   
-  1a. speaking of declaring variables-- `final` is like `const` where the variable will not be reassigned, ie: `final int PIE = 3.14`.
+  1(a) speaking of declaring variables-- `final` is like `const` where the variable will not be reassigned, ie: `final int PIE = 3.14`.
   
-  1b. Casting- converting from one data type to another, ideally from smaller to larger:
+  1(b) Casting- converting from one data type to another, ideally from smaller to larger:
   ```
   double cDbl = 1.234;
   int cInt = (int)cDbl;
