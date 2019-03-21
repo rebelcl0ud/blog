@@ -26,5 +26,9 @@ Since turning in my Java code challenge I've been familiarizing myself with desi
 `Singleton Pattern` is used when you want to eliminate the option of instantiating more than one object
 
 `Builder Pattern`: used to create objects made from a bunch of other objects
+  - when you want to build an object from other objects
+  - when you want the creation of those parts to be independent of the main object
+  - hide the creation of the parts from the client so both aren't dependent
+  - the builder knows the specifics and nobody else does
 
 `Prototype Pattern`:
