@@ -32,3 +32,7 @@ Since turning in my Java code challenge I've been familiarizing myself with desi
   - the builder knows the specifics and nobody else does
 
 `Prototype Pattern`:
+  - creates new objects (instances) by cloning (copying) other objects
+  - allows for adding of any subclass instance of a known super class at run time
+  - when there are numerous potential classes that you want to only use if needed at run time
+  - reduces the need for creating subclasses
