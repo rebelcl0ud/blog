@@ -5,7 +5,9 @@ date:   2019-03-19
 categories: design patterns
 ---
 
-Since turning in my Java code challenge I've been familiarizing myself with design patterns. I came across a pretty helpful YouTube channel that I will have to link in here soon--
+Since turning in a Java code challenge (mentioned in a previous post) I've been familiarizing myself with design patterns. I realized they kept coming up while reading up on Java-- there's been a few blogs and YouTube channels that have been pretty good at showing overall Java goodness, but I snagged the following from Derek Banas, check him out [here](https://www.youtube.com/channel/UCwRXb5dUK4cvsHbx-rGzSgw).
+
+I tend to forget things so I figure throwing a little post up with main pointers of what makes what... I got something to check out for a referesher later on.
 
 3 categories: Creational, Behavorial, Structural
 
