@@ -23,7 +23,7 @@ A few things:
   ```
   2. `System.out.println()` is like `console.log()`.
   3. It's all about the `" "` instead of `' '`, and don't forget to end with `;`.
-  4. When you set up your class and constructor, code to be executed goes in the following: `public static void main(String[] args) {}`.
+  4. When you set up your class and constructor, code to be executed goes in the following: `public static void main(String[] args) {}`. With that said, there must be atleast *one* class in a Java application and *one* main method (per application, not class).
   5. When you look to return from a method you declare the data type as with a variable (as stated above), if the method will not be returning anything you use `void`.
   6. When method returning an Integer, using an if/else statement and if condition calls for it, `return 0;`-- it must return something since it was declared.
   7. When using a simple file `MyClass.java`, script title will match `class MyClass {}`.
