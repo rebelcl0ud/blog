@@ -66,3 +66,13 @@ class Practice {
 }
 ```
 That^ outputs `[I@677327b6`. To get `[0, 0, 0, 0, 0, 0, 0]` => `System.out.println(Arrays.toString(nums));`
+
+Something that I sorta touched on up there when mentioning casting is the whole container size type bit; numeric primitives and fixed number of bits
+	
+	- byte(8)
+	- short(16)
+	- int(32)
+	- long(64)
+	
+	- float(32)
+	- double(64)
