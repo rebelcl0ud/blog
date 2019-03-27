@@ -44,3 +44,25 @@ note: to future self, you never touched Java, yet got something set up; correct 
 - - - 
 
 On another note, the whole [Eclipse](https://www.eclipse.org/downloads/) usage did intrigue me so I downloaded it. It has a "code completion" feature that you can bring up using the shortcut `ctrl-space`. I needed to change it to something else and found this [gem](https://www.stefaanlippens.net/code_completion_shortcut_eclipse_osx/) explaining how to do just that.
+
+- - - 
+I'm totally going to have to start another post for more post-java code challenge stuff, but until then...
+
+  - Don't forget to import stuff. *What does that mean?* Well, I was messing with Arrays and I wanted to print out to console... you're not gonna get anywhere if it doesn't know wth you're talking about. `import java.util.Arrays;` tossing this onto the top of the file got it done.
+
+Speaking of printing out Arrays--
+```
+import java.util.Arrays; 
+
+class Practice {
+	
+	public static void main(String[] args) {
+		int[] nums;
+
+		nums = new int[7];
+		
+		System.out.println(nums);
+	}
+}
+```
+That^ outputs `[I@677327b6`. To get `[0, 0, 0, 0, 0, 0, 0]` => `System.out.println(Arrays.toString(nums));`
