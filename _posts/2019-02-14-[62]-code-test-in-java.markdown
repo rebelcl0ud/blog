@@ -76,4 +76,5 @@ That^ outputs `[I@677327b6`. To get `[0, 0, 0, 0, 0, 0, 0]` => `System.out.print
 	
 	- float(32)
 	- double(64)
-Note: with floats, ie: 55.5f; placing 'f' prevents it being taken as a double.
+	
+	Note: with floats, ie: 55.5f; placing 'f' prevents it being taken as a double.
