@@ -80,3 +80,5 @@ That^ outputs `[I@677327b6`. To get `[0, 0, 0, 0, 0, 0, 0]` => `System.out.print
 	Note: with floats, ie: 55.5f; placing 'f' prevents it being taken as a double.
 	
   - A method uses parameters. A caller passes arguments.
+  
+  - *Converting a String to an integer?* ie: int thisWillHoldIntegerNow = Integer.parseInt(StringToConvertToIntGoesHere);
