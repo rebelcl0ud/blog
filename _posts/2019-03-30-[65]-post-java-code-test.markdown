@@ -5,7 +5,7 @@ date: 2019-03-30
 categories: [java, junit]
 ---
 
-These random notes deserve their own post taken *post* previous... post? *Annnnnnd how many times can I use 'post' in this sentence?* Sections below were moved from [here](https://rebelcl0ud.github.io/blog/java/junit/2019/02/14/62-code-test-in-java.html).
+These random notes deserve their own post taken *post* previous... post? *Annnnnnd how many times can I use 'post' in this sentence?* Sections below were moved from [Code Test In... Java?](https://rebelcl0ud.github.io/blog/java/junit/2019/02/14/62-code-test-in-java.html).
 
 - - - 
 
