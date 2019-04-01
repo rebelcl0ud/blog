@@ -52,4 +52,7 @@ That^ outputs `[I@677327b6`. To get `[0, 0, 0, 0, 0, 0, 0]` => `System.out.print
   
   - *Converting a String to an integer?* ie: `int thisWillHoldIntegerNow = Integer.parseInt(StringToConvertToIntGoesHere);`
   
-  - `x++` vs. `++x`; affects result-- placement determines whether to increment first or after using the value of `x`.                                                                                                                                                                                                                    
+  - `x++` vs. `++x`; affects result-- placement determines whether to increment first or after using the value of `x`.
+  
+  - `for` vs. `while` loop: if you know number of iteration use a for, else use while to run while a condition is true. I think I've rarely use while loops, but this is a good way to think about usage. Speaking of `for` loops: `for(String name : nameArray){}` (the enhanced for loop) reads as if it were a `for each` or `for in` loop. Note: variable declared to hold single element of array as it iterates, the variable type, must be compatible with elements inside array.
+  
