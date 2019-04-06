@@ -60,3 +60,5 @@ That^ outputs `[I@677327b6`. To get `[0, 0, 0, 0, 0, 0, 0]` => `System.out.print
   
   - Some `ArrayList` can-dos: `.add()`, `.size()`, `contains()`, `indexOf()`, `isEmpty()`, `.remove()`
   
+  - *I had no idea this was a thing* `&` and `|`, non short circuit operators. They act like their counterparts, `&&` and `||` except they force to have both sides of the expression checked. In comparison, the `&&` and `||` doesn't bother to check the right side if left side of expression shows false or true (respectively).
+  
