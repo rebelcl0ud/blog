@@ -38,3 +38,9 @@ I tend to forget things so I figure throwing a little post up with main pointers
   - allows for adding of any subclass instance of a known super class at run time
   - when there are numerous potential classes that you want to only use if needed at run time
   - reduces the need for creating subclasses
+  
+  - - -
+  
+  Something I've come across in relation to design patterns; OO
+  
+  A good way to keep your inheritance in check when designing is using `IS-A`. Example: Dog `is-a` Canine `is-a` Animal. Note: `is-a` relationship works in only 1 direction.
