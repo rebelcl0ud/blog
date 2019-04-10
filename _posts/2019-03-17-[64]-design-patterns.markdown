@@ -56,3 +56,11 @@ I tend to forget things so I figure throwing a little post up with main pointers
   ```
   
   *Polymorphism*-- when definining a supertype for a group of classes, any of the subclasses (of that supertype) can be used where the supertype is expected.
+  
+  **Car myCar** = new Car(); // create instance variable
+  
+  Car myCar = **new Car();** // create object
+  
+  Car myCar **=** new Car(); // make the relation; connect instance variable to object, typical creation-- both types match, both are of type Car.
+  
+  With *polymorphism*: **Vehicle** myCar = new Car(); // the reference and object can differ
