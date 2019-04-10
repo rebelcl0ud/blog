@@ -44,3 +44,5 @@ I tend to forget things so I figure throwing a little post up with main pointers
   Something I've come across in relation to design patterns; OO
   
   A good way to keep your inheritance in check when designing is using `IS-A`. Example: Dog `is-a` Canine `is-a` Animal. Note: `is-a` relationship works in only 1 direction.
+  
+  Access Levels: `public` instance variables/ methods are not inherited, `private`are not. There are also `default` and `protected`.
