@@ -54,3 +54,5 @@ I tend to forget things so I figure throwing a little post up with main pointers
     // the override follows here
   }
   ```
+  
+  *Polymorphism*-- when definining a supertype for a group of classes, any of the subclasses (of that supertype) can be used where the supertype is expected.
