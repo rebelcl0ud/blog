@@ -66,3 +66,5 @@ I tend to forget things so I figure throwing a little post up with main pointers
   With *polymorphism*: **Vehicle** myCar = new Car(); // the reference and object can differ
   
   Speaking of *polymorphism*-- for it to work and **override** super class method-- **arguments must be the same & have compatible return types**. The compiler will look at reference types to decided whether or not to give you the go ahead to call method on that reference. Given the compiler gives the greenlight, at runtime JVM doesn't look at reference type but at the actual object on the heap you are calling method on. Note: to override though arguments must be the same and have compatible return types, as well as the method cannot be less accessible.
+  
+  One the flip side, you can **overload** a method, but that doesn't involve polymorphism. **Two methods by the same name with *different* arguments lists-- return types may be different, but return type cannot be the *only* change.** Note: You can also vary access levels, ie: overload a method with a more restrictive method.
