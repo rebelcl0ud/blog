@@ -64,3 +64,5 @@ I tend to forget things so I figure throwing a little post up with main pointers
   Car myCar **=** new Car(); // make the relation; connect instance variable to object, typical creation-- both types match, both are of type Car.
   
   With *polymorphism*: **Vehicle** myCar = new Car(); // the reference and object can differ
+  
+  Speaking of *polymorphism*-- for it to work and **override** super class method-- **arguments must be the same & have compatible return types**. The compiler will look at reference types to decided whether or not to give you the go ahead to call method on that reference. Given the compiler gives the greenlight, at runtime JVM doesn't look at reference type but at the actual object on the heap you are calling method on. Note: to override though arguments must be the same and have compatible return types, as well as the method cannot be less accessible.
