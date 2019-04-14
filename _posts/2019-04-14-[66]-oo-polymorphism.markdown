@@ -4,13 +4,19 @@ title:  "OO & Polymorphism"
 date:   2019-04-14
 categories: [java, design patterns]
 ---
-  
+
+Below started as a section within Design Patterns post, but it started looking like this could get a bit longer so it was moved here. Design Patterns will be left solely for notes on the design playlist as was the initial intent. What follows are 'notes' as I make my way through the Head First Java book. sn: *I miss JavaScript and hope I don't forget it as I delve deeper into Java.*
+
+## inheritance check 
   Something I've come across in relation to design patterns; OO
   
   A good way to keep your inheritance in check when designing is using `IS-A`. Example: Dog `is-a` Canine `is-a` Animal. Note: `is-a` relationship works in only 1 direction.
   
+## access levels
+  
   Access Levels: `public` instance variables/ methods are not inherited, `private`are not. There are also `default` and `protected`.
   
+## super
   Subclass using super class method and subclass override method: use `super.addMethodHereLikeSleep()` followed by your own method that way it runs both.
   ```
   puublic void sleep() {
@@ -18,7 +24,7 @@ categories: [java, design patterns]
     // the override follows here
   }
   ```
-  
+## polymorphism 
   *Polymorphism*-- when definining a supertype for a group of classes, any of the subclasses (of that supertype) can be used where the supertype is expected.
   
   **Car myCar** = new Car(); // create instance variable
