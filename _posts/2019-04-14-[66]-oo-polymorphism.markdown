@@ -41,4 +41,8 @@ Below started as a section within Design Patterns post, but it started looking l
   One the flip side, you can **overload** a method, but that doesn't involve polymorphism. **Two methods by the same name with *different* arguments lists-- return types may be different, but return type cannot be the *only* change.** Note: You can also vary access levels, ie: overload a method with a more restrictive method.
   
   ### interfaces
-  To avoid multiple inheritance use interface. When defining an interface, ie: `public interface Supercharged {...}`; implement `public class Civic extends Car implements Supercharged {...}`. Some things about an interface: they are like 100% abstract class, when you implement you can still extend class, methods end in semicolons, methods from interface must be used in (if continuing with example) Civic class which satisfies the first concrete class having to implement abstract method inherited down the tree. Note: a class can implement multiple interfaces.
+  To avoid multiple inheritance use interface. When defining an interface, ie: `public interface Supercharged {...}`; implement `public class Civic extends Car implements Supercharged {...}`.
+  
+  Some things about an interface: they are like 100% abstract class, when you implement you can still extend class, methods end in semicolons, methods from interface must be used in (if continuing with example) Civic class which satisfies the first concrete class having to implement abstract method inherited down the tree. 
+  
+  Note: a class can implement multiple interfaces, ie: `public class Dog extends Animal implements Pet, ServiceAnimal, Therapy {...}`
