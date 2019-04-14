@@ -2,7 +2,7 @@
 layout: post
 title:  "OO & Polymorphism"
 date:   2019-04-14
-categories: design patterns
+categories: [java, design patterns]
 ---
   
   Something I've come across in relation to design patterns; OO
