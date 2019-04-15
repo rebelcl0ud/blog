@@ -46,3 +46,13 @@ Below started as a section within Design Patterns post, but it started looking l
   Some things about an interface: they are like 100% abstract class, when you implement you can still extend class, methods end in semicolons, methods from interface must be used in (if continuing with example) Civic class which satisfies the first concrete class having to implement abstract method inherited down the tree. 
   
   Note: a class can implement multiple interfaces, ie: `public class Dog extends Animal implements Pet, ServiceAnimal, Therapy {...}`
+  
+ ## When to use what? [class, subclass, abstract class, interface]
+ 
+  - Make a class that doesn't extend anything when there is no `is-a`.
+  
+  - Subclass to extend a class for more specific behavior derived from class-- override or add new behavior.
+  
+  - Use an abstract class to define a type of "template" for a group of subclasses and use some implemented code for all subclasses to use. Also, if you don't want anyone making an object of the type abstract is a good way to go.
+  
+  - Use an interface to define a *role* that other classes may play regardless of where they are in the inheritance totem pole.
