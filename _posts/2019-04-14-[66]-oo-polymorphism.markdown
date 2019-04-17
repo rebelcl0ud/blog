@@ -40,6 +40,22 @@ Below started as a section within Design Patterns post, but it started looking l
   
   One the flip side, you can **overload** a method, but that doesn't involve polymorphism. **Two methods by the same name with *different* arguments lists-- return types may be different, but return type cannot be the *only* change.** Note: You can also vary access levels, ie: overload a method with a more restrictive method.
   
+  ### `ArrayList<Object>`
+  Instead of making an ArrayList of specific vehicles, you are able to make one of Vehicles where it would take in different types of vehicles. Coming out of the ArrayList however, they'd be of type Object-- the way to revert back to its correct type would be through *casting*.
+  
+  ```
+  Object o = theArrayList.get(index);
+  Car c = (Car) o;
+  c.drive();
+  ```
+  Checking type...
+  ```
+  if(o instanceof Car) {
+    Car c = (Car) o;
+  }
+  ```
+  will prevent a `ClassCastException` at runtime.
+  
   ### interfaces
   To avoid multiple inheritance use interface. When defining an interface, ie: `public interface Supercharged {...}`; implement `public class Civic extends Car implements Supercharged {...}`.
   
