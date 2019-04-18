@@ -63,7 +63,7 @@ Below started as a section within Design Patterns post, but it started looking l
   
   An example of this would be adding subclasses to a superclass like Animal-- having Animal go in as an argument for a method within a Vet class prevents writing out seperate methods for any/ every type of Animal.
   
-  ### interfaces
+  ### interface
   To avoid multiple inheritance use interface. When defining an interface, ie: `public interface Supercharged {...}`; implement `public class Civic extends Car implements Supercharged {...}`.
   
   Some things about an interface: they are like 100% abstract class, when you implement you can still extend class, methods end in semicolons, methods from interface must be used in (if continuing with example) Civic class which satisfies the first concrete class having to implement abstract method inherited down the tree. 
