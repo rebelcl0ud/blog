@@ -56,6 +56,13 @@ Below started as a section within Design Patterns post, but it started looking l
   ```
   will prevent a `ClassCastException` at runtime.
   
+  ### abstract
+  Purpose of an abstract class is to be *extended*; abstract methods must be *overridden*. An abstract method has no body and if you declare a method abstract, you **must** mark the class abstract as well. However, you can mix both abstract and non-abstract methods in the abstract class.
+  
+  *What's the point of an abstract method?* While you haven't placed in actual code, you've defined part of protocol for a group of subclasses(subtypes). You want the ability to use a superclass type(often abstract) as a method argument, return type, or array type.
+  
+  An example of this would be adding subclasses to a superclass like Animal-- having Animal go in as an argument for a method within a Vet class prevents writing out seperate methods for any/ every type of Animal.
+  
   ### interfaces
   To avoid multiple inheritance use interface. When defining an interface, ie: `public interface Supercharged {...}`; implement `public class Civic extends Car implements Supercharged {...}`.
   
