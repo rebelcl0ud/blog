@@ -67,7 +67,7 @@ Below started as a section within Design Patterns post, but it started looking l
   Abstract methods have no body, they exist solely for polymorphism leaving the first concrete subclass down the inheritance tree to implement *all* abstract methods. Implement, meaning provide the method a body-- a non-abstract method with the same structure of name/arguments/return type. What you put in it is all on you, Java cares only that exists in the concrete class.
   
   ### interface
-  To avoid multiple inheritance use interface. When defining an interface, ie: `public interface Supercharged {...}`; implement `public class Civic extends Car implements Supercharged {...}`.
+  To avoid multiple inheritance use interface. When *defining* an interface, ie: `public interface Supercharged {...}`; And when *implement*ing, ie: `public class Civic extends Car implements Supercharged {...}`.
   
   Some things about an interface: they are like 100% abstract class, when you implement you can still extend class, methods end in semicolons, methods from interface must be used in (if continuing with example) Civic class which satisfies the first concrete class having to implement abstract method inherited down the tree. 
   
