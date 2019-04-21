@@ -143,3 +143,12 @@ Below started as a section within Design Patterns post, but it started looking l
   
   - Use an interface to define a *role* that other classes may play regardless of where they are in the inheritance totem pole.
   
+ ## Objects and their *cues music* "circle of life"
+ 
+ ### Heap & Stack
+ Two areas of memory-- the **heap**, *where objects live* and the the **stack**, *where the invoke of methods and local variables live*.
+ 
+ **Instance variables are declared within a class, not a method**-- they represent 'fields' a object has and are able to hold values for different instances of objects created from its class. They live within the object they belong to and therefore also reside in the heap.
+ 
+ **Local variables (aka stack variables) are declared within a method (including method parameters)**-- they live as long as the method that created them lives *on the stack*, ie: as soon as that last curly brace hits *poof*.
+  
