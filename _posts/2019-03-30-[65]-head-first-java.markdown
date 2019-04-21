@@ -151,4 +151,6 @@ Below started as a section within Design Patterns post, but it started looking l
  **Instance variables are declared within a class, not a method**-- they represent 'fields' a object has and are able to hold values for different instances of objects created from its class. They live within the object they belong to and therefore also reside in the heap.
  
  **Local variables (aka stack variables) are declared within a method (including method parameters)**-- they live as long as the method that created them lives *on the stack*, ie: as soon as that last curly brace hits *poof*.
+ 
+ Speaking of stacks and all that jazz-- when you call a method it lands on top of a stack, kinda like a pile or *stack* of books. The method stays at the top of the stack until it hits that last curly brace, meaning the method has reached its end of life.
   
