@@ -153,4 +153,5 @@ Below started as a section within Design Patterns post, but it started looking l
  **Local variables (aka stack variables) are declared within a method (including method parameters)**-- they live as long as the method that created them lives *on the stack*, ie: as soon as that last curly brace hits *poof*.
  
  Speaking of stacks and all that jazz-- when you call a method it lands on top of a stack, kinda like a pile or *stack* of books. The method stays at the top of the stack until it hits that last curly brace, meaning the method has reached its end of life.
-  
+
+Note: non-primitive variable holds a *reference* to an object, not the object itself. So if the local variable references an object, while the object still goes on to the heap, **the variable goes on the stack**.
