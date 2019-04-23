@@ -164,3 +164,10 @@ String s = String.format("%, d", 10000000);
 System.out.println(s); // prints 10,000,000
 ```
 The percent is the indicator of where to insert the argument, followed by how it should be formatted (what follows the percent sign). In the example above the `,` follows the `%` sign. The `d` is for *decimal integer*.
+
+Another example using *floating point*:
+```
+String t = String.format("Here's %,.2f, another example.", 476578.09876);
+System.out.println(t); // prints Here's 476,578.10, another example.
+```
+Here you can see how the placement of commas give different results. The one following the `%` is used as part of the argument (the commas to be placed between digits), while the one that follows `.2f` places the comma as part of the String/ sentence.
