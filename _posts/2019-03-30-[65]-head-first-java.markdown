@@ -171,3 +171,7 @@ String t = String.format("Here's %,.2f, another example.", 476578.09876);
 System.out.println(t); // prints Here's 476,578.10, another example.
 ```
 Here you can see how the placement of commas give different results. The one following the `%` is used as part of the argument (the commas to be placed between digits), while the one that follows `.2f` places the comma as part of the String/ sentence.
+
+### format method
+The format method has its own syntax type rules. Everything that follows the `%` up to the type indicator (ie: `d` or `f`) are part of formatting instructions. The format specifier can have up to five parts (`%` not included).
+`%[argument #] [flag] [width] [.precision] type` **type** is mandatory and always placed last.
