@@ -183,3 +183,6 @@ System.out.println(multi); // prints Here we use multiple arguments and variable
 ### format method
 The format method has its own syntax type rules. Everything that follows the `%` up to the type indicator (ie: `d` or `f`) are part of formatting instructions. The format specifier can have up to five parts (`%` not included).
 `%[argument #] [flag] [width] [.precision] type` **type** is mandatory and always placed last.
+
+## static
+`static` runs/ outputs before `constructors`
