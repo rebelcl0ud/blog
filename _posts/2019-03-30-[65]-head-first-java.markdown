@@ -163,3 +163,4 @@ Sometimes you just want some commas... *Sidebar: this reminds me of my vfx rende
 String s = String.format("%, d", 10000000);
 System.out.println(s); // prints 10,000,000
 ```
+The percent is the indicator of where to insert the argument, followed by how it should be formatted (what follows the percent sign). In the example above the `,` follows the `%` sign. The `d` is for *decimal integer*.
