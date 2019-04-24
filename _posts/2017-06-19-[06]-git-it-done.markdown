@@ -106,3 +106,5 @@ That gem of info (list) came from [this SO post](https://stackoverflow.com/quest
 
 # So you wanna re-snag your repo or snag to contribute to one...
 Hello `git clone`! Put that into your terminal, at your desired location, and follow it with url that shows up when you click that "clone or download" green button on repo's page. [See this nice post by Github :)](https://help.github.com/en/articles/cloning-a-repository)
+
+Resource: [Forking vs. Cloning repo](https://github.community/t5/Support-Protips/The-difference-between-forking-and-cloning-a-repository/ba-p/1372)
