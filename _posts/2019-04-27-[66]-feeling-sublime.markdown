@@ -10,7 +10,7 @@ In an `html` file:
 
   - typing `html` followed by `tab` will auto complete the basics of what's needed to get an html file started, ie: `doctype`, `html`, `head`, `title`,  and `body` tags.
 
-  - typing `lorem` followed by hitting `tab` will insert dummy text (aka lorem ipsum text) although that hipsum is pretty amusing to use [see: hipsum.co](hipsum.co)
+  - typing `lorem` followed by hitting `tab` will insert dummy text (aka lorem ipsum text) although that hipsum is pretty amusing to use [hipsum.co](https://hipsum.co/)
   
   - `div#wrapper` + `tab` => `<div id="wrapper"></div>`
   
