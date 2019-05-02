@@ -185,4 +185,4 @@ The format method has its own syntax type rules. Everything that follows the `%`
 `%[argument #] [flag] [width] [.precision] type` **type** is mandatory and always placed last.
 
 ## static
-`static` runs/ outputs before `constructors`
+`static` runs/ outputs *before* `constructors`
