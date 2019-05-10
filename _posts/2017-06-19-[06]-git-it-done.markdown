@@ -115,3 +115,5 @@ git reset --hard <commit-hash>
 git push -f origin master
 ```
 Note: DO NOT do this if you have a repo with collaborators who may have pulled and started working. At that point it may be best to create a branch with what you want back on there to then be merged into master repo. That way everyone pulls that update *with* their possible additions jazz and things :D
+
+Resource: [Resetting Remote to a Certain Commit](https://stackoverflow.com/questions/5816688/resetting-remote-to-a-certain-commit)
