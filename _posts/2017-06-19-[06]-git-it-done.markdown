@@ -108,3 +108,10 @@ That gem of info (list) came from [this SO post](https://stackoverflow.com/quest
 Hello `git clone`! Put that into your terminal, at your desired location, and follow it with url that shows up when you click that "clone or download" green button on repo's page. [See this nice post by Github :)](https://help.github.com/en/articles/cloning-a-repository)
 
 Resource: [Forking vs. Cloning repo](https://github.community/t5/Support-Protips/The-difference-between-forking-and-cloning-a-repository/ba-p/1372)
+
+# You add, you commit, you push and then... you realize you need to revert back to a previous commit on your remote repo O_O
+```
+git reset --hard <commit-hash>
+git push -f origin master
+```
+Note: DO NOT do this if you have a repo with collaborators who may have pulled and started working. At that point it may be best to create a branch with what you want back on there to then be merged into master repo. That way everyone pulls that update *with* their possible additions jazz and things :D
