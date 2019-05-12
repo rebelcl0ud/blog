@@ -18,9 +18,9 @@ I found the posts below-- I didn't want to remove the pop-up completely, but did
 [https://askubuntu.com/questions/133385/getting-system-program-problem-detected-pops-up-regularly-after-upgrade/369297](https://askubuntu.com/questions/133385/getting-system-program-problem-detected-pops-up-regularly-after-upgrade/369297)
 
 ## What the hell happened to nvm?
-I installed nvm and it seemed to work ok until I tried to use it from another folder, then I thought I fixed it, but after a restart I was back to square one.
+I installed nvm and it seemed to work ok until I tried to use it from another folder. I thought I fixed it, but after a restart I was back to square one.
 
-What was the issue?
+*What was the issue?*
 
 The gist: turns out during setup there's a line suggested to put into a certain file, like bash-- the line for me had to go into my zsh file because that is the terminal that was being loaded.
 
