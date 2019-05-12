@@ -27,3 +27,6 @@ The gist: turns out during setup there's a line suggested to put into a certain 
 Some ways down this [SO post](https://www.binarytides.com/ubuntu-fix-system-program-problem-error/) Karl's answer helped me out.
 
 [TL;DR] add `source ~/.nvm/nvm.sh` to the `~/.zshrc`
+
+## Node | npm
+[Install NodeJS + npm](https://itsfoss.com/install-nodejs-ubuntu/)
