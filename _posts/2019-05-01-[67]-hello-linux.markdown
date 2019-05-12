@@ -25,7 +25,7 @@ I installed nvm and it seemed to work ok until I tried to use it from another fo
 
 The gist: turns out during setup there's a line suggested to put into a certain file, like bash-- the line for me had to go into my zsh file because that is the terminal that was being loaded.
 
-Some ways down this [SO post](https://www.binarytides.com/ubuntu-fix-system-program-problem-error/) Karl's answer helped me out.
+Some ways down this [SO post](https://stackoverflow.com/questions/16904658/node-version-manager-install-nvm-command-not-found) Karl's answer helped me out.
 
 [TL;DR] add `source ~/.nvm/nvm.sh` to the `~/.zshrc`
 
