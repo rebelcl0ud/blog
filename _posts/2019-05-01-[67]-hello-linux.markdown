@@ -14,8 +14,8 @@ It's continuous display was annoying and so not helpful-- telling me I have a pr
 
 I found the posts below-- I didn't want to remove the pop-up completely, but did clear reports...
 
-[1](https://www.binarytides.com/ubuntu-fix-system-program-problem-error/)
-[2](https://askubuntu.com/questions/133385/getting-system-program-problem-detected-pops-up-regularly-after-upgrade/369297)
+[https://www.binarytides.com/ubuntu-fix-system-program-problem-error/](https://www.binarytides.com/ubuntu-fix-system-program-problem-error/)
+[https://askubuntu.com/questions/133385/getting-system-program-problem-detected-pops-up-regularly-after-upgrade/369297](https://askubuntu.com/questions/133385/getting-system-program-problem-detected-pops-up-regularly-after-upgrade/369297)
 
 ## What the hell happened to nvm?
 I installed nvm and it seemed to work ok until I tried to use it from another folder, then I thought I fixed it, but after a restart I was back to square one.
