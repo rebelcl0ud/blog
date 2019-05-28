@@ -186,3 +186,5 @@ The format method has its own syntax type rules. Everything that follows the `%`
 
 ## static
 `static` runs/ outputs *before* `constructors`
+
+The *static* keyword let's a method run without any instance of the class-- meaning "behavior not dpenedent pn an instance variable, so no instance/object is required. Just the class."
