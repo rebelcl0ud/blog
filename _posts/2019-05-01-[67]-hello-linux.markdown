@@ -31,3 +31,10 @@ Some ways down this [SO post](https://stackoverflow.com/questions/16904658/node-
 
 ## Node | npm
 [Install NodeJS + npm](https://itsfoss.com/install-nodejs-ubuntu/)
+
+## checking Java versions
+Sometimes you have multiple versions and while `java -version` shows you your current version it doesn't show anything else. In comes `sudo update-alternatives --config java`. It will list versions and you are able to select version as well.
+
+references:
+  - [https://superuser.com/questions/569633/what-is-command-to-see-all-java-versions-installed-on-linux](https://superuser.com/questions/569633/what-is-command-to-see-all-java-versions-installed-on-linux)
+  - [https://www.codingbot.net/2019/02/switch-between-multiple-java-versions.html](https://www.codingbot.net/2019/02/switch-between-multiple-java-versions.html)
