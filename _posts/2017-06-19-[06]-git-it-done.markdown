@@ -122,4 +122,9 @@ Resource: [Resetting Remote to a Certain Commit](https://stackoverflow.com/quest
 
 [Diverged Branches SO Link](https://stackoverflow.com/questions/2452226/master-branch-and-origin-master-have-diverged-how-to-undiverge-branches) has a few links to look into within the accepted answer.
 
-
+# Fixed conflicts, but git still complains
+ - fix conflict
+ - `git add <file>`
+ - no commit between add and rebase**
+ - `git rebase --continue`
+Resource: [After Fixing Conflicts Git Still Complains](https://stackoverflow.com/questions/3611260/after-fixing-conflicts-git-still-complains)
