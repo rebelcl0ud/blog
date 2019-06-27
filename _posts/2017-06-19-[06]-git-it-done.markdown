@@ -117,3 +117,9 @@ git push -f origin master
 Note: DO NOT do this if you have a repo with collaborators who may have pulled and started working. At that point it may be best to create a branch with what you want back on there to then be merged into master repo. That way everyone pulls that update *with* their possible additions jazz and things :D
 
 Resource: [Resetting Remote to a Certain Commit](https://stackoverflow.com/questions/5816688/resetting-remote-to-a-certain-commit)
+
+# When you get something like "Your branch and 'origin/master' have diverged, # and have 1 and 1 different commit(s) each, respectively."
+
+[Diverged Branches SO Link](https://stackoverflow.com/questions/2452226/master-branch-and-origin-master-have-diverged-how-to-undiverge-branches) has a few links to look into within the accepted answer.
+
+
