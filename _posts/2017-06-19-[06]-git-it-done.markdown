@@ -127,10 +127,12 @@ Resource: [Resetting Remote to a Certain Commit](https://stackoverflow.com/quest
  - `git add <file>`
  - no commit between add and rebase**
  - `git rebase --continue`
+
 Resource: [After Fixing Conflicts Git Still Complains](https://stackoverflow.com/questions/3611260/after-fixing-conflicts-git-still-complains)
 
 # Multiple Github Accounts
 One day you may find yourself needing to keep things seperate... work and personal accounts for instance.
+
 Reference:
-[SSH Keys with Multiple GitHub Accounts](https://medium.com/@trionkidnapper/ssh-keys-with-multiple-github-accounts-c67db56f191e)
-[Multiple SSH Keys settings for different github account](https://gist.github.com/jexchan/2351996/)
+- [SSH Keys with Multiple GitHub Accounts](https://medium.com/@trionkidnapper/ssh-keys-with-multiple-github-accounts-c67db56f191e)
+- [Multiple SSH Keys settings for different github account](https://gist.github.com/jexchan/2351996/)
