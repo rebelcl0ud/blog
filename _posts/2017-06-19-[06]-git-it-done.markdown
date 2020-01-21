@@ -136,3 +136,15 @@ One day you may find yourself needing to keep things seperate... work and person
 Reference:
 - [SSH Keys with Multiple GitHub Accounts](https://medium.com/@trionkidnapper/ssh-keys-with-multiple-github-accounts-c67db56f191e)
 - [Multiple SSH Keys settings for different github account](https://gist.github.com/jexchan/2351996/)
+
+# Need to transfer commits from one repo to another? (via cherry-pick)
+Not limited to remote on another machine.
+
+`cd {repo to update}`
+`git remote add {path of repo cherry-picking from}`
+
+You can `fetch` and `cherry-pick` commits to transfer, ie: `git cherry-pick abc6666^..xyz8888`. Note: the use of the `^` is to include that first commit in the range, otherwise it will start the following commit in the range
+
+Reference:
+- [2.5 Git Basics - Working with Remotes](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
+- [git cherry-pick](https://git-scm.com/docs/git-cherry-pick)
