@@ -148,3 +148,6 @@ You can `fetch` and `cherry-pick` commits to transfer, ie: `git cherry-pick abc6
 Reference:
 - [2.5 Git Basics - Working with Remotes](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
 - [git cherry-pick](https://git-scm.com/docs/git-cherry-pick)
+
+# Make pretty git logs
+`git log --oneline --graph`
