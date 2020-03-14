@@ -78,6 +78,9 @@ check out the *stash* using `git stash list`
 
 for the latest stash, `git stash apply` and for a non-recent stash... it will look something like `git stash apply stash@{2}` the number will depend on what is displayed when you check out the list and which one of those you want to apply. Note: using no number, it will be assumed it is the latest stash you're looking to apply.
 
+how about gettin' rid of that *stash*?
+`git stash drop` drops the top stash, while `git stash drop stash@{2}` gets rid of a specific stash. Note: the '2' is just for example, it can be whatever number that points to the specific stash your heart desires.
+
 # That time you made some commits and realized you forgot to make an alternate branch so you don't efF your master... */facepalm*
 
 create a new branch, `$ git branch branch-name-here`, from where you've made all the commits, in my case it was master
