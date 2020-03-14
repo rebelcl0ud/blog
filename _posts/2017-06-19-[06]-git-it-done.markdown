@@ -145,9 +145,21 @@ Not limited to remote on another machine.
 
 You can `fetch` and `cherry-pick` commits to transfer, ie: `git cherry-pick abc6666^..xyz8888`. Note: the use of the `^` is to include that first commit in the range, otherwise it will start the following commit in the range
 
+Regarding `cherry-pick`:
+If you press `git cherry-pick --continue` and you have resolved conflicts and added files and all that jazz... you may see something that looks like could be an error when in fact it is your default editor.
+
+Navigate using:
+
+- press "i"
+- write your merge message
+- press "esc"
+- ":wq"
+- then press enter
+
 Reference:
 - [2.5 Git Basics - Working with Remotes](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
 - [git cherry-pick](https://git-scm.com/docs/git-cherry-pick)
+- [SO Post: please-enter-a-commit-message-to-explain-why-this-merge-is-necessary](https://stackoverflow.com/questions/19085807/please-enter-a-commit-message-to-explain-why-this-merge-is-necessary-especially#19085954)
 
 # Make pretty git logs
 `git log --oneline --graph`
