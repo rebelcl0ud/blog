@@ -176,3 +176,9 @@ Below discoveries came from looking up `warning: LF will be replaced by CRLF in 
 `git rm -r --cached .`
 
 What I ended up doing for my initial issue: `git config --local core.autocrlf false` there's like a whole thing to this... I mean a **whole** thing where there's arguments to both sides, true and false. Instead of the rabbit hole I would have for sure continued on I decided on that and moved on. Although, I'd be lying if I didn't say... I'm curious.
+
+# Removing file with sensitive data
+I ended up not ignoring a file I should have and then realized it after a few commits... luckily, there is...
+`git filter-branch`; Resource: [https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository](https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository)
+
+Note: if it doesn't seem to work, check file path
