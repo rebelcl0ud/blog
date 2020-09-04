@@ -140,6 +140,8 @@ Reference:
 - [SSH Keys with Multiple GitHub Accounts](https://medium.com/@trionkidnapper/ssh-keys-with-multiple-github-accounts-c67db56f191e)
 - [Multiple SSH Keys settings for different github account](https://gist.github.com/jexchan/2351996/)
 
+Note: One thing I noticed when I had to do this some time after setup-- if I wasn't cloning but creating you still have to make sure you differentiate cmd as would with cloning and check/change user/email associated to gh acct desired.
+
 # Need to transfer commits from one repo to another? (via cherry-pick)
 Not limited to remote on another machine.
 
