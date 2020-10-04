@@ -143,6 +143,14 @@ Reference:
 
 Note: One thing I noticed when I had to do this some time after setup-- if I wasn't cloning but creating you still have to make sure you differentiate cmd as would with cloning and check/change user/email associated to gh acct desired.
 
+`git config --list` to check username/email for particular project
+- change if you must
+- make sure when you're seting the repo you are using the correct format (see: differentiate repo/accts above)
+`git remote set-url origin git://new.url.here`
+
+Reference:
+[how-to-remove-remote-origin-from-git-repo](https://stackoverflow.com/questions/16330404/how-to-remove-remote-origin-from-git-repo)
+
 # Need to transfer commits from one repo to another? (via cherry-pick)
 Not limited to remote on another machine.
 
